@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aylien.newsapi</groupId>
     <artifactId>client</artifactId>
@@ -7,7 +6,7 @@
     <name>client</name>
     <description>AYLIEN's officially supported Java client library for accessing News API</description>
     <url>https://github.com/AYLIEN/aylien_newsapi_java</url>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <licenses>
         <license>
@@ -30,7 +29,7 @@
         <url>https://github.com/AYLIEN/aylien_newsapi_java</url>
         <connection>scm:git:git://github.com/AYLIEN/aylien_newsapi_java.git</connection>
         <developerConnection>scm:git:git@github.com:AYLIEN/aylien_newsapi_java.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v0.0.1</tag>
     </scm>
 
     <distributionManagement>
