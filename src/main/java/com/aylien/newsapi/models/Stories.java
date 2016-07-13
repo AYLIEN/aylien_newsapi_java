@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,23 +25,31 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Stories {
+/**
+ * Stories
+ */
 
+public class Stories {
+    @JsonProperty("stories")
     private List<Story> stories = new ArrayList<Story>();
+
+    @JsonProperty("clusters")
     private List<StoryCluster> clusters = new ArrayList<StoryCluster>();
+
+    @JsonProperty("next_page_cursor")
     private String nextPageCursor = null;
 
-
-    /**
-     * An array of stories
-     **/
     public Stories stories(List<Story> stories) {
         this.stories = stories;
         return this;
     }
 
+    /**
+     * An array of stories
+     *
+     * @return stories
+     **/
     @ApiModelProperty(example = "null", value = "An array of stories")
-    @JsonProperty("stories")
     public List<Story> getStories() {
         return stories;
     }
@@ -49,17 +58,17 @@ public class Stories {
         this.stories = stories;
     }
 
-
-    /**
-     * An array of clusters
-     **/
     public Stories clusters(List<StoryCluster> clusters) {
         this.clusters = clusters;
         return this;
     }
 
+    /**
+     * An array of clusters
+     *
+     * @return clusters
+     **/
     @ApiModelProperty(example = "null", value = "An array of clusters")
-    @JsonProperty("clusters")
     public List<StoryCluster> getClusters() {
         return clusters;
     }
@@ -68,17 +77,17 @@ public class Stories {
         this.clusters = clusters;
     }
 
-
-    /**
-     * The next page cursor
-     **/
     public Stories nextPageCursor(String nextPageCursor) {
         this.nextPageCursor = nextPageCursor;
         return this;
     }
 
+    /**
+     * The next page cursor
+     *
+     * @return nextPageCursor
+     **/
     @ApiModelProperty(example = "null", value = "The next page cursor")
-    @JsonProperty("next_page_cursor")
     public String getNextPageCursor() {
         return nextPageCursor;
     }

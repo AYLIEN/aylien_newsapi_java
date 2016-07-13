@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -22,25 +23,40 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 
-public class Error {
+/**
+ * Error
+ */
 
+public class Error {
+    @JsonProperty("id")
     private String id = null;
+
+    @JsonProperty("links")
     private ErrorLinks links = null;
+
+    @JsonProperty("status")
     private String status = null;
+
+    @JsonProperty("code")
     private String code = null;
+
+    @JsonProperty("title")
     private String title = null;
+
+    @JsonProperty("detail")
     private String detail = null;
 
-
-    /**
-     **/
     public Error id(String id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * Get id
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("id")
     public String getId() {
         return id;
     }
@@ -49,16 +65,17 @@ public class Error {
         this.id = id;
     }
 
-
-    /**
-     **/
     public Error links(ErrorLinks links) {
         this.links = links;
         return this;
     }
 
+    /**
+     * Get links
+     *
+     * @return links
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("links")
     public ErrorLinks getLinks() {
         return links;
     }
@@ -67,16 +84,17 @@ public class Error {
         this.links = links;
     }
 
-
-    /**
-     **/
     public Error status(String status) {
         this.status = status;
         return this;
     }
 
+    /**
+     * Get status
+     *
+     * @return status
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("status")
     public String getStatus() {
         return status;
     }
@@ -85,16 +103,17 @@ public class Error {
         this.status = status;
     }
 
-
-    /**
-     **/
     public Error code(String code) {
         this.code = code;
         return this;
     }
 
+    /**
+     * Get code
+     *
+     * @return code
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("code")
     public String getCode() {
         return code;
     }
@@ -103,16 +122,17 @@ public class Error {
         this.code = code;
     }
 
-
-    /**
-     **/
     public Error title(String title) {
         this.title = title;
         return this;
     }
 
+    /**
+     * Get title
+     *
+     * @return title
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("title")
     public String getTitle() {
         return title;
     }
@@ -121,16 +141,17 @@ public class Error {
         this.title = title;
     }
 
-
-    /**
-     **/
     public Error detail(String detail) {
         this.detail = detail;
         return this;
     }
 
+    /**
+     * Get detail
+     *
+     * @return detail
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("detail")
     public String getDetail() {
         return detail;
     }

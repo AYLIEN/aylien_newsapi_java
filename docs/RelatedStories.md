@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **storyBody** | **String** | The input story body |  [optional]
 **storyLanguage** | **String** | The input story language |  [optional]
 **relatedStories** | [**List&lt;Story&gt;**](Story.md) | An array of related stories for the input story |  [optional]
+**clusters** | [**List&lt;StoryCluster&gt;**](StoryCluster.md) | An array of clusters |  [optional]
 
 
 

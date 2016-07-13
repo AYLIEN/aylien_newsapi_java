@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,7 +67,6 @@ public class DefaultApi {
         String language = autocompletesParams.getLanguage();
         Integer perPage = autocompletesParams.getPerPage();
 
-
         // verify the required parameter 'type' is set
         if (type == null) {
             throw new ApiException(400, "Missing the required parameter 'type' when calling listAutocompletes");
@@ -111,7 +110,7 @@ public class DefaultApi {
 
     /**
      * List coverages
-     * This endpoint is used for finding story coverages based on provided parameters. The number of coverages to return, up to a maximum of 100.
+     * This endpoint is used for finding story coverages based on the parameters provided. The maximum number of related stories returned is 100.
      *
      * @param coveragesParams Coverages parameters
      * @return Coverages
@@ -140,6 +139,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = coveragesParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = coveragesParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = coveragesParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = coveragesParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = coveragesParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = coveragesParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = coveragesParams.getMediaVideosCountMax();
         List<Integer> authorId = coveragesParams.getAuthorId();
         String authorName = coveragesParams.getAuthorName();
         List<Integer> sourceId = coveragesParams.getSourceId();
@@ -152,6 +155,8 @@ public class DefaultApi {
         List<String> sourceScopesState = coveragesParams.getSourceScopesState();
         List<String> sourceScopesCity = coveragesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = coveragesParams.getSourceScopesLevel();
+        Boolean cluster = coveragesParams.getCluster();
+        String clusterAlgorithm = coveragesParams.getClusterAlgorithm();
         List<String> _return = coveragesParams.get_return();
         Long storyId = coveragesParams.getStoryId();
         String storyUrl = coveragesParams.getStoryUrl();
@@ -208,6 +213,14 @@ public class DefaultApi {
             localVarFormParams.put("sentiment.title.polarity", sentimentTitlePolarity);
         if (sentimentBodyPolarity != null)
             localVarFormParams.put("sentiment.body.polarity", sentimentBodyPolarity);
+        if (mediaImagesCountMin != null)
+            localVarFormParams.put("media.images.count.min", mediaImagesCountMin);
+        if (mediaImagesCountMax != null)
+            localVarFormParams.put("media.images.count.max", mediaImagesCountMax);
+        if (mediaVideosCountMin != null)
+            localVarFormParams.put("media.videos.count.min", mediaVideosCountMin);
+        if (mediaVideosCountMax != null)
+            localVarFormParams.put("media.videos.count.max", mediaVideosCountMax);
         if (authorId != null)
             localVarFormParams.put("author.id[]", authorId);
         if (authorName != null)
@@ -232,6 +245,10 @@ public class DefaultApi {
             localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
         if (sourceScopesLevel != null)
             localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
+        if (cluster != null)
+            localVarFormParams.put("cluster", cluster);
+        if (clusterAlgorithm != null)
+            localVarFormParams.put("cluster.algorithm", clusterAlgorithm);
         if (_return != null)
             localVarFormParams.put("return[]", _return);
         if (storyId != null)
@@ -268,7 +285,7 @@ public class DefaultApi {
 
     /**
      * List histograms
-     * This endpoint is used for getting histograms based on the field parameter is passed.
+     * This endpoint is used for getting histograms based on the &#x60;field&#x60; parameter passed to the API.
      *
      * @param histogramsParams Histograms parameters
      * @return Histograms
@@ -297,6 +314,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = histogramsParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = histogramsParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = histogramsParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = histogramsParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = histogramsParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = histogramsParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = histogramsParams.getMediaVideosCountMax();
         List<Integer> authorId = histogramsParams.getAuthorId();
         String authorName = histogramsParams.getAuthorName();
         List<Integer> sourceId = histogramsParams.getSourceId();
@@ -341,6 +362,10 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
@@ -378,7 +403,7 @@ public class DefaultApi {
 
     /**
      * List related stories
-     * This endpoint is used for finding related stories based on provided parameters. The number of related stories to return, up to a maximum of 100.
+     * This endpoint is used for finding related stories based on the parameters provided. The maximum number of related stories returned is 100.
      *
      * @param relatedStoriesParams Related Stories parameters
      * @return RelatedStories
@@ -407,6 +432,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = relatedStoriesParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = relatedStoriesParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = relatedStoriesParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = relatedStoriesParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = relatedStoriesParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = relatedStoriesParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = relatedStoriesParams.getMediaVideosCountMax();
         List<Integer> authorId = relatedStoriesParams.getAuthorId();
         String authorName = relatedStoriesParams.getAuthorName();
         List<Integer> sourceId = relatedStoriesParams.getSourceId();
@@ -419,6 +448,8 @@ public class DefaultApi {
         List<String> sourceScopesState = relatedStoriesParams.getSourceScopesState();
         List<String> sourceScopesCity = relatedStoriesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = relatedStoriesParams.getSourceScopesLevel();
+        Boolean cluster = relatedStoriesParams.getCluster();
+        String clusterAlgorithm = relatedStoriesParams.getClusterAlgorithm();
         List<String> _return = relatedStoriesParams.get_return();
         Long storyId = relatedStoriesParams.getStoryId();
         String storyUrl = relatedStoriesParams.getStoryUrl();
@@ -475,6 +506,14 @@ public class DefaultApi {
             localVarFormParams.put("sentiment.title.polarity", sentimentTitlePolarity);
         if (sentimentBodyPolarity != null)
             localVarFormParams.put("sentiment.body.polarity", sentimentBodyPolarity);
+        if (mediaImagesCountMin != null)
+            localVarFormParams.put("media.images.count.min", mediaImagesCountMin);
+        if (mediaImagesCountMax != null)
+            localVarFormParams.put("media.images.count.max", mediaImagesCountMax);
+        if (mediaVideosCountMin != null)
+            localVarFormParams.put("media.videos.count.min", mediaVideosCountMin);
+        if (mediaVideosCountMax != null)
+            localVarFormParams.put("media.videos.count.max", mediaVideosCountMax);
         if (authorId != null)
             localVarFormParams.put("author.id[]", authorId);
         if (authorName != null)
@@ -499,6 +538,10 @@ public class DefaultApi {
             localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
         if (sourceScopesLevel != null)
             localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
+        if (cluster != null)
+            localVarFormParams.put("cluster", cluster);
+        if (clusterAlgorithm != null)
+            localVarFormParams.put("cluster.algorithm", clusterAlgorithm);
         if (_return != null)
             localVarFormParams.put("return[]", _return);
         if (storyId != null)
@@ -535,7 +578,7 @@ public class DefaultApi {
 
     /**
      * List Stories
-     * This endpoint is used for getting list of stories.
+     * This endpoint is used for getting a list of stories.
      *
      * @param storiesParams Stories parameters
      * @return Stories
@@ -564,6 +607,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = storiesParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = storiesParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = storiesParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = storiesParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = storiesParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = storiesParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = storiesParams.getMediaVideosCountMax();
         List<Integer> authorId = storiesParams.getAuthorId();
         String authorName = storiesParams.getAuthorName();
         List<Integer> sourceId = storiesParams.getSourceId();
@@ -611,6 +658,10 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
@@ -678,6 +729,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = timeSeriesParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = timeSeriesParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = timeSeriesParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = timeSeriesParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = timeSeriesParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = timeSeriesParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = timeSeriesParams.getMediaVideosCountMax();
         List<Integer> authorId = timeSeriesParams.getAuthorId();
         String authorName = timeSeriesParams.getAuthorName();
         List<Integer> sourceId = timeSeriesParams.getSourceId();
@@ -719,6 +774,10 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
@@ -755,7 +814,7 @@ public class DefaultApi {
 
     /**
      * List trends
-     * This endpoint is used for finding news trendings based on stories resource.
+     * This endpoint is used for finding trends based on stories.
      *
      * @param trendsParams Trends parameters
      * @return Trends
@@ -784,6 +843,10 @@ public class DefaultApi {
         List<String> entitiesBodyLinksDbpedia = trendsParams.getEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = trendsParams.getSentimentTitlePolarity();
         String sentimentBodyPolarity = trendsParams.getSentimentBodyPolarity();
+        Integer mediaImagesCountMin = trendsParams.getMediaImagesCountMin();
+        Integer mediaImagesCountMax = trendsParams.getMediaImagesCountMax();
+        Integer mediaVideosCountMin = trendsParams.getMediaVideosCountMin();
+        Integer mediaVideosCountMax = trendsParams.getMediaVideosCountMax();
         List<Integer> authorId = trendsParams.getAuthorId();
         String authorName = trendsParams.getAuthorName();
         List<Integer> sourceId = trendsParams.getSourceId();
@@ -825,6 +888,10 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));

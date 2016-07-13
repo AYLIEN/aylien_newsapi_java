@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,25 +25,37 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Histograms {
+/**
+ * Histograms
+ */
 
+public class Histograms {
+    @JsonProperty("intervals")
     private List<HistogramInterval> intervals = new ArrayList<HistogramInterval>();
+
+    @JsonProperty("interval.start")
     private Integer intervalStart = null;
+
+    @JsonProperty("interval.end")
     private Integer intervalEnd = null;
+
+    @JsonProperty("interval.width")
     private Integer intervalWidth = null;
+
+    @JsonProperty("field")
     private String field = null;
 
-
-    /**
-     * The intervals of the histograms
-     **/
     public Histograms intervals(List<HistogramInterval> intervals) {
         this.intervals = intervals;
         return this;
     }
 
+    /**
+     * The intervals of the histograms
+     *
+     * @return intervals
+     **/
     @ApiModelProperty(example = "null", value = "The intervals of the histograms")
-    @JsonProperty("intervals")
     public List<HistogramInterval> getIntervals() {
         return intervals;
     }
@@ -51,17 +64,17 @@ public class Histograms {
         this.intervals = intervals;
     }
 
-
-    /**
-     * The start interval of the histogram
-     **/
     public Histograms intervalStart(Integer intervalStart) {
         this.intervalStart = intervalStart;
         return this;
     }
 
+    /**
+     * The start interval of the histogram
+     *
+     * @return intervalStart
+     **/
     @ApiModelProperty(example = "null", value = "The start interval of the histogram")
-    @JsonProperty("interval.start")
     public Integer getIntervalStart() {
         return intervalStart;
     }
@@ -70,17 +83,17 @@ public class Histograms {
         this.intervalStart = intervalStart;
     }
 
-
-    /**
-     * The end interval of the histogram
-     **/
     public Histograms intervalEnd(Integer intervalEnd) {
         this.intervalEnd = intervalEnd;
         return this;
     }
 
+    /**
+     * The end interval of the histogram
+     *
+     * @return intervalEnd
+     **/
     @ApiModelProperty(example = "null", value = "The end interval of the histogram")
-    @JsonProperty("interval.end")
     public Integer getIntervalEnd() {
         return intervalEnd;
     }
@@ -89,17 +102,17 @@ public class Histograms {
         this.intervalEnd = intervalEnd;
     }
 
-
-    /**
-     * The width of the histogram
-     **/
     public Histograms intervalWidth(Integer intervalWidth) {
         this.intervalWidth = intervalWidth;
         return this;
     }
 
+    /**
+     * The width of the histogram
+     *
+     * @return intervalWidth
+     **/
     @ApiModelProperty(example = "null", value = "The width of the histogram")
-    @JsonProperty("interval.width")
     public Integer getIntervalWidth() {
         return intervalWidth;
     }
@@ -108,16 +121,17 @@ public class Histograms {
         this.intervalWidth = intervalWidth;
     }
 
-
-    /**
-     **/
     public Histograms field(String field) {
         this.field = field;
         return this;
     }
 
+    /**
+     * Get field
+     *
+     * @return field
+     **/
     @ApiModelProperty(example = "null", value = "")
-    @JsonProperty("field")
     public String getField() {
         return field;
     }

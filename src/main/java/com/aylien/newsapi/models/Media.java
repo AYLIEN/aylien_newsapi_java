@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,49 +14,36 @@
  * limitations under the License.
  */
 
+
 package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
 
+/**
+ * Media
+ */
+
 public class Media {
-
-
-    public enum TypeEnum {
-        IMAGE("image"),
-        VIDEO("video");
-
-        private String value;
-
-        TypeEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return value;
-        }
-    }
-
+    @JsonProperty("type")
     private TypeEnum type = null;
+    @JsonProperty("url")
     private String url = null;
 
-
-    /**
-     * Type of the media
-     **/
     public Media type(TypeEnum type) {
         this.type = type;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "Type of the media")
-    @JsonProperty("type")
+    /**
+     * The type of media
+     *
+     * @return type
+     **/
+    @ApiModelProperty(example = "null", value = "The type of media")
     public TypeEnum getType() {
         return type;
     }
@@ -65,17 +52,17 @@ public class Media {
         this.type = type;
     }
 
-
-    /**
-     * A URL which points to the media file
-     **/
     public Media url(String url) {
         this.url = url;
         return this;
     }
 
+    /**
+     * A URL which points to the media file
+     *
+     * @return url
+     **/
     @ApiModelProperty(example = "null", value = "A URL which points to the media file")
-    @JsonProperty("url")
     public String getUrl() {
         return url;
     }
@@ -83,7 +70,6 @@ public class Media {
     public void setUrl(String url) {
         this.url = url;
     }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -123,6 +109,26 @@ public class Media {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
+    }
+
+    /**
+     * The type of media
+     */
+    public enum TypeEnum {
+        IMAGE("image"),
+
+        VIDEO("video");
+
+        private String value;
+
+        TypeEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 }
 

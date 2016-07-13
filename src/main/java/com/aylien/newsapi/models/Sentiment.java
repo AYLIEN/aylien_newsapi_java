@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,50 +14,36 @@
  * limitations under the License.
  */
 
+
 package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
 
+/**
+ * Sentiment
+ */
+
 public class Sentiment {
-
-
-    public enum PolarityEnum {
-        POSITIVE("positive"),
-        NEUTRAL("neutral"),
-        NEGATIVE("negative");
-
-        private String value;
-
-        PolarityEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return value;
-        }
-    }
-
+    @JsonProperty("polarity")
     private PolarityEnum polarity = null;
+    @JsonProperty("score")
     private Double score = null;
 
-
-    /**
-     * Polarity of the sentiment
-     **/
     public Sentiment polarity(PolarityEnum polarity) {
         this.polarity = polarity;
         return this;
     }
 
+    /**
+     * Polarity of the sentiment
+     *
+     * @return polarity
+     **/
     @ApiModelProperty(example = "null", value = "Polarity of the sentiment")
-    @JsonProperty("polarity")
     public PolarityEnum getPolarity() {
         return polarity;
     }
@@ -66,19 +52,19 @@ public class Sentiment {
         this.polarity = polarity;
     }
 
-
-    /**
-     * Polarity score of the sentiment
-     * minimum: 0.0
-     * maximum: 1.0
-     **/
     public Sentiment score(Double score) {
         this.score = score;
         return this;
     }
 
+    /**
+     * Polarity score of the sentiment
+     * minimum: 0.0
+     * maximum: 1.0
+     *
+     * @return score
+     **/
     @ApiModelProperty(example = "null", value = "Polarity score of the sentiment")
-    @JsonProperty("score")
     public Double getScore() {
         return score;
     }
@@ -86,7 +72,6 @@ public class Sentiment {
     public void setScore(Double score) {
         this.score = score;
     }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,6 +111,28 @@ public class Sentiment {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
+    }
+
+    /**
+     * Polarity of the sentiment
+     */
+    public enum PolarityEnum {
+        POSITIVE("positive"),
+
+        NEUTRAL("neutral"),
+
+        NEGATIVE("negative");
+
+        private String value;
+
+        PolarityEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 }
 

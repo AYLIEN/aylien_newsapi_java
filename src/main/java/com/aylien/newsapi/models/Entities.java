@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,22 +25,28 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Entities {
+/**
+ * Entities
+ */
 
+public class Entities {
+    @JsonProperty("title")
     private List<Entity> title = new ArrayList<Entity>();
+
+    @JsonProperty("body")
     private List<Entity> body = new ArrayList<Entity>();
 
-
-    /**
-     * An array of extracted entities from the story title
-     **/
     public Entities title(List<Entity> title) {
         this.title = title;
         return this;
     }
 
+    /**
+     * An array of extracted entities from the story title
+     *
+     * @return title
+     **/
     @ApiModelProperty(example = "null", value = "An array of extracted entities from the story title")
-    @JsonProperty("title")
     public List<Entity> getTitle() {
         return title;
     }
@@ -48,17 +55,17 @@ public class Entities {
         this.title = title;
     }
 
-
-    /**
-     * An array of extracted entities from the story body
-     **/
     public Entities body(List<Entity> body) {
         this.body = body;
         return this;
     }
 
+    /**
+     * An array of extracted entities from the story body
+     *
+     * @return body
+     **/
     @ApiModelProperty(example = "null", value = "An array of extracted entities from the story body")
-    @JsonProperty("body")
     public List<Entity> getBody() {
         return body;
     }

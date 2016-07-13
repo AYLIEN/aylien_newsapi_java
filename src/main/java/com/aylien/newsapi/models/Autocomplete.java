@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -22,22 +23,28 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 
-public class Autocomplete {
+/**
+ * Autocomplete
+ */
 
+public class Autocomplete {
+    @JsonProperty("id")
     private String id = null;
+
+    @JsonProperty("text")
     private String text = null;
 
-
-    /**
-     * ID of the autocomplete
-     **/
     public Autocomplete id(String id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * ID of the autocomplete
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "ID of the autocomplete")
-    @JsonProperty("id")
     public String getId() {
         return id;
     }
@@ -46,17 +53,17 @@ public class Autocomplete {
         this.id = id;
     }
 
-
-    /**
-     * Text of the autocomplete
-     **/
     public Autocomplete text(String text) {
         this.text = text;
         return this;
     }
 
+    /**
+     * Text of the autocomplete
+     *
+     * @return text
+     **/
     @ApiModelProperty(example = "null", value = "Text of the autocomplete")
-    @JsonProperty("text")
     public String getText() {
         return text;
     }

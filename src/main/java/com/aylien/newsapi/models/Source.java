@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,26 +25,40 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Source {
+/**
+ * Source
+ */
 
+public class Source {
+    @JsonProperty("id")
     private Integer id = null;
+
+    @JsonProperty("name")
     private String name = null;
+
+    @JsonProperty("domain")
     private String domain = null;
+
+    @JsonProperty("logo_url")
     private String logoUrl = null;
+
+    @JsonProperty("locations")
     private List<Location> locations = new ArrayList<Location>();
+
+    @JsonProperty("scopes")
     private List<Scope> scopes = new ArrayList<Scope>();
 
-
-    /**
-     * The source id which is a unique value
-     **/
     public Source id(Integer id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * The source id which is a unique value
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "The source id which is a unique value")
-    @JsonProperty("id")
     public Integer getId() {
         return id;
     }
@@ -52,17 +67,17 @@ public class Source {
         this.id = id;
     }
 
-
-    /**
-     * The source name
-     **/
     public Source name(String name) {
         this.name = name;
         return this;
     }
 
+    /**
+     * The source name
+     *
+     * @return name
+     **/
     @ApiModelProperty(example = "null", value = "The source name")
-    @JsonProperty("name")
     public String getName() {
         return name;
     }
@@ -71,17 +86,17 @@ public class Source {
         this.name = name;
     }
 
-
-    /**
-     * Domain name of the source which is extracted from the source URL
-     **/
     public Source domain(String domain) {
         this.domain = domain;
         return this;
     }
 
+    /**
+     * Domain name of the source which is extracted from the source URL
+     *
+     * @return domain
+     **/
     @ApiModelProperty(example = "null", value = "Domain name of the source which is extracted from the source URL")
-    @JsonProperty("domain")
     public String getDomain() {
         return domain;
     }
@@ -90,17 +105,17 @@ public class Source {
         this.domain = domain;
     }
 
-
-    /**
-     * A URL which points to the source logo
-     **/
     public Source logoUrl(String logoUrl) {
         this.logoUrl = logoUrl;
         return this;
     }
 
+    /**
+     * A URL which points to the source logo
+     *
+     * @return logoUrl
+     **/
     @ApiModelProperty(example = "null", value = "A URL which points to the source logo")
-    @JsonProperty("logo_url")
     public String getLogoUrl() {
         return logoUrl;
     }
@@ -109,17 +124,17 @@ public class Source {
         this.logoUrl = logoUrl;
     }
 
-
-    /**
-     * The source locations which are tend to be the physical locations of the source, e.g. BBC headquarter is located in London.
-     **/
     public Source locations(List<Location> locations) {
         this.locations = locations;
         return this;
     }
 
+    /**
+     * The source locations which are tend to be the physical locations of the source, e.g. BBC headquarter is located in London.
+     *
+     * @return locations
+     **/
     @ApiModelProperty(example = "null", value = "The source locations which are tend to be the physical locations of the source, e.g. BBC headquarter is located in London.")
-    @JsonProperty("locations")
     public List<Location> getLocations() {
         return locations;
     }
@@ -128,17 +143,17 @@ public class Source {
         this.locations = locations;
     }
 
-
-    /**
-     * The source scopes which is tend to be scope locations of the source, e.g. BBC scopes is international.
-     **/
     public Source scopes(List<Scope> scopes) {
         this.scopes = scopes;
         return this;
     }
 
+    /**
+     * The source scopes which is tend to be scope locations of the source, e.g. BBC scopes is international.
+     *
+     * @return scopes
+     **/
     @ApiModelProperty(example = "null", value = "The source scopes which is tend to be scope locations of the source, e.g. BBC scopes is international. ")
-    @JsonProperty("scopes")
     public List<Scope> getScopes() {
         return scopes;
     }

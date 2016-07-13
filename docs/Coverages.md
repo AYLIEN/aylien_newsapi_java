@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **storyPublishedAt** | [**DateTime**](DateTime.md) | The input story published date |  [optional]
 **storyLanguage** | **String** | The input story language |  [optional]
 **coverages** | [**List&lt;Story&gt;**](Story.md) | An array of coverages for the input story |  [optional]
+**clusters** | [**List&lt;StoryCluster&gt;**](StoryCluster.md) | An array of clusters |  [optional]
 
 
 

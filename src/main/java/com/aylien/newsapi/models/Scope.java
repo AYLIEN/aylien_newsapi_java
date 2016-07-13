@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,53 +14,42 @@
  * limitations under the License.
  */
 
+
 package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
 
+/**
+ * Scope
+ */
+
 public class Scope {
-
+    @JsonProperty("country")
     private String country = null;
+
+    @JsonProperty("state")
     private String state = null;
+
+    @JsonProperty("city")
     private String city = null;
-
-
-    public enum LevelEnum {
-        INTERNATIONAL("international"),
-        NATIONAL("national"),
-        LOCAL("local");
-
-        private String value;
-
-        LevelEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return value;
-        }
-    }
-
+    @JsonProperty("level")
     private LevelEnum level = null;
 
-
-    /**
-     * The country code of the scope. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
-     **/
     public Scope country(String country) {
         this.country = country;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "The country code of the scope. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.")
-    @JsonProperty("country")
+    /**
+     * The source scope by country code. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
+     *
+     * @return country
+     **/
+    @ApiModelProperty(example = "null", value = "The source scope by country code. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.")
     public String getCountry() {
         return country;
     }
@@ -69,17 +58,17 @@ public class Scope {
         this.country = country;
     }
 
-
-    /**
-     * The state of the scope
-     **/
     public Scope state(String state) {
         this.state = state;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "The state of the scope")
-    @JsonProperty("state")
+    /**
+     * The scope by state
+     *
+     * @return state
+     **/
+    @ApiModelProperty(example = "null", value = "The scope by state")
     public String getState() {
         return state;
     }
@@ -88,17 +77,17 @@ public class Scope {
         this.state = state;
     }
 
-
-    /**
-     * The city of the scope
-     **/
     public Scope city(String city) {
         this.city = city;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "The city of the scope")
-    @JsonProperty("city")
+    /**
+     * The scope by city
+     *
+     * @return city
+     **/
+    @ApiModelProperty(example = "null", value = "The scope by city")
     public String getCity() {
         return city;
     }
@@ -107,17 +96,17 @@ public class Scope {
         this.city = city;
     }
 
-
-    /**
-     * The level of the scope
-     **/
     public Scope level(LevelEnum level) {
         this.level = level;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "The level of the scope")
-    @JsonProperty("level")
+    /**
+     * The scope by level
+     *
+     * @return level
+     **/
+    @ApiModelProperty(example = "null", value = "The scope by level")
     public LevelEnum getLevel() {
         return level;
     }
@@ -125,7 +114,6 @@ public class Scope {
     public void setLevel(LevelEnum level) {
         this.level = level;
     }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -169,6 +157,28 @@ public class Scope {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
+    }
+
+    /**
+     * The scope by level
+     */
+    public enum LevelEnum {
+        INTERNATIONAL("international"),
+
+        NATIONAL("national"),
+
+        LOCAL("local");
+
+        private String value;
+
+        LevelEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 }
 

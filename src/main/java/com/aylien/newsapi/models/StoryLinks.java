@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -22,23 +23,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 
-public class StoryLinks {
+/**
+ * StoryLinks
+ */
 
+public class StoryLinks {
+    @JsonProperty("permalink")
     private String permalink = null;
+
+    @JsonProperty("related_stories")
     private String relatedStories = null;
+
+    @JsonProperty("coverages")
     private String coverages = null;
 
-
-    /**
-     * The story permalink URL
-     **/
     public StoryLinks permalink(String permalink) {
         this.permalink = permalink;
         return this;
     }
 
+    /**
+     * The story permalink URL
+     *
+     * @return permalink
+     **/
     @ApiModelProperty(example = "null", value = "The story permalink URL")
-    @JsonProperty("permalink")
     public String getPermalink() {
         return permalink;
     }
@@ -47,17 +56,17 @@ public class StoryLinks {
         this.permalink = permalink;
     }
 
-
-    /**
-     * The related stories URL
-     **/
     public StoryLinks relatedStories(String relatedStories) {
         this.relatedStories = relatedStories;
         return this;
     }
 
+    /**
+     * The related stories URL
+     *
+     * @return relatedStories
+     **/
     @ApiModelProperty(example = "null", value = "The related stories URL")
-    @JsonProperty("related_stories")
     public String getRelatedStories() {
         return relatedStories;
     }
@@ -66,17 +75,17 @@ public class StoryLinks {
         this.relatedStories = relatedStories;
     }
 
-
-    /**
-     * The coverages URL
-     **/
     public StoryLinks coverages(String coverages) {
         this.coverages = coverages;
         return this;
     }
 
+    /**
+     * The coverages URL
+     *
+     * @return coverages
+     **/
     @ApiModelProperty(example = "null", value = "The coverages URL")
-    @JsonProperty("coverages")
     public String getCoverages() {
         return coverages;
     }

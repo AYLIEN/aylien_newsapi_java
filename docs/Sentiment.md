@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 ## Enum: PolarityEnum
 Name | Value
 ---- | -----
-POSITIVE | positive
-NEUTRAL | neutral
-NEGATIVE | negative
+POSITIVE | &quot;positive&quot;
+NEUTRAL | &quot;neutral&quot;
+NEGATIVE | &quot;negative&quot;
 
 
 

@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -25,40 +26,82 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Story {
+/**
+ * Story
+ */
 
+public class Story {
+    @JsonProperty("id")
     private Long id = null;
+
+    @JsonProperty("title")
     private String title = null;
+
+    @JsonProperty("body")
     private String body = null;
+
+    @JsonProperty("summary")
     private Summary summary = null;
+
+    @JsonProperty("source")
     private Source source = null;
+
+    @JsonProperty("author")
     private Author author = null;
+
+    @JsonProperty("entities")
     private Entities entities = null;
+
+    @JsonProperty("keywords")
     private List<String> keywords = new ArrayList<String>();
+
+    @JsonProperty("hashtags")
     private List<String> hashtags = new ArrayList<String>();
+
+    @JsonProperty("characters_count")
     private Integer charactersCount = null;
+
+    @JsonProperty("words_count")
     private Integer wordsCount = null;
+
+    @JsonProperty("sentences_count")
     private Integer sentencesCount = null;
+
+    @JsonProperty("paragraphs_count")
     private Integer paragraphsCount = null;
+
+    @JsonProperty("categories")
     private List<Category> categories = new ArrayList<Category>();
+
+    @JsonProperty("social_shares_count")
     private ShareCounts socialSharesCount = null;
+
+    @JsonProperty("media")
     private List<Media> media = new ArrayList<Media>();
+
+    @JsonProperty("sentiment")
     private Sentiments sentiment = null;
+
+    @JsonProperty("language")
     private String language = null;
+
+    @JsonProperty("published_at")
     private DateTime publishedAt = null;
+
+    @JsonProperty("links")
     private StoryLinks links = null;
 
-
-    /**
-     * ID of the story which is unique identification
-     **/
     public Story id(Long id) {
         this.id = id;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "ID of the story which is unique identification")
-    @JsonProperty("id")
+    /**
+     * ID of the story which is a unique identification
+     *
+     * @return id
+     **/
+    @ApiModelProperty(example = "null", value = "ID of the story which is a unique identification")
     public Long getId() {
         return id;
     }
@@ -67,17 +110,17 @@ public class Story {
         this.id = id;
     }
 
-
-    /**
-     * Title of the story
-     **/
     public Story title(String title) {
         this.title = title;
         return this;
     }
 
+    /**
+     * Title of the story
+     *
+     * @return title
+     **/
     @ApiModelProperty(example = "null", value = "Title of the story")
-    @JsonProperty("title")
     public String getTitle() {
         return title;
     }
@@ -86,17 +129,17 @@ public class Story {
         this.title = title;
     }
 
-
-    /**
-     * Body of the story
-     **/
     public Story body(String body) {
         this.body = body;
         return this;
     }
 
+    /**
+     * Body of the story
+     *
+     * @return body
+     **/
     @ApiModelProperty(example = "null", value = "Body of the story")
-    @JsonProperty("body")
     public String getBody() {
         return body;
     }
@@ -105,17 +148,17 @@ public class Story {
         this.body = body;
     }
 
-
-    /**
-     * The suggested story summary
-     **/
     public Story summary(Summary summary) {
         this.summary = summary;
         return this;
     }
 
+    /**
+     * The suggested story summary
+     *
+     * @return summary
+     **/
     @ApiModelProperty(example = "null", value = "The suggested story summary")
-    @JsonProperty("summary")
     public Summary getSummary() {
         return summary;
     }
@@ -124,17 +167,17 @@ public class Story {
         this.summary = summary;
     }
 
-
-    /**
-     * The story source
-     **/
     public Story source(Source source) {
         this.source = source;
         return this;
     }
 
+    /**
+     * The story source
+     *
+     * @return source
+     **/
     @ApiModelProperty(example = "null", value = "The story source")
-    @JsonProperty("source")
     public Source getSource() {
         return source;
     }
@@ -143,17 +186,17 @@ public class Story {
         this.source = source;
     }
 
-
-    /**
-     * The story author
-     **/
     public Story author(Author author) {
         this.author = author;
         return this;
     }
 
+    /**
+     * The story author
+     *
+     * @return author
+     **/
     @ApiModelProperty(example = "null", value = "The story author")
-    @JsonProperty("author")
     public Author getAuthor() {
         return author;
     }
@@ -162,17 +205,17 @@ public class Story {
         this.author = author;
     }
 
-
-    /**
-     * Extracted entities from the story title or body
-     **/
     public Story entities(Entities entities) {
         this.entities = entities;
         return this;
     }
 
+    /**
+     * Extracted entities from the story title or body
+     *
+     * @return entities
+     **/
     @ApiModelProperty(example = "null", value = "Extracted entities from the story title or body")
-    @JsonProperty("entities")
     public Entities getEntities() {
         return entities;
     }
@@ -181,17 +224,17 @@ public class Story {
         this.entities = entities;
     }
 
-
-    /**
-     * Extracted keywords mentioned in the story title or body
-     **/
     public Story keywords(List<String> keywords) {
         this.keywords = keywords;
         return this;
     }
 
+    /**
+     * Extracted keywords mentioned in the story title or body
+     *
+     * @return keywords
+     **/
     @ApiModelProperty(example = "null", value = "Extracted keywords mentioned in the story title or body")
-    @JsonProperty("keywords")
     public List<String> getKeywords() {
         return keywords;
     }
@@ -200,17 +243,17 @@ public class Story {
         this.keywords = keywords;
     }
 
-
-    /**
-     * An array of suggested Story hashtags
-     **/
     public Story hashtags(List<String> hashtags) {
         this.hashtags = hashtags;
         return this;
     }
 
+    /**
+     * An array of suggested Story hashtags
+     *
+     * @return hashtags
+     **/
     @ApiModelProperty(example = "null", value = "An array of suggested Story hashtags")
-    @JsonProperty("hashtags")
     public List<String> getHashtags() {
         return hashtags;
     }
@@ -219,17 +262,17 @@ public class Story {
         this.hashtags = hashtags;
     }
 
-
-    /**
-     * Characters count of the story body
-     **/
     public Story charactersCount(Integer charactersCount) {
         this.charactersCount = charactersCount;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "Characters count of the story body")
-    @JsonProperty("characters_count")
+    /**
+     * Character count of the story body
+     *
+     * @return charactersCount
+     **/
+    @ApiModelProperty(example = "null", value = "Character count of the story body")
     public Integer getCharactersCount() {
         return charactersCount;
     }
@@ -238,17 +281,17 @@ public class Story {
         this.charactersCount = charactersCount;
     }
 
-
-    /**
-     * Words count of the story body
-     **/
     public Story wordsCount(Integer wordsCount) {
         this.wordsCount = wordsCount;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "Words count of the story body")
-    @JsonProperty("words_count")
+    /**
+     * Word count of the story body
+     *
+     * @return wordsCount
+     **/
+    @ApiModelProperty(example = "null", value = "Word count of the story body")
     public Integer getWordsCount() {
         return wordsCount;
     }
@@ -257,17 +300,17 @@ public class Story {
         this.wordsCount = wordsCount;
     }
 
-
-    /**
-     * Sentences count of the story body
-     **/
     public Story sentencesCount(Integer sentencesCount) {
         this.sentencesCount = sentencesCount;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "Sentences count of the story body")
-    @JsonProperty("sentences_count")
+    /**
+     * Sentence count of the story body
+     *
+     * @return sentencesCount
+     **/
+    @ApiModelProperty(example = "null", value = "Sentence count of the story body")
     public Integer getSentencesCount() {
         return sentencesCount;
     }
@@ -276,17 +319,17 @@ public class Story {
         this.sentencesCount = sentencesCount;
     }
 
-
-    /**
-     * Paragraphs count of the story body
-     **/
     public Story paragraphsCount(Integer paragraphsCount) {
         this.paragraphsCount = paragraphsCount;
         return this;
     }
 
-    @ApiModelProperty(example = "null", value = "Paragraphs count of the story body")
-    @JsonProperty("paragraphs_count")
+    /**
+     * Paragraph count of the story body
+     *
+     * @return paragraphsCount
+     **/
+    @ApiModelProperty(example = "null", value = "Paragraph count of the story body")
     public Integer getParagraphsCount() {
         return paragraphsCount;
     }
@@ -295,17 +338,17 @@ public class Story {
         this.paragraphsCount = paragraphsCount;
     }
 
-
-    /**
-     * Suggested categories for the story
-     **/
     public Story categories(List<Category> categories) {
         this.categories = categories;
         return this;
     }
 
+    /**
+     * Suggested categories for the story
+     *
+     * @return categories
+     **/
     @ApiModelProperty(example = "null", value = "Suggested categories for the story")
-    @JsonProperty("categories")
     public List<Category> getCategories() {
         return categories;
     }
@@ -314,17 +357,17 @@ public class Story {
         this.categories = categories;
     }
 
-
-    /**
-     * Social shares count for the story
-     **/
     public Story socialSharesCount(ShareCounts socialSharesCount) {
         this.socialSharesCount = socialSharesCount;
         return this;
     }
 
+    /**
+     * Social shares count for the story
+     *
+     * @return socialSharesCount
+     **/
     @ApiModelProperty(example = "null", value = "Social shares count for the story")
-    @JsonProperty("social_shares_count")
     public ShareCounts getSocialSharesCount() {
         return socialSharesCount;
     }
@@ -333,17 +376,17 @@ public class Story {
         this.socialSharesCount = socialSharesCount;
     }
 
-
-    /**
-     * An array of extracted media such as images and videos
-     **/
     public Story media(List<Media> media) {
         this.media = media;
         return this;
     }
 
+    /**
+     * An array of extracted media such as images and videos
+     *
+     * @return media
+     **/
     @ApiModelProperty(example = "null", value = "An array of extracted media such as images and videos")
-    @JsonProperty("media")
     public List<Media> getMedia() {
         return media;
     }
@@ -352,17 +395,17 @@ public class Story {
         this.media = media;
     }
 
-
-    /**
-     * Suggested sentiments for the story title or body
-     **/
     public Story sentiment(Sentiments sentiment) {
         this.sentiment = sentiment;
         return this;
     }
 
+    /**
+     * Suggested sentiments for the story title or body
+     *
+     * @return sentiment
+     **/
     @ApiModelProperty(example = "null", value = "Suggested sentiments for the story title or body")
-    @JsonProperty("sentiment")
     public Sentiments getSentiment() {
         return sentiment;
     }
@@ -371,17 +414,17 @@ public class Story {
         this.sentiment = sentiment;
     }
 
-
-    /**
-     * Language of the story
-     **/
     public Story language(String language) {
         this.language = language;
         return this;
     }
 
+    /**
+     * Language of the story
+     *
+     * @return language
+     **/
     @ApiModelProperty(example = "null", value = "Language of the story")
-    @JsonProperty("language")
     public String getLanguage() {
         return language;
     }
@@ -390,17 +433,17 @@ public class Story {
         this.language = language;
     }
 
-
-    /**
-     * Published date of the story
-     **/
     public Story publishedAt(DateTime publishedAt) {
         this.publishedAt = publishedAt;
         return this;
     }
 
+    /**
+     * Published date of the story
+     *
+     * @return publishedAt
+     **/
     @ApiModelProperty(example = "null", value = "Published date of the story")
-    @JsonProperty("published_at")
     public DateTime getPublishedAt() {
         return publishedAt;
     }
@@ -409,17 +452,17 @@ public class Story {
         this.publishedAt = publishedAt;
     }
 
-
-    /**
-     * Links which is related to the story
-     **/
     public Story links(StoryLinks links) {
         this.links = links;
         return this;
     }
 
+    /**
+     * Links which is related to the story
+     *
+     * @return links
+     **/
     @ApiModelProperty(example = "null", value = "Links which is related to the story")
-    @JsonProperty("links")
     public StoryLinks getLinks() {
         return links;
     }

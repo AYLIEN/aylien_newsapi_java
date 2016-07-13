@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,25 +25,37 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class StoryCluster {
+/**
+ * StoryCluster
+ */
 
+public class StoryCluster {
+    @JsonProperty("id")
     private Integer id = null;
+
+    @JsonProperty("phrases")
     private List<String> phrases = new ArrayList<String>();
+
+    @JsonProperty("size")
     private Integer size = null;
+
+    @JsonProperty("stories")
     private List<Long> stories = new ArrayList<Long>();
+
+    @JsonProperty("score")
     private Double score = null;
 
-
-    /**
-     * A unique identification for the cluster
-     **/
     public StoryCluster id(Integer id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * A unique identification for the cluster
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "A unique identification for the cluster")
-    @JsonProperty("id")
     public Integer getId() {
         return id;
     }
@@ -51,17 +64,17 @@ public class StoryCluster {
         this.id = id;
     }
 
-
-    /**
-     * Suggested labels for the cluster
-     **/
     public StoryCluster phrases(List<String> phrases) {
         this.phrases = phrases;
         return this;
     }
 
+    /**
+     * Suggested labels for the cluster
+     *
+     * @return phrases
+     **/
     @ApiModelProperty(example = "null", value = "Suggested labels for the cluster")
-    @JsonProperty("phrases")
     public List<String> getPhrases() {
         return phrases;
     }
@@ -70,17 +83,17 @@ public class StoryCluster {
         this.phrases = phrases;
     }
 
-
-    /**
-     * Size of the cluster
-     **/
     public StoryCluster size(Integer size) {
         this.size = size;
         return this;
     }
 
+    /**
+     * Size of the cluster
+     *
+     * @return size
+     **/
     @ApiModelProperty(example = "null", value = "Size of the cluster")
-    @JsonProperty("size")
     public Integer getSize() {
         return size;
     }
@@ -89,17 +102,17 @@ public class StoryCluster {
         this.size = size;
     }
 
-
-    /**
-     * Story ids which are in the cluster
-     **/
     public StoryCluster stories(List<Long> stories) {
         this.stories = stories;
         return this;
     }
 
+    /**
+     * Story ids which are in the cluster
+     *
+     * @return stories
+     **/
     @ApiModelProperty(example = "null", value = "Story ids which are in the cluster")
-    @JsonProperty("stories")
     public List<Long> getStories() {
         return stories;
     }
@@ -108,17 +121,17 @@ public class StoryCluster {
         this.stories = stories;
     }
 
-
-    /**
-     * The cluster score
-     **/
     public StoryCluster score(Double score) {
         this.score = score;
         return this;
     }
 
+    /**
+     * The cluster score
+     *
+     * @return score
+     **/
     @ApiModelProperty(example = "null", value = "The cluster score")
-    @JsonProperty("score")
     public Double getScore() {
         return score;
     }

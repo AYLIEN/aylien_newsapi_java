@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,6 +38,10 @@ public class HistogramsParams {
     private List<String> entitiesBodyLinksDbpedia;
     private String sentimentTitlePolarity;
     private String sentimentBodyPolarity;
+    private Integer mediaImagesCountMin;
+    private Integer mediaImagesCountMax;
+    private Integer mediaVideosCountMin;
+    private Integer mediaVideosCountMax;
     private List<Integer> authorId;
     private String authorName;
     private List<Integer> sourceId;
@@ -54,6 +58,95 @@ public class HistogramsParams {
     private Integer intervalEnd;
     private Integer intervalWidth;
     private String field;
+
+    /**
+     * Constructs parameters for Histograms endpoint
+     *
+     * @param id                        This parameter is used for finding stroies by story id. (optional)
+     * @param title                     This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param body                      This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param text                      This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param language                  This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
+     * @param publishedAtStart          This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param publishedAtEnd            This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param categoriesTaxonomy        This parameter is used for defining the type of the taxonomy for the rest of the categories queries. (optional)
+     * @param categoriesConfident       This parameter is used for finding stories whose categories are confident. (optional, default to true)
+     * @param categoriesId              This parameter is used for finding stories by categories id. (optional)
+     * @param categoriesLevel           This parameter is used for finding stories by categories level. (optional)
+     * @param entitiesTitleText         This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. (optional)
+     * @param entitiesTitleType         This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. (optional)
+     * @param entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. (optional)
+     * @param entitiesBodyText          This parameter is used to find stories based on the specified entities &#x60;text&#x60; in the body of stories. (optional)
+     * @param entitiesBodyType          This parameter is used to find stories based on the specified entities &#x60;type&#x60; in the body of stories. (optional)
+     * @param entitiesBodyLinksDbpedia  This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. (optional)
+     * @param sentimentTitlePolarity    This parameter is used for finding stories whose title sentiment is the specified value. (optional)
+     * @param sentimentBodyPolarity     This parameter is used for finding stories whose body sentiment is the specified value. (optional)
+     * @param mediaImagesCountMin       This parameter is used for finding stories whose number of images is greater than or equal to the specified value. (optional)
+     * @param mediaImagesCountMax       This parameter is used for finding stories whose number of images is less than or equal to the specified value. (optional)
+     * @param mediaVideosCountMin       This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. (optional)
+     * @param mediaVideosCountMax       This parameter is used for finding stories whose number of videos is less than or equal to the specified value. (optional)
+     * @param authorId                  This parameter is used for finding stories whose author id is the specified value. (optional)
+     * @param authorName                This parameter is used for finding stories whose author full name contains the specified value. (optional)
+     * @param sourceId                  This parameter is used for finding stories whose source id is the specified value. (optional)
+     * @param sourceName                This parameter is used for finding stories whose source name contains the specified value. (optional)
+     * @param sourceDomain              This parameter is used for finding stories whose source domain is the specified value. (optional)
+     * @param sourceLocationsCountry    This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsState      This parameter is used for finding stories whose source state/province is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsCity       This parameter is used for finding stories whose source city is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCountry       This parameter is used for finding stories whose source scopes is the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesState         This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCity          This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesLevel         This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param intervalStart             This parameter is used for setting the start data point of histogram intervals. (optional)
+     * @param intervalEnd               This parameter is used for setting the end data point of histogram intervals. (optional)
+     * @param intervalWidth             This parameter is used for setting the width of histogram intervals. (optional)
+     * @param field                     This parameter is used for specifying the y-axis variable for the histogram. (optional, default to social_shares_count)
+     */
+    public HistogramsParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, Integer mediaImagesCountMin, Integer mediaImagesCountMax, Integer mediaVideosCountMin, Integer mediaVideosCountMax, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Integer intervalStart, Integer intervalEnd, Integer intervalWidth, String field) {
+        this.id = id;
+        this.title = title;
+        this.body = body;
+        this.text = text;
+        this.language = language;
+        this.publishedAtStart = publishedAtStart;
+        this.publishedAtEnd = publishedAtEnd;
+        this.categoriesTaxonomy = categoriesTaxonomy;
+        this.categoriesConfident = categoriesConfident;
+        this.categoriesId = categoriesId;
+        this.categoriesLevel = categoriesLevel;
+        this.entitiesTitleText = entitiesTitleText;
+        this.entitiesTitleType = entitiesTitleType;
+        this.entitiesTitleLinksDbpedia = entitiesTitleLinksDbpedia;
+        this.entitiesBodyText = entitiesBodyText;
+        this.entitiesBodyType = entitiesBodyType;
+        this.entitiesBodyLinksDbpedia = entitiesBodyLinksDbpedia;
+        this.sentimentTitlePolarity = sentimentTitlePolarity;
+        this.sentimentBodyPolarity = sentimentBodyPolarity;
+        this.mediaImagesCountMin = mediaImagesCountMin;
+        this.mediaImagesCountMax = mediaImagesCountMax;
+        this.mediaVideosCountMin = mediaVideosCountMin;
+        this.mediaVideosCountMax = mediaVideosCountMax;
+        this.authorId = authorId;
+        this.authorName = authorName;
+        this.sourceId = sourceId;
+        this.sourceName = sourceName;
+        this.sourceDomain = sourceDomain;
+        this.sourceLocationsCountry = sourceLocationsCountry;
+        this.sourceLocationsState = sourceLocationsState;
+        this.sourceLocationsCity = sourceLocationsCity;
+        this.sourceScopesCountry = sourceScopesCountry;
+        this.sourceScopesState = sourceScopesState;
+        this.sourceScopesCity = sourceScopesCity;
+        this.sourceScopesLevel = sourceScopesLevel;
+        this.intervalStart = intervalStart;
+        this.intervalEnd = intervalEnd;
+        this.intervalWidth = intervalWidth;
+        this.field = field;
+    }
+
+    public static Builder newBuilder() {
+        return new Builder();
+    }
 
     public List<Long> getId() {
         return id;
@@ -131,6 +224,23 @@ public class HistogramsParams {
         return sentimentBodyPolarity;
     }
 
+    public Integer getMediaImagesCountMin() {
+        return mediaImagesCountMin;
+    }
+
+    public Integer getMediaImagesCountMax() {
+        return mediaImagesCountMax;
+    }
+
+    public Integer getMediaVideosCountMin() {
+        return mediaVideosCountMin;
+    }
+
+    public Integer getMediaVideosCountMax() {
+        return mediaVideosCountMax;
+    }
+
+
     public List<Integer> getAuthorId() {
         return authorId;
     }
@@ -195,87 +305,6 @@ public class HistogramsParams {
         return field;
     }
 
-    public static Builder newBuilder() {
-        return new Builder();
-    }
-
-    /**
-     * Constructs parameters for Histograms endpoint
-     *
-     * @param id                        This parameter is used for finding stroies by story id. (optional)
-     * @param title                     This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param body                      This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param text                      This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param language                  This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
-     * @param publishedAtStart          This parameter is used for finding stories whose published at is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param publishedAtEnd            This parameter is used for finding stories whose published at is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param categoriesTaxonomy        This parameter is used for defining type of the taxonomy for the rest of categories queries. (optional)
-     * @param categoriesConfident       This parameter is used for finding stories whose categories are confident. (optional, default to true)
-     * @param categoriesId              This parameter is used for finding stories whose categories id is the specified value. (optional)
-     * @param categoriesLevel           This parameter is used for finding stories whose categories level is the specified value. (optional)
-     * @param entitiesTitleText         This parameter is used for finding stories whose entities text in title is the specified value. (optional)
-     * @param entitiesTitleType         This parameter is used for finding stories whose entities type in title is the specified value. (optional)
-     * @param entitiesTitleLinksDbpedia This parameter is used for finding stories whose entities dbpedia url in title is the specified value. (optional)
-     * @param entitiesBodyText          This parameter is used for finding stories whose entities text in body is the specified value. (optional)
-     * @param entitiesBodyType          This parameter is used for finding stories whose entities type in body is the specified value. (optional)
-     * @param entitiesBodyLinksDbpedia  This parameter is used for finding stories whose entities dbpedia url in body is the specified value. (optional)
-     * @param sentimentTitlePolarity    This parameter is used for finding stories whose title sentiment is the specified value. (optional)
-     * @param sentimentBodyPolarity     This parameter is used for finding stories whose body sentiment is the specified value. (optional)
-     * @param authorId                  This parameter is used for finding stories whose author id is the specified value. (optional)
-     * @param authorName                This parameter is used for finding stories whose author full name contains the specified value. (optional)
-     * @param sourceId                  This parameter is used for finding stories whose source id is the specified value. (optional)
-     * @param sourceName                This parameter is used for finding stories whose source name contains the specified value. (optional)
-     * @param sourceDomain              This parameter is used for finding stories whose source domain is the specified value. (optional)
-     * @param sourceLocationsCountry    This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. (optional)
-     * @param sourceLocationsState      This parameter is used for finding stories whose source state/province is the specified value. (optional)
-     * @param sourceLocationsCity       This parameter is used for finding stories whose source city is the specified value. (optional)
-     * @param sourceScopesCountry       This parameter is used for finding stories whose source scopes country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. (optional)
-     * @param sourceScopesState         This parameter is used for finding stories whose source scopes state/province is the specified value. (optional)
-     * @param sourceScopesCity          This parameter is used for finding stories whose source scopes city is the specified value. (optional)
-     * @param sourceScopesLevel         This parameter is used for finding stories whose source scopes level is the specified value. (optional)
-     * @param intervalStart             This parameter is used for setting the start data point of histogram intervals. (optional)
-     * @param intervalEnd               This parameter is used for setting the end data point of histogram intervals. (optional)
-     * @param intervalWidth             This parameter is used for setting the width of histogram intervals. (optional)
-     * @param field                     This parameter is used for specifying the y-axis variable for the histogram. (optional, default to social_shares_count)
-     */
-    public HistogramsParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Integer intervalStart, Integer intervalEnd, Integer intervalWidth, String field) {
-        this.id = id;
-        this.title = title;
-        this.body = body;
-        this.text = text;
-        this.language = language;
-        this.publishedAtStart = publishedAtStart;
-        this.publishedAtEnd = publishedAtEnd;
-        this.categoriesTaxonomy = categoriesTaxonomy;
-        this.categoriesConfident = categoriesConfident;
-        this.categoriesId = categoriesId;
-        this.categoriesLevel = categoriesLevel;
-        this.entitiesTitleText = entitiesTitleText;
-        this.entitiesTitleType = entitiesTitleType;
-        this.entitiesTitleLinksDbpedia = entitiesTitleLinksDbpedia;
-        this.entitiesBodyText = entitiesBodyText;
-        this.entitiesBodyType = entitiesBodyType;
-        this.entitiesBodyLinksDbpedia = entitiesBodyLinksDbpedia;
-        this.sentimentTitlePolarity = sentimentTitlePolarity;
-        this.sentimentBodyPolarity = sentimentBodyPolarity;
-        this.authorId = authorId;
-        this.authorName = authorName;
-        this.sourceId = sourceId;
-        this.sourceName = sourceName;
-        this.sourceDomain = sourceDomain;
-        this.sourceLocationsCountry = sourceLocationsCountry;
-        this.sourceLocationsState = sourceLocationsState;
-        this.sourceLocationsCity = sourceLocationsCity;
-        this.sourceScopesCountry = sourceScopesCountry;
-        this.sourceScopesState = sourceScopesState;
-        this.sourceScopesCity = sourceScopesCity;
-        this.sourceScopesLevel = sourceScopesLevel;
-        this.intervalStart = intervalStart;
-        this.intervalEnd = intervalEnd;
-        this.intervalWidth = intervalWidth;
-        this.field = field;
-    }
-
     public static class Builder {
         private List<Long> id;
         private String title;
@@ -296,6 +325,10 @@ public class HistogramsParams {
         private List<String> entitiesBodyLinksDbpedia;
         private String sentimentTitlePolarity;
         private String sentimentBodyPolarity;
+        private Integer mediaImagesCountMin;
+        private Integer mediaImagesCountMax;
+        private Integer mediaVideosCountMin;
+        private Integer mediaVideosCountMax;
         private List<Integer> authorId;
         private String authorName;
         private List<Integer> sourceId;
@@ -408,6 +441,26 @@ public class HistogramsParams {
             return this;
         }
 
+        public Builder setMediaImagesCountMin(Integer mediaImagesCountMin) {
+            this.mediaImagesCountMin = mediaImagesCountMin;
+            return this;
+        }
+
+        public Builder setMediaImagesCountMax(Integer mediaImagesCountMax) {
+            this.mediaImagesCountMax = mediaImagesCountMax;
+            return this;
+        }
+
+        public Builder setMediaVideosCountMin(Integer mediaVideosCountMin) {
+            this.mediaVideosCountMin = mediaVideosCountMin;
+            return this;
+        }
+
+        public Builder setMediaVideosCountMax(Integer mediaVideosCountMax) {
+            this.mediaVideosCountMax = mediaVideosCountMax;
+            return this;
+        }
+
         public Builder setAuthorId(List<Integer> authorId) {
             this.authorId = authorId;
             return this;
@@ -489,7 +542,7 @@ public class HistogramsParams {
         }
 
         public HistogramsParams build() {
-            return new HistogramsParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, intervalStart, intervalEnd, intervalWidth, field);
+            return new HistogramsParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, mediaImagesCountMin, mediaImagesCountMax, mediaVideosCountMin, mediaVideosCountMax, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, intervalStart, intervalEnd, intervalWidth, field);
         }
     }
 }

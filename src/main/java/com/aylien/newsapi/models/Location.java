@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -22,23 +23,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 
-public class Location {
+/**
+ * Location
+ */
 
+public class Location {
+    @JsonProperty("country")
     private String country = null;
+
+    @JsonProperty("state")
     private String state = null;
+
+    @JsonProperty("city")
     private String city = null;
 
-
-    /**
-     * The country code of the location. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
-     **/
     public Location country(String country) {
         this.country = country;
         return this;
     }
 
+    /**
+     * The country code of the location. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.
+     *
+     * @return country
+     **/
     @ApiModelProperty(example = "null", value = "The country code of the location. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes.")
-    @JsonProperty("country")
     public String getCountry() {
         return country;
     }
@@ -47,17 +56,17 @@ public class Location {
         this.country = country;
     }
 
-
-    /**
-     * The state of the location
-     **/
     public Location state(String state) {
         this.state = state;
         return this;
     }
 
+    /**
+     * The state of the location
+     *
+     * @return state
+     **/
     @ApiModelProperty(example = "null", value = "The state of the location")
-    @JsonProperty("state")
     public String getState() {
         return state;
     }
@@ -66,17 +75,17 @@ public class Location {
         this.state = state;
     }
 
-
-    /**
-     * The city of the location
-     **/
     public Location city(String city) {
         this.city = city;
         return this;
     }
 
+    /**
+     * The city of the location
+     *
+     * @return city
+     **/
     @ApiModelProperty(example = "null", value = "The city of the location")
-    @JsonProperty("city")
     public String getCity() {
         return city;
     }

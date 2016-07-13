@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -25,25 +26,40 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class Coverages {
+/**
+ * Coverages
+ */
 
+public class Coverages {
+    @JsonProperty("story_title")
     private String storyTitle = null;
+
+    @JsonProperty("story_body")
     private String storyBody = null;
+
+    @JsonProperty("story_published_at")
     private DateTime storyPublishedAt = null;
+
+    @JsonProperty("story_language")
     private String storyLanguage = null;
+
+    @JsonProperty("coverages")
     private List<Story> coverages = new ArrayList<Story>();
 
+    @JsonProperty("clusters")
+    private List<StoryCluster> clusters = new ArrayList<StoryCluster>();
 
-    /**
-     * The input story title
-     **/
     public Coverages storyTitle(String storyTitle) {
         this.storyTitle = storyTitle;
         return this;
     }
 
+    /**
+     * The input story title
+     *
+     * @return storyTitle
+     **/
     @ApiModelProperty(example = "null", value = "The input story title")
-    @JsonProperty("story_title")
     public String getStoryTitle() {
         return storyTitle;
     }
@@ -52,17 +68,17 @@ public class Coverages {
         this.storyTitle = storyTitle;
     }
 
-
-    /**
-     * The input story body
-     **/
     public Coverages storyBody(String storyBody) {
         this.storyBody = storyBody;
         return this;
     }
 
+    /**
+     * The input story body
+     *
+     * @return storyBody
+     **/
     @ApiModelProperty(example = "null", value = "The input story body")
-    @JsonProperty("story_body")
     public String getStoryBody() {
         return storyBody;
     }
@@ -71,17 +87,17 @@ public class Coverages {
         this.storyBody = storyBody;
     }
 
-
-    /**
-     * The input story published date
-     **/
     public Coverages storyPublishedAt(DateTime storyPublishedAt) {
         this.storyPublishedAt = storyPublishedAt;
         return this;
     }
 
+    /**
+     * The input story published date
+     *
+     * @return storyPublishedAt
+     **/
     @ApiModelProperty(example = "null", value = "The input story published date")
-    @JsonProperty("story_published_at")
     public DateTime getStoryPublishedAt() {
         return storyPublishedAt;
     }
@@ -90,17 +106,17 @@ public class Coverages {
         this.storyPublishedAt = storyPublishedAt;
     }
 
-
-    /**
-     * The input story language
-     **/
     public Coverages storyLanguage(String storyLanguage) {
         this.storyLanguage = storyLanguage;
         return this;
     }
 
+    /**
+     * The input story language
+     *
+     * @return storyLanguage
+     **/
     @ApiModelProperty(example = "null", value = "The input story language")
-    @JsonProperty("story_language")
     public String getStoryLanguage() {
         return storyLanguage;
     }
@@ -109,23 +125,42 @@ public class Coverages {
         this.storyLanguage = storyLanguage;
     }
 
-
-    /**
-     * An array of coverages for the input story
-     **/
     public Coverages coverages(List<Story> coverages) {
         this.coverages = coverages;
         return this;
     }
 
+    /**
+     * An array of coverages for the input story
+     *
+     * @return coverages
+     **/
     @ApiModelProperty(example = "null", value = "An array of coverages for the input story")
-    @JsonProperty("coverages")
     public List<Story> getCoverages() {
         return coverages;
     }
 
     public void setCoverages(List<Story> coverages) {
         this.coverages = coverages;
+    }
+
+    public Coverages clusters(List<StoryCluster> clusters) {
+        this.clusters = clusters;
+        return this;
+    }
+
+    /**
+     * An array of clusters
+     *
+     * @return clusters
+     **/
+    @ApiModelProperty(example = "null", value = "An array of clusters")
+    public List<StoryCluster> getClusters() {
+        return clusters;
+    }
+
+    public void setClusters(List<StoryCluster> clusters) {
+        this.clusters = clusters;
     }
 
 
@@ -142,12 +177,13 @@ public class Coverages {
                 Objects.equals(this.storyBody, coverages.storyBody) &&
                 Objects.equals(this.storyPublishedAt, coverages.storyPublishedAt) &&
                 Objects.equals(this.storyLanguage, coverages.storyLanguage) &&
-                Objects.equals(this.coverages, coverages.coverages);
+                Objects.equals(this.coverages, coverages.coverages) &&
+                Objects.equals(this.clusters, coverages.clusters);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(storyTitle, storyBody, storyPublishedAt, storyLanguage, coverages);
+        return Objects.hash(storyTitle, storyBody, storyPublishedAt, storyLanguage, coverages, clusters);
     }
 
     @Override
@@ -160,6 +196,7 @@ public class Coverages {
         sb.append("    storyPublishedAt: ").append(toIndentedString(storyPublishedAt)).append("\n");
         sb.append("    storyLanguage: ").append(toIndentedString(storyLanguage)).append("\n");
         sb.append("    coverages: ").append(toIndentedString(coverages)).append("\n");
+        sb.append("    clusters: ").append(toIndentedString(clusters)).append("\n");
         sb.append("}");
         return sb.toString();
     }

@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -24,24 +25,34 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class ShareCounts {
+/**
+ * ShareCounts
+ */
 
+public class ShareCounts {
+    @JsonProperty("facebook")
     private List<ShareCount> facebook = new ArrayList<ShareCount>();
+
+    @JsonProperty("google_plus")
     private List<ShareCount> googlePlus = new ArrayList<ShareCount>();
+
+    @JsonProperty("linkedin")
     private List<ShareCount> linkedin = new ArrayList<ShareCount>();
+
+    @JsonProperty("reddit")
     private List<ShareCount> reddit = new ArrayList<ShareCount>();
 
-
-    /**
-     * Facebook shares count
-     **/
     public ShareCounts facebook(List<ShareCount> facebook) {
         this.facebook = facebook;
         return this;
     }
 
+    /**
+     * Facebook shares count
+     *
+     * @return facebook
+     **/
     @ApiModelProperty(example = "null", value = "Facebook shares count")
-    @JsonProperty("facebook")
     public List<ShareCount> getFacebook() {
         return facebook;
     }
@@ -50,17 +61,17 @@ public class ShareCounts {
         this.facebook = facebook;
     }
 
-
-    /**
-     * Google Plus shares count
-     **/
     public ShareCounts googlePlus(List<ShareCount> googlePlus) {
         this.googlePlus = googlePlus;
         return this;
     }
 
+    /**
+     * Google Plus shares count
+     *
+     * @return googlePlus
+     **/
     @ApiModelProperty(example = "null", value = "Google Plus shares count")
-    @JsonProperty("google_plus")
     public List<ShareCount> getGooglePlus() {
         return googlePlus;
     }
@@ -69,17 +80,17 @@ public class ShareCounts {
         this.googlePlus = googlePlus;
     }
 
-
-    /**
-     * LinkedIn shares count
-     **/
     public ShareCounts linkedin(List<ShareCount> linkedin) {
         this.linkedin = linkedin;
         return this;
     }
 
+    /**
+     * LinkedIn shares count
+     *
+     * @return linkedin
+     **/
     @ApiModelProperty(example = "null", value = "LinkedIn shares count")
-    @JsonProperty("linkedin")
     public List<ShareCount> getLinkedin() {
         return linkedin;
     }
@@ -88,17 +99,17 @@ public class ShareCounts {
         this.linkedin = linkedin;
     }
 
-
-    /**
-     * Reddit shares count
-     **/
     public ShareCounts reddit(List<ShareCount> reddit) {
         this.reddit = reddit;
         return this;
     }
 
+    /**
+     * Reddit shares count
+     *
+     * @return reddit
+     **/
     @ApiModelProperty(example = "null", value = "Reddit shares count")
-    @JsonProperty("reddit")
     public List<ShareCount> getReddit() {
         return reddit;
     }

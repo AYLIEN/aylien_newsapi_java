@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -23,22 +24,28 @@ import org.joda.time.DateTime;
 import java.util.Objects;
 
 
-public class ShareCount {
+/**
+ * ShareCount
+ */
 
+public class ShareCount {
+    @JsonProperty("count")
     private Integer count = null;
+
+    @JsonProperty("fetched_at")
     private DateTime fetchedAt = null;
 
-
-    /**
-     * The number of shares
-     **/
     public ShareCount count(Integer count) {
         this.count = count;
         return this;
     }
 
+    /**
+     * The number of shares
+     *
+     * @return count
+     **/
     @ApiModelProperty(example = "null", value = "The number of shares")
-    @JsonProperty("count")
     public Integer getCount() {
         return count;
     }
@@ -47,17 +54,17 @@ public class ShareCount {
         this.count = count;
     }
 
-
-    /**
-     * The fetched date of the shares
-     **/
     public ShareCount fetchedAt(DateTime fetchedAt) {
         this.fetchedAt = fetchedAt;
         return this;
     }
 
+    /**
+     * The fetched date of the shares
+     *
+     * @return fetchedAt
+     **/
     @ApiModelProperty(example = "null", value = "The fetched date of the shares")
-    @JsonProperty("fetched_at")
     public DateTime getFetchedAt() {
         return fetchedAt;
     }

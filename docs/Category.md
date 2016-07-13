@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 ## Enum: TaxonomyEnum
 Name | Value
 ---- | -----
-IAB_QAG | iab-qag
-IPTC_SUBJECTCODE | iptc-subjectcode
+IAB_QAG | &quot;iab-qag&quot;
+IPTC_SUBJECTCODE | &quot;iptc-subjectcode&quot;
 
 
 

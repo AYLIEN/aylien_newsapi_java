@@ -1,12 +1,12 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,54 +14,44 @@
  * limitations under the License.
  */
 
+
 package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
 
+/**
+ * Category
+ */
+
 public class Category {
-
+    @JsonProperty("id")
     private String id = null;
-
-
-    public enum TaxonomyEnum {
-        IAB_QAG("iab-qag"),
-        IPTC_SUBJECTCODE("iptc-subjectcode");
-
-        private String value;
-
-        TaxonomyEnum(String value) {
-            this.value = value;
-        }
-
-        @Override
-        @JsonValue
-        public String toString() {
-            return value;
-        }
-    }
-
+    @JsonProperty("taxonomy")
     private TaxonomyEnum taxonomy = null;
+    @JsonProperty("level")
     private Integer level = null;
+    @JsonProperty("score")
     private Double score = null;
+    @JsonProperty("confident")
     private Boolean confident = null;
+    @JsonProperty("links")
     private CategoryLinks links = null;
 
-
-    /**
-     * The ID of the category
-     **/
     public Category id(String id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * The ID of the category
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "The ID of the category")
-    @JsonProperty("id")
     public String getId() {
         return id;
     }
@@ -70,17 +60,17 @@ public class Category {
         this.id = id;
     }
 
-
-    /**
-     * The taxonomy of the category
-     **/
     public Category taxonomy(TaxonomyEnum taxonomy) {
         this.taxonomy = taxonomy;
         return this;
     }
 
+    /**
+     * The taxonomy of the category
+     *
+     * @return taxonomy
+     **/
     @ApiModelProperty(example = "null", value = "The taxonomy of the category")
-    @JsonProperty("taxonomy")
     public TaxonomyEnum getTaxonomy() {
         return taxonomy;
     }
@@ -89,17 +79,17 @@ public class Category {
         this.taxonomy = taxonomy;
     }
 
-
-    /**
-     * The level of the category
-     **/
     public Category level(Integer level) {
         this.level = level;
         return this;
     }
 
+    /**
+     * The level of the category
+     *
+     * @return level
+     **/
     @ApiModelProperty(example = "null", value = "The level of the category")
-    @JsonProperty("level")
     public Integer getLevel() {
         return level;
     }
@@ -108,17 +98,17 @@ public class Category {
         this.level = level;
     }
 
-
-    /**
-     * The score of the category
-     **/
     public Category score(Double score) {
         this.score = score;
         return this;
     }
 
+    /**
+     * The score of the category
+     *
+     * @return score
+     **/
     @ApiModelProperty(example = "null", value = "The score of the category")
-    @JsonProperty("score")
     public Double getScore() {
         return score;
     }
@@ -127,17 +117,17 @@ public class Category {
         this.score = score;
     }
 
-
-    /**
-     * It defines whether the extracted category is confident or not
-     **/
     public Category confident(Boolean confident) {
         this.confident = confident;
         return this;
     }
 
+    /**
+     * It defines whether the extracted category is confident or not
+     *
+     * @return confident
+     **/
     @ApiModelProperty(example = "null", value = "It defines whether the extracted category is confident or not")
-    @JsonProperty("confident")
     public Boolean getConfident() {
         return confident;
     }
@@ -146,17 +136,17 @@ public class Category {
         this.confident = confident;
     }
 
-
-    /**
-     * Related links for the category
-     **/
     public Category links(CategoryLinks links) {
         this.links = links;
         return this;
     }
 
+    /**
+     * Related links for the category
+     *
+     * @return links
+     **/
     @ApiModelProperty(example = "null", value = "Related links for the category")
-    @JsonProperty("links")
     public CategoryLinks getLinks() {
         return links;
     }
@@ -164,7 +154,6 @@ public class Category {
     public void setLinks(CategoryLinks links) {
         this.links = links;
     }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -212,6 +201,26 @@ public class Category {
             return "null";
         }
         return o.toString().replace("\n", "\n    ");
+    }
+
+    /**
+     * The taxonomy of the category
+     */
+    public enum TaxonomyEnum {
+        IAB_QAG("iab-qag"),
+
+        IPTC_SUBJECTCODE("iptc-subjectcode");
+
+        private String value;
+
+        TaxonomyEnum(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 }
 

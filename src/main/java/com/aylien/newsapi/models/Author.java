@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -22,23 +23,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.Objects;
 
 
-public class Author {
+/**
+ * Author
+ */
 
+public class Author {
+    @JsonProperty("id")
     private Long id = null;
+
+    @JsonProperty("name")
     private String name = null;
+
+    @JsonProperty("avatar_url")
     private String avatarUrl = null;
 
-
-    /**
-     * A unique identification for the author
-     **/
     public Author id(Long id) {
         this.id = id;
         return this;
     }
 
+    /**
+     * A unique identification for the author
+     *
+     * @return id
+     **/
     @ApiModelProperty(example = "null", value = "A unique identification for the author")
-    @JsonProperty("id")
     public Long getId() {
         return id;
     }
@@ -47,17 +56,17 @@ public class Author {
         this.id = id;
     }
 
-
-    /**
-     * The extracted author full name
-     **/
     public Author name(String name) {
         this.name = name;
         return this;
     }
 
+    /**
+     * The extracted author full name
+     *
+     * @return name
+     **/
     @ApiModelProperty(example = "null", value = "The extracted author full name")
-    @JsonProperty("name")
     public String getName() {
         return name;
     }
@@ -66,17 +75,17 @@ public class Author {
         this.name = name;
     }
 
-
-    /**
-     * A URL which points to the author avatar
-     **/
     public Author avatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
         return this;
     }
 
+    /**
+     * A URL which points to the author avatar
+     *
+     * @return avatarUrl
+     **/
     @ApiModelProperty(example = "null", value = "A URL which points to the author avatar")
-    @JsonProperty("avatar_url")
     public String getAvatarUrl() {
         return avatarUrl;
     }

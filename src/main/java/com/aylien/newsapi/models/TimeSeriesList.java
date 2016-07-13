@@ -1,18 +1,19 @@
 /**
  * Copyright 2016 Aylien, Inc. All Rights Reserved.
- *
+ * <p>
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 
 package com.aylien.newsapi.models;
 
@@ -25,24 +26,34 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class TimeSeriesList {
+/**
+ * TimeSeriesList
+ */
 
+public class TimeSeriesList {
+    @JsonProperty("time_series")
     private List<TimeSeries> timeSeries = new ArrayList<TimeSeries>();
+
+    @JsonProperty("period")
     private String period = null;
+
+    @JsonProperty("published_at.start")
     private DateTime publishedAtStart = null;
+
+    @JsonProperty("published_at.end")
     private DateTime publishedAtEnd = null;
 
-
-    /**
-     * An array of time series
-     **/
     public TimeSeriesList timeSeries(List<TimeSeries> timeSeries) {
         this.timeSeries = timeSeries;
         return this;
     }
 
+    /**
+     * An array of time series
+     *
+     * @return timeSeries
+     **/
     @ApiModelProperty(example = "null", value = "An array of time series")
-    @JsonProperty("time_series")
     public List<TimeSeries> getTimeSeries() {
         return timeSeries;
     }
@@ -51,17 +62,17 @@ public class TimeSeriesList {
         this.timeSeries = timeSeries;
     }
 
-
-    /**
-     * The size of each date range expressed as an interval to be added to the lower bound.
-     **/
     public TimeSeriesList period(String period) {
         this.period = period;
         return this;
     }
 
+    /**
+     * The size of each date range expressed as an interval to be added to the lower bound.
+     *
+     * @return period
+     **/
     @ApiModelProperty(example = "null", value = "The size of each date range expressed as an interval to be added to the lower bound.")
-    @JsonProperty("period")
     public String getPeriod() {
         return period;
     }
@@ -70,17 +81,17 @@ public class TimeSeriesList {
         this.period = period;
     }
 
-
-    /**
-     * The start published date of the time series
-     **/
     public TimeSeriesList publishedAtStart(DateTime publishedAtStart) {
         this.publishedAtStart = publishedAtStart;
         return this;
     }
 
+    /**
+     * The start published date of the time series
+     *
+     * @return publishedAtStart
+     **/
     @ApiModelProperty(example = "null", value = "The start published date of the time series")
-    @JsonProperty("published_at.start")
     public DateTime getPublishedAtStart() {
         return publishedAtStart;
     }
@@ -89,17 +100,17 @@ public class TimeSeriesList {
         this.publishedAtStart = publishedAtStart;
     }
 
-
-    /**
-     * The end published date of the time series
-     **/
     public TimeSeriesList publishedAtEnd(DateTime publishedAtEnd) {
         this.publishedAtEnd = publishedAtEnd;
         return this;
     }
 
+    /**
+     * The end published date of the time series
+     *
+     * @return publishedAtEnd
+     **/
     @ApiModelProperty(example = "null", value = "The end published date of the time series")
-    @JsonProperty("published_at.end")
     public DateTime getPublishedAtEnd() {
         return publishedAtEnd;
     }
