@@ -17,6 +17,8 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Story;
+import com.aylien.newsapi.models.StoryCluster;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
@@ -130,6 +132,11 @@ public class Coverages {
         return this;
     }
 
+    public Coverages addCoveragesItem(Story coveragesItem) {
+        this.coverages.add(coveragesItem);
+        return this;
+    }
+
     /**
      * An array of coverages for the input story
      *
@@ -146,6 +153,11 @@ public class Coverages {
 
     public Coverages clusters(List<StoryCluster> clusters) {
         this.clusters = clusters;
+        return this;
+    }
+
+    public Coverages addClustersItem(StoryCluster clustersItem) {
+        this.clusters.add(clustersItem);
         return this;
     }
 

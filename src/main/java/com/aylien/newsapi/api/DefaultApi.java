@@ -155,6 +155,11 @@ public class DefaultApi {
         List<String> sourceScopesState = coveragesParams.getSourceScopesState();
         List<String> sourceScopesCity = coveragesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = coveragesParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = coveragesParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = coveragesParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = coveragesParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = coveragesParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = coveragesParams.getSourceRankingsAlexaCountry();
         Boolean cluster = coveragesParams.getCluster();
         String clusterAlgorithm = coveragesParams.getClusterAlgorithm();
         List<String> _return = coveragesParams.get_return();
@@ -245,6 +250,16 @@ public class DefaultApi {
             localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
         if (sourceScopesLevel != null)
             localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
+        if (sourceLinksInCountMin != null)
+            localVarFormParams.put("source.links_in_count.min", sourceLinksInCountMin);
+        if (sourceLinksInCountMax != null)
+            localVarFormParams.put("source.links_in_count.max", sourceLinksInCountMax);
+        if (sourceRankingsAlexaRankMin != null)
+            localVarFormParams.put("source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin);
+        if (sourceRankingsAlexaRankMax != null)
+            localVarFormParams.put("source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax);
+        if (sourceRankingsAlexaCountry != null)
+            localVarFormParams.put("source.rankings.alexa.country[]", sourceRankingsAlexaCountry);
         if (cluster != null)
             localVarFormParams.put("cluster", cluster);
         if (clusterAlgorithm != null)
@@ -330,6 +345,11 @@ public class DefaultApi {
         List<String> sourceScopesState = histogramsParams.getSourceScopesState();
         List<String> sourceScopesCity = histogramsParams.getSourceScopesCity();
         List<String> sourceScopesLevel = histogramsParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = histogramsParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = histogramsParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = histogramsParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = histogramsParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = histogramsParams.getSourceRankingsAlexaCountry();
         Integer intervalStart = histogramsParams.getIntervalStart();
         Integer intervalEnd = histogramsParams.getIntervalEnd();
         Integer intervalWidth = histogramsParams.getIntervalWidth();
@@ -378,6 +398,11 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.start", intervalStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.end", intervalEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.width", intervalWidth));
@@ -448,6 +473,11 @@ public class DefaultApi {
         List<String> sourceScopesState = relatedStoriesParams.getSourceScopesState();
         List<String> sourceScopesCity = relatedStoriesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = relatedStoriesParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = relatedStoriesParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = relatedStoriesParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = relatedStoriesParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = relatedStoriesParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = relatedStoriesParams.getSourceRankingsAlexaCountry();
         Boolean cluster = relatedStoriesParams.getCluster();
         String clusterAlgorithm = relatedStoriesParams.getClusterAlgorithm();
         List<String> _return = relatedStoriesParams.get_return();
@@ -538,6 +568,16 @@ public class DefaultApi {
             localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
         if (sourceScopesLevel != null)
             localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
+        if (sourceLinksInCountMin != null)
+            localVarFormParams.put("source.links_in_count.min", sourceLinksInCountMin);
+        if (sourceLinksInCountMax != null)
+            localVarFormParams.put("source.links_in_count.max", sourceLinksInCountMax);
+        if (sourceRankingsAlexaRankMin != null)
+            localVarFormParams.put("source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin);
+        if (sourceRankingsAlexaRankMax != null)
+            localVarFormParams.put("source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax);
+        if (sourceRankingsAlexaCountry != null)
+            localVarFormParams.put("source.rankings.alexa.country[]", sourceRankingsAlexaCountry);
         if (cluster != null)
             localVarFormParams.put("cluster", cluster);
         if (clusterAlgorithm != null)
@@ -623,6 +663,11 @@ public class DefaultApi {
         List<String> sourceScopesState = storiesParams.getSourceScopesState();
         List<String> sourceScopesCity = storiesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = storiesParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = storiesParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = storiesParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = storiesParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = storiesParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = storiesParams.getSourceRankingsAlexaCountry();
         Boolean cluster = storiesParams.getCluster();
         String clusterAlgorithm = storiesParams.getClusterAlgorithm();
         List<String> _return = storiesParams.get_return();
@@ -674,6 +719,11 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
@@ -745,6 +795,11 @@ public class DefaultApi {
         List<String> sourceScopesState = timeSeriesParams.getSourceScopesState();
         List<String> sourceScopesCity = timeSeriesParams.getSourceScopesCity();
         List<String> sourceScopesLevel = timeSeriesParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = timeSeriesParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = timeSeriesParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = timeSeriesParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = timeSeriesParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = timeSeriesParams.getSourceRankingsAlexaCountry();
         String publishedAtStart = timeSeriesParams.getPublishedAtStart();
         String publishedAtEnd = timeSeriesParams.getPublishedAtEnd();
         String period = timeSeriesParams.getPeriod();
@@ -790,6 +845,11 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "period", period));
@@ -859,6 +919,11 @@ public class DefaultApi {
         List<String> sourceScopesState = trendsParams.getSourceScopesState();
         List<String> sourceScopesCity = trendsParams.getSourceScopesCity();
         List<String> sourceScopesLevel = trendsParams.getSourceScopesLevel();
+        Integer sourceLinksInCountMin = trendsParams.getSourceLinksInCountMin();
+        Integer sourceLinksInCountMax = trendsParams.getSourceLinksInCountMax();
+        Integer sourceRankingsAlexaRankMin = trendsParams.getSourceRankingsAlexaRankMin();
+        Integer sourceRankingsAlexaRankMax = trendsParams.getSourceRankingsAlexaRankMax();
+        List<String> sourceRankingsAlexaCountry = trendsParams.getSourceRankingsAlexaCountry();
         String field = trendsParams.getField();
 
         // create path and map variables
@@ -904,6 +969,11 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "field", field));
 
 

@@ -54,6 +54,11 @@ public class StoriesParams {
     private List<String> sourceScopesState;
     private List<String> sourceScopesCity;
     private List<String> sourceScopesLevel;
+    private Integer sourceLinksInCountMin;
+    private Integer sourceLinksInCountMax;
+    private Integer sourceRankingsAlexaRankMin;
+    private Integer sourceRankingsAlexaRankMax;
+    private List<String> sourceRankingsAlexaCountry;
     private Boolean cluster;
     private String clusterAlgorithm;
     private List<String> _return;
@@ -65,50 +70,55 @@ public class StoriesParams {
     /**
      * Constructs parameters for Stories endpoint
      *
-     * @param id                        This parameter is used for finding stroies by story id. (optional)
-     * @param title                     This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param body                      This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param text                      This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param language                  This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
-     * @param publishedAtStart          This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param publishedAtEnd            This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param categoriesTaxonomy        This parameter is used for defining the type of the taxonomy for the rest of the categories queries. (optional)
-     * @param categoriesConfident       This parameter is used for finding stories whose categories are confident. (optional, default to true)
-     * @param categoriesId              This parameter is used for finding stories by categories id. (optional)
-     * @param categoriesLevel           This parameter is used for finding stories by categories level. (optional)
-     * @param entitiesTitleText         This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. (optional)
-     * @param entitiesTitleType         This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. (optional)
-     * @param entitiesTitleLinksDbpedia This parameter is used to find stories based on the specified entities dbpedia URL in story titles. (optional)
-     * @param entitiesBodyText          This parameter is used to find stories based on the specified entities &#x60;text&#x60; in the body of stories. (optional)
-     * @param entitiesBodyType          This parameter is used to find stories based on the specified entities &#x60;type&#x60; in the body of stories. (optional)
-     * @param entitiesBodyLinksDbpedia  This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. (optional)
-     * @param sentimentTitlePolarity    This parameter is used for finding stories whose title sentiment is the specified value. (optional)
-     * @param sentimentBodyPolarity     This parameter is used for finding stories whose body sentiment is the specified value. (optional)
-     * @param mediaImagesCountMin       This parameter is used for finding stories whose number of images is greater than or equal to the specified value. (optional)
-     * @param mediaImagesCountMax       This parameter is used for finding stories whose number of images is less than or equal to the specified value. (optional)
-     * @param mediaVideosCountMin       This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. (optional)
-     * @param mediaVideosCountMax       This parameter is used for finding stories whose number of videos is less than or equal to the specified value. (optional)
-     * @param authorId                  This parameter is used for finding stories whose author id is the specified value. (optional)
-     * @param authorName                This parameter is used for finding stories whose author full name contains the specified value. (optional)
-     * @param sourceId                  This parameter is used for finding stories whose source id is the specified value. (optional)
-     * @param sourceName                This parameter is used for finding stories whose source name contains the specified value. (optional)
-     * @param sourceDomain              This parameter is used for finding stories whose source domain is the specified value. (optional)
-     * @param sourceLocationsCountry    This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceLocationsState      This parameter is used for finding stories whose source state/province is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceLocationsCity       This parameter is used for finding stories whose source city is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesCountry       This parameter is used for finding stories whose source scopes is the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesState         This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesCity          This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesLevel         This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param cluster                   This parameter enables clustering for the returned stories. (optional, default to false)
-     * @param clusterAlgorithm          This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms. (optional, default to lingo)
-     * @param _return                   This parameter is used for specifying return fields. (optional)
-     * @param sortBy                    This parameter is used for changing the order column of the results. (optional, default to published_at)
-     * @param sortDirection             This parameter is used for changing the order direction of the result. (optional, default to desc)
-     * @param cursor                    This parameter is used for finding a specific page. (optional, default to *)
-     * @param perPage                   This parameter is used for specifying number of items in each page. (optional, default to 10)
+     * @param id                         This parameter is used for finding stroies by story id. (optional)
+     * @param title                      This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param body                       This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param text                       This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param language                   This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
+     * @param publishedAtStart           This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param publishedAtEnd             This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param categoriesTaxonomy         This parameter is used for defining the type of the taxonomy for the rest of the categories queries. (optional)
+     * @param categoriesConfident        This parameter is used for finding stories whose categories are confident. (optional, default to true)
+     * @param categoriesId               This parameter is used for finding stories by categories id. (optional)
+     * @param categoriesLevel            This parameter is used for finding stories by categories level. (optional)
+     * @param entitiesTitleText          This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. (optional)
+     * @param entitiesTitleType          This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. (optional)
+     * @param entitiesTitleLinksDbpedia  This parameter is used to find stories based on the specified entities dbpedia URL in story titles. (optional)
+     * @param entitiesBodyText           This parameter is used to find stories based on the specified entities &#x60;text&#x60; in the body of stories. (optional)
+     * @param entitiesBodyType           This parameter is used to find stories based on the specified entities &#x60;type&#x60; in the body of stories. (optional)
+     * @param entitiesBodyLinksDbpedia   This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. (optional)
+     * @param sentimentTitlePolarity     This parameter is used for finding stories whose title sentiment is the specified value. (optional)
+     * @param sentimentBodyPolarity      This parameter is used for finding stories whose body sentiment is the specified value. (optional)
+     * @param mediaImagesCountMin        This parameter is used for finding stories whose number of images is greater than or equal to the specified value. (optional)
+     * @param mediaImagesCountMax        This parameter is used for finding stories whose number of images is less than or equal to the specified value. (optional)
+     * @param mediaVideosCountMin        This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. (optional)
+     * @param mediaVideosCountMax        This parameter is used for finding stories whose number of videos is less than or equal to the specified value. (optional)
+     * @param authorId                   This parameter is used for finding stories whose author id is the specified value. (optional)
+     * @param authorName                 This parameter is used for finding stories whose author full name contains the specified value. (optional)
+     * @param sourceId                   This parameter is used for finding stories whose source id is the specified value. (optional)
+     * @param sourceName                 This parameter is used for finding stories whose source name contains the specified value. (optional)
+     * @param sourceDomain               This parameter is used for finding stories whose source domain is the specified value. (optional)
+     * @param sourceLocationsCountry     This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsState       This parameter is used for finding stories whose source state/province is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsCity        This parameter is used for finding stories whose source city is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCountry        This parameter is used for finding stories whose source scopes is the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesState          This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCity           This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesLevel          This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLinksInCountMin      This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
+     * @param sourceLinksInCountMax      This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
+     * @param sourceRankingsAlexaRankMin This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param sourceRankingsAlexaRankMax This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param sourceRankingsAlexaCountry This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param cluster                    This parameter enables clustering for the returned stories. (optional, default to false)
+     * @param clusterAlgorithm           This parameter is used for specifying the clustering algorithm you wish to use. It supprts STC, Lingo and [k-means](https://en.wikipedia.org/wiki/K-means_clustering) algorithms. (optional, default to lingo)
+     * @param _return                    This parameter is used for specifying return fields. (optional)
+     * @param sortBy                     This parameter is used for changing the order column of the results. (optional, default to published_at)
+     * @param sortDirection              This parameter is used for changing the order direction of the result. (optional, default to desc)
+     * @param cursor                     This parameter is used for finding a specific page. (optional, default to *)
+     * @param perPage                    This parameter is used for specifying number of items in each page. (optional, default to 10)
      */
-    public StoriesParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, Integer mediaImagesCountMin, Integer mediaImagesCountMax, Integer mediaVideosCountMin, Integer mediaVideosCountMax, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Boolean cluster, String clusterAlgorithm, List<String> _return, String sortBy, String sortDirection, String cursor, Integer perPage) {
+    public StoriesParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, Integer mediaImagesCountMin, Integer mediaImagesCountMax, Integer mediaVideosCountMin, Integer mediaVideosCountMax, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Integer sourceLinksInCountMin, Integer sourceLinksInCountMax, Integer sourceRankingsAlexaRankMin, Integer sourceRankingsAlexaRankMax, List<String> sourceRankingsAlexaCountry, Boolean cluster, String clusterAlgorithm, List<String> _return, String sortBy, String sortDirection, String cursor, Integer perPage) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -144,6 +154,11 @@ public class StoriesParams {
         this.sourceScopesState = sourceScopesState;
         this.sourceScopesCity = sourceScopesCity;
         this.sourceScopesLevel = sourceScopesLevel;
+        this.sourceLinksInCountMin = sourceLinksInCountMin;
+        this.sourceLinksInCountMax = sourceLinksInCountMax;
+        this.sourceRankingsAlexaRankMin = sourceRankingsAlexaRankMin;
+        this.sourceRankingsAlexaRankMax = sourceRankingsAlexaRankMax;
+        this.sourceRankingsAlexaCountry = sourceRankingsAlexaCountry;
         this.cluster = cluster;
         this.clusterAlgorithm = clusterAlgorithm;
         this._return = _return;
@@ -297,6 +312,26 @@ public class StoriesParams {
         return sourceScopesLevel;
     }
 
+    public Integer getSourceLinksInCountMin() {
+        return sourceLinksInCountMin;
+    }
+
+    public Integer getSourceLinksInCountMax() {
+        return sourceLinksInCountMax;
+    }
+
+    public Integer getSourceRankingsAlexaRankMin() {
+        return sourceRankingsAlexaRankMin;
+    }
+
+    public Integer getSourceRankingsAlexaRankMax() {
+        return sourceRankingsAlexaRankMax;
+    }
+
+    public List<String> getSourceRankingsAlexaCountry() {
+        return sourceRankingsAlexaCountry;
+    }
+
     public Boolean getCluster() {
         return cluster;
     }
@@ -361,6 +396,11 @@ public class StoriesParams {
         private List<String> sourceScopesState;
         private List<String> sourceScopesCity;
         private List<String> sourceScopesLevel;
+        private Integer sourceLinksInCountMin;
+        private Integer sourceLinksInCountMax;
+        private Integer sourceRankingsAlexaRankMin;
+        private Integer sourceRankingsAlexaRankMax;
+        private List<String> sourceRankingsAlexaCountry;
         private Boolean cluster;
         private String clusterAlgorithm;
         private List<String> _return;
@@ -544,6 +584,31 @@ public class StoriesParams {
             return this;
         }
 
+        public Builder setSourceLinksInCountMin(Integer sourceLinksInCountMin) {
+            this.sourceLinksInCountMin = sourceLinksInCountMin;
+            return this;
+        }
+
+        public Builder setSourceLinksInCountMax(Integer sourceLinksInCountMax) {
+            this.sourceLinksInCountMax = sourceLinksInCountMax;
+            return this;
+        }
+
+        public Builder setSourceRankingsAlexaRankMin(Integer sourceRankingsAlexaRankMin) {
+            this.sourceRankingsAlexaRankMin = sourceRankingsAlexaRankMin;
+            return this;
+        }
+
+        public Builder setSourceRankingsAlexaRankMax(Integer sourceRankingsAlexaRankMax) {
+            this.sourceRankingsAlexaRankMax = sourceRankingsAlexaRankMax;
+            return this;
+        }
+
+        public Builder setSourceRankingsAlexaCountry(List<String> sourceRankingsAlexaCountry) {
+            this.sourceRankingsAlexaCountry = sourceRankingsAlexaCountry;
+            return this;
+        }
+
         public Builder setCluster(Boolean cluster) {
             this.cluster = cluster;
             return this;
@@ -580,7 +645,7 @@ public class StoriesParams {
         }
 
         public StoriesParams build() {
-            return new StoriesParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, mediaImagesCountMin, mediaImagesCountMax, mediaVideosCountMin, mediaVideosCountMax, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, cluster, clusterAlgorithm, _return, sortBy, sortDirection, cursor, perPage);
+            return new StoriesParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, mediaImagesCountMin, mediaImagesCountMax, mediaVideosCountMin, mediaVideosCountMax, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, sourceLinksInCountMin, sourceLinksInCountMax, sourceRankingsAlexaRankMin, sourceRankingsAlexaRankMax, sourceRankingsAlexaCountry, cluster, clusterAlgorithm, _return, sortBy, sortDirection, cursor, perPage);
         }
     }
 }

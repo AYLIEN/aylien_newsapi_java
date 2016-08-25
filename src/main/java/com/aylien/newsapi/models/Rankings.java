@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Rank;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -26,35 +27,35 @@ import java.util.Objects;
 
 
 /**
- * Summary
+ * Rankings
  */
 
-public class Summary {
-    @JsonProperty("sentences")
-    private List<String> sentences = new ArrayList<String>();
+public class Rankings {
+    @JsonProperty("alexa")
+    private List<Rank> alexa = new ArrayList<Rank>();
 
-    public Summary sentences(List<String> sentences) {
-        this.sentences = sentences;
+    public Rankings alexa(List<Rank> alexa) {
+        this.alexa = alexa;
         return this;
     }
 
-    public Summary addSentencesItem(String sentencesItem) {
-        this.sentences.add(sentencesItem);
+    public Rankings addAlexaItem(Rank alexaItem) {
+        this.alexa.add(alexaItem);
         return this;
     }
 
     /**
-     * An array of the suggested summary sentences
+     * Get alexa
      *
-     * @return sentences
+     * @return alexa
      **/
-    @ApiModelProperty(example = "null", value = "An array of the suggested summary sentences")
-    public List<String> getSentences() {
-        return sentences;
+    @ApiModelProperty(example = "null", value = "")
+    public List<Rank> getAlexa() {
+        return alexa;
     }
 
-    public void setSentences(List<String> sentences) {
-        this.sentences = sentences;
+    public void setAlexa(List<Rank> alexa) {
+        this.alexa = alexa;
     }
 
 
@@ -66,21 +67,21 @@ public class Summary {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Summary summary = (Summary) o;
-        return Objects.equals(this.sentences, summary.sentences);
+        Rankings rankings = (Rankings) o;
+        return Objects.equals(this.alexa, rankings.alexa);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sentences);
+        return Objects.hash(alexa);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Summary {\n");
+        sb.append("class Rankings {\n");
 
-        sb.append("    sentences: ").append(toIndentedString(sentences)).append("\n");
+        sb.append("    alexa: ").append(toIndentedString(alexa)).append("\n");
         sb.append("}");
         return sb.toString();
     }

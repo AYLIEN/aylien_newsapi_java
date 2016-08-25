@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Entity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -41,6 +42,11 @@ public class Entities {
         return this;
     }
 
+    public Entities addTitleItem(Entity titleItem) {
+        this.title.add(titleItem);
+        return this;
+    }
+
     /**
      * An array of extracted entities from the story title
      *
@@ -57,6 +63,11 @@ public class Entities {
 
     public Entities body(List<Entity> body) {
         this.body = body;
+        return this;
+    }
+
+    public Entities addBodyItem(Entity bodyItem) {
+        this.body.add(bodyItem);
         return this;
     }
 

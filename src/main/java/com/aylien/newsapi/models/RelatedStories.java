@@ -17,6 +17,8 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Story;
+import com.aylien.newsapi.models.StoryCluster;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -107,6 +109,11 @@ public class RelatedStories {
         return this;
     }
 
+    public RelatedStories addRelatedStoriesItem(Story relatedStoriesItem) {
+        this.relatedStories.add(relatedStoriesItem);
+        return this;
+    }
+
     /**
      * An array of related stories for the input story
      *
@@ -123,6 +130,11 @@ public class RelatedStories {
 
     public RelatedStories clusters(List<StoryCluster> clusters) {
         this.clusters = clusters;
+        return this;
+    }
+
+    public RelatedStories addClustersItem(StoryCluster clustersItem) {
+        this.clusters.add(clustersItem);
         return this;
     }
 

@@ -20,11 +20,9 @@ import com.aylien.newsapi.auth.ApiKeyAuth;
 import com.aylien.newsapi.auth.Authentication;
 import com.aylien.newsapi.auth.HttpBasicAuth;
 import com.aylien.newsapi.auth.OAuth;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.datatype.joda.JodaModule;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.*;
+import com.fasterxml.jackson.datatype.joda.*;
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
@@ -75,7 +73,7 @@ public class ApiClient {
         dateFormat = ApiClient.buildDefaultDateFormat();
 
         // Set default User-Agent.
-        setUserAgent("aylien-news-api/0.1.0/java");
+        setUserAgent("aylien-news-api/0.2.0/java");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
@@ -489,9 +487,16 @@ public class ApiClient {
         if (contentType.startsWith("multipart/form-data")) {
             FormDataMultiPart mp = new FormDataMultiPart();
             for (Entry<String, Object> param : formParams.entrySet()) {
-                if (param.getValue() instanceof File) {
+                if (param.getValue() instanceof List && !((List) param.getValue()).isEmpty()
+                        && ((List) param.getValue()).get(0) instanceof File) {
+                    @SuppressWarnings("unchecked")
+                    List<File> files = (List<File>) param.getValue();
+                    for (File file : files) {
+                        mp.bodyPart(new FileDataBodyPart(param.getKey(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
+                    }
+                } else if (param.getValue() instanceof File) {
                     File file = (File) param.getValue();
-                    mp.bodyPart(new FileDataBodyPart(param.getKey(), file, MediaType.MULTIPART_FORM_DATA_TYPE));
+                    mp.bodyPart(new FileDataBodyPart(param.getKey(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
                 } else {
                     mp.field(param.getKey(), parameterToString(param.getValue()), MediaType.MULTIPART_FORM_DATA_TYPE);
                 }

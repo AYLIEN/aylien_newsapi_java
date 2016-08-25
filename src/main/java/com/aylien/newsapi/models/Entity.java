@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.EntityLinks;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -90,6 +91,11 @@ public class Entity {
         return this;
     }
 
+    public Entity addTypesItem(String typesItem) {
+        this.types.add(typesItem);
+        return this;
+    }
+
     /**
      * An array of the dbpedia types
      *
@@ -125,6 +131,11 @@ public class Entity {
 
     public Entity indices(List<List<Integer>> indices) {
         this.indices = indices;
+        return this;
+    }
+
+    public Entity addIndicesItem(List<Integer> indicesItem) {
+        this.indices.add(indicesItem);
         return this;
     }
 

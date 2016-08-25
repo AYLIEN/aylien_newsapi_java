@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.ShareCount;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -47,6 +48,11 @@ public class ShareCounts {
         return this;
     }
 
+    public ShareCounts addFacebookItem(ShareCount facebookItem) {
+        this.facebook.add(facebookItem);
+        return this;
+    }
+
     /**
      * Facebook shares count
      *
@@ -63,6 +69,11 @@ public class ShareCounts {
 
     public ShareCounts googlePlus(List<ShareCount> googlePlus) {
         this.googlePlus = googlePlus;
+        return this;
+    }
+
+    public ShareCounts addGooglePlusItem(ShareCount googlePlusItem) {
+        this.googlePlus.add(googlePlusItem);
         return this;
     }
 
@@ -85,6 +96,11 @@ public class ShareCounts {
         return this;
     }
 
+    public ShareCounts addLinkedinItem(ShareCount linkedinItem) {
+        this.linkedin.add(linkedinItem);
+        return this;
+    }
+
     /**
      * LinkedIn shares count
      *
@@ -101,6 +117,11 @@ public class ShareCounts {
 
     public ShareCounts reddit(List<ShareCount> reddit) {
         this.reddit = reddit;
+        return this;
+    }
+
+    public ShareCounts addRedditItem(ShareCount redditItem) {
+        this.reddit.add(redditItem);
         return this;
     }
 

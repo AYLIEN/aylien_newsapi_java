@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -123,6 +124,16 @@ public class Media {
 
         TypeEnum(String value) {
             this.value = value;
+        }
+
+        @JsonCreator
+        public static TypeEnum fromValue(String text) {
+            for (TypeEnum b : TypeEnum.values()) {
+                if (String.valueOf(b.value).equals(text)) {
+                    return b;
+                }
+            }
+            return null;
         }
 
         @Override

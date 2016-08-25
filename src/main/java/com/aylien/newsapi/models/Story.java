@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;
@@ -229,6 +230,11 @@ public class Story {
         return this;
     }
 
+    public Story addKeywordsItem(String keywordsItem) {
+        this.keywords.add(keywordsItem);
+        return this;
+    }
+
     /**
      * Extracted keywords mentioned in the story title or body
      *
@@ -245,6 +251,11 @@ public class Story {
 
     public Story hashtags(List<String> hashtags) {
         this.hashtags = hashtags;
+        return this;
+    }
+
+    public Story addHashtagsItem(String hashtagsItem) {
+        this.hashtags.add(hashtagsItem);
         return this;
     }
 
@@ -343,6 +354,11 @@ public class Story {
         return this;
     }
 
+    public Story addCategoriesItem(Category categoriesItem) {
+        this.categories.add(categoriesItem);
+        return this;
+    }
+
     /**
      * Suggested categories for the story
      *
@@ -378,6 +394,11 @@ public class Story {
 
     public Story media(List<Media> media) {
         this.media = media;
+        return this;
+    }
+
+    public Story addMediaItem(Media mediaItem) {
+        this.media.add(mediaItem);
         return this;
     }
 

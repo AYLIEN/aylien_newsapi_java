@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Trend;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -38,6 +39,11 @@ public class Trends {
 
     public Trends trends(List<Trend> trends) {
         this.trends = trends;
+        return this;
+    }
+
+    public Trends addTrendsItem(Trend trendsItem) {
+        this.trends.add(trendsItem);
         return this;
     }
 

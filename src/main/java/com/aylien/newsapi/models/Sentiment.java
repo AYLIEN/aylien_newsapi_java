@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -127,6 +128,16 @@ public class Sentiment {
 
         PolarityEnum(String value) {
             this.value = value;
+        }
+
+        @JsonCreator
+        public static PolarityEnum fromValue(String text) {
+            for (PolarityEnum b : PolarityEnum.values()) {
+                if (String.valueOf(b.value).equals(text)) {
+                    return b;
+                }
+            }
+            return null;
         }
 
         @Override

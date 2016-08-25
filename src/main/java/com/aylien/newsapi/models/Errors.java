@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Error;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -35,6 +36,11 @@ public class Errors {
 
     public Errors errors(List<Error> errors) {
         this.errors = errors;
+        return this;
+    }
+
+    public Errors addErrorsItem(Error errorsItem) {
+        this.errors.add(errorsItem);
         return this;
     }
 

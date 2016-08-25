@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.HistogramInterval;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -47,6 +48,11 @@ public class Histograms {
 
     public Histograms intervals(List<HistogramInterval> intervals) {
         this.intervals = intervals;
+        return this;
+    }
+
+    public Histograms addIntervalsItem(HistogramInterval intervalsItem) {
+        this.intervals.add(intervalsItem);
         return this;
     }
 

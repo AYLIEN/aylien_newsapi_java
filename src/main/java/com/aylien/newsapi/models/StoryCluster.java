@@ -69,6 +69,11 @@ public class StoryCluster {
         return this;
     }
 
+    public StoryCluster addPhrasesItem(String phrasesItem) {
+        this.phrases.add(phrasesItem);
+        return this;
+    }
+
     /**
      * Suggested labels for the cluster
      *
@@ -104,6 +109,11 @@ public class StoryCluster {
 
     public StoryCluster stories(List<Long> stories) {
         this.stories = stories;
+        return this;
+    }
+
+    public StoryCluster addStoriesItem(Long storiesItem) {
+        this.stories.add(storiesItem);
         return this;
     }
 

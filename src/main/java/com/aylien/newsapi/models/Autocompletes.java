@@ -17,6 +17,7 @@
 
 package com.aylien.newsapi.models;
 
+import com.aylien.newsapi.models.Autocomplete;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -35,6 +36,11 @@ public class Autocompletes {
 
     public Autocompletes autocompletes(List<Autocomplete> autocompletes) {
         this.autocompletes = autocompletes;
+        return this;
+    }
+
+    public Autocompletes addAutocompletesItem(Autocomplete autocompletesItem) {
+        this.autocompletes.add(autocompletesItem);
         return this;
     }
 
