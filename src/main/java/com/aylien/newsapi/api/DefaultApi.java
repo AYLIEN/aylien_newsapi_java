@@ -83,7 +83,7 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "type", type));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "term", term));
@@ -177,109 +177,60 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
 
-        if (id != null)
-            localVarFormParams.put("id[]", id);
-        if (title != null)
-            localVarFormParams.put("title", title);
-        if (body != null)
-            localVarFormParams.put("body", body);
-        if (text != null)
-            localVarFormParams.put("text", text);
-        if (language != null)
-            localVarFormParams.put("language[]", language);
-        if (publishedAtStart != null)
-            localVarFormParams.put("published_at.start", publishedAtStart);
-        if (publishedAtEnd != null)
-            localVarFormParams.put("published_at.end", publishedAtEnd);
-        if (categoriesTaxonomy != null)
-            localVarFormParams.put("categories.taxonomy", categoriesTaxonomy);
-        if (categoriesConfident != null)
-            localVarFormParams.put("categories.confident", categoriesConfident);
-        if (categoriesId != null)
-            localVarFormParams.put("categories.id[]", categoriesId);
-        if (categoriesLevel != null)
-            localVarFormParams.put("categories.level[]", categoriesLevel);
-        if (entitiesTitleText != null)
-            localVarFormParams.put("entities.title.text[]", entitiesTitleText);
-        if (entitiesTitleType != null)
-            localVarFormParams.put("entities.title.type[]", entitiesTitleType);
-        if (entitiesTitleLinksDbpedia != null)
-            localVarFormParams.put("entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia);
-        if (entitiesBodyText != null)
-            localVarFormParams.put("entities.body.text[]", entitiesBodyText);
-        if (entitiesBodyType != null)
-            localVarFormParams.put("entities.body.type[]", entitiesBodyType);
-        if (entitiesBodyLinksDbpedia != null)
-            localVarFormParams.put("entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia);
-        if (sentimentTitlePolarity != null)
-            localVarFormParams.put("sentiment.title.polarity", sentimentTitlePolarity);
-        if (sentimentBodyPolarity != null)
-            localVarFormParams.put("sentiment.body.polarity", sentimentBodyPolarity);
-        if (mediaImagesCountMin != null)
-            localVarFormParams.put("media.images.count.min", mediaImagesCountMin);
-        if (mediaImagesCountMax != null)
-            localVarFormParams.put("media.images.count.max", mediaImagesCountMax);
-        if (mediaVideosCountMin != null)
-            localVarFormParams.put("media.videos.count.min", mediaVideosCountMin);
-        if (mediaVideosCountMax != null)
-            localVarFormParams.put("media.videos.count.max", mediaVideosCountMax);
-        if (authorId != null)
-            localVarFormParams.put("author.id[]", authorId);
-        if (authorName != null)
-            localVarFormParams.put("author.name", authorName);
-        if (sourceId != null)
-            localVarFormParams.put("source.id[]", sourceId);
-        if (sourceName != null)
-            localVarFormParams.put("source.name[]", sourceName);
-        if (sourceDomain != null)
-            localVarFormParams.put("source.domain[]", sourceDomain);
-        if (sourceLocationsCountry != null)
-            localVarFormParams.put("source.locations.country[]", sourceLocationsCountry);
-        if (sourceLocationsState != null)
-            localVarFormParams.put("source.locations.state[]", sourceLocationsState);
-        if (sourceLocationsCity != null)
-            localVarFormParams.put("source.locations.city[]", sourceLocationsCity);
-        if (sourceScopesCountry != null)
-            localVarFormParams.put("source.scopes.country[]", sourceScopesCountry);
-        if (sourceScopesState != null)
-            localVarFormParams.put("source.scopes.state[]", sourceScopesState);
-        if (sourceScopesCity != null)
-            localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
-        if (sourceScopesLevel != null)
-            localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
-        if (sourceLinksInCountMin != null)
-            localVarFormParams.put("source.links_in_count.min", sourceLinksInCountMin);
-        if (sourceLinksInCountMax != null)
-            localVarFormParams.put("source.links_in_count.max", sourceLinksInCountMax);
-        if (sourceRankingsAlexaRankMin != null)
-            localVarFormParams.put("source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin);
-        if (sourceRankingsAlexaRankMax != null)
-            localVarFormParams.put("source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax);
-        if (sourceRankingsAlexaCountry != null)
-            localVarFormParams.put("source.rankings.alexa.country[]", sourceRankingsAlexaCountry);
-        if (cluster != null)
-            localVarFormParams.put("cluster", cluster);
-        if (clusterAlgorithm != null)
-            localVarFormParams.put("cluster.algorithm", clusterAlgorithm);
-        if (_return != null)
-            localVarFormParams.put("return[]", _return);
-        if (storyId != null)
-            localVarFormParams.put("story_id", storyId);
-        if (storyUrl != null)
-            localVarFormParams.put("story_url", storyUrl);
-        if (storyTitle != null)
-            localVarFormParams.put("story_title", storyTitle);
-        if (storyBody != null)
-            localVarFormParams.put("story_body", storyBody);
-        if (storyPublishedAt != null)
-            localVarFormParams.put("story_published_at", storyPublishedAt);
-        if (storyLanguage != null)
-            localVarFormParams.put("story_language", storyLanguage);
-        if (perPage != null)
-            localVarFormParams.put("per_page", perPage);
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "title", title));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "body", body));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "text", text));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_id", storyId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_url", storyUrl));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_title", storyTitle));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_body", storyBody));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_published_at", storyPublishedAt));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_language", storyLanguage));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "per_page", perPage));
+
 
         final String[] localVarAccepts = {
                 "application/json", "text/xml"
@@ -361,7 +312,7 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
@@ -495,109 +446,59 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
 
-        if (id != null)
-            localVarFormParams.put("id[]", id);
-        if (title != null)
-            localVarFormParams.put("title", title);
-        if (body != null)
-            localVarFormParams.put("body", body);
-        if (text != null)
-            localVarFormParams.put("text", text);
-        if (language != null)
-            localVarFormParams.put("language[]", language);
-        if (publishedAtStart != null)
-            localVarFormParams.put("published_at.start", publishedAtStart);
-        if (publishedAtEnd != null)
-            localVarFormParams.put("published_at.end", publishedAtEnd);
-        if (categoriesTaxonomy != null)
-            localVarFormParams.put("categories.taxonomy", categoriesTaxonomy);
-        if (categoriesConfident != null)
-            localVarFormParams.put("categories.confident", categoriesConfident);
-        if (categoriesId != null)
-            localVarFormParams.put("categories.id[]", categoriesId);
-        if (categoriesLevel != null)
-            localVarFormParams.put("categories.level[]", categoriesLevel);
-        if (entitiesTitleText != null)
-            localVarFormParams.put("entities.title.text[]", entitiesTitleText);
-        if (entitiesTitleType != null)
-            localVarFormParams.put("entities.title.type[]", entitiesTitleType);
-        if (entitiesTitleLinksDbpedia != null)
-            localVarFormParams.put("entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia);
-        if (entitiesBodyText != null)
-            localVarFormParams.put("entities.body.text[]", entitiesBodyText);
-        if (entitiesBodyType != null)
-            localVarFormParams.put("entities.body.type[]", entitiesBodyType);
-        if (entitiesBodyLinksDbpedia != null)
-            localVarFormParams.put("entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia);
-        if (sentimentTitlePolarity != null)
-            localVarFormParams.put("sentiment.title.polarity", sentimentTitlePolarity);
-        if (sentimentBodyPolarity != null)
-            localVarFormParams.put("sentiment.body.polarity", sentimentBodyPolarity);
-        if (mediaImagesCountMin != null)
-            localVarFormParams.put("media.images.count.min", mediaImagesCountMin);
-        if (mediaImagesCountMax != null)
-            localVarFormParams.put("media.images.count.max", mediaImagesCountMax);
-        if (mediaVideosCountMin != null)
-            localVarFormParams.put("media.videos.count.min", mediaVideosCountMin);
-        if (mediaVideosCountMax != null)
-            localVarFormParams.put("media.videos.count.max", mediaVideosCountMax);
-        if (authorId != null)
-            localVarFormParams.put("author.id[]", authorId);
-        if (authorName != null)
-            localVarFormParams.put("author.name", authorName);
-        if (sourceId != null)
-            localVarFormParams.put("source.id[]", sourceId);
-        if (sourceName != null)
-            localVarFormParams.put("source.name[]", sourceName);
-        if (sourceDomain != null)
-            localVarFormParams.put("source.domain[]", sourceDomain);
-        if (sourceLocationsCountry != null)
-            localVarFormParams.put("source.locations.country[]", sourceLocationsCountry);
-        if (sourceLocationsState != null)
-            localVarFormParams.put("source.locations.state[]", sourceLocationsState);
-        if (sourceLocationsCity != null)
-            localVarFormParams.put("source.locations.city[]", sourceLocationsCity);
-        if (sourceScopesCountry != null)
-            localVarFormParams.put("source.scopes.country[]", sourceScopesCountry);
-        if (sourceScopesState != null)
-            localVarFormParams.put("source.scopes.state[]", sourceScopesState);
-        if (sourceScopesCity != null)
-            localVarFormParams.put("source.scopes.city[]", sourceScopesCity);
-        if (sourceScopesLevel != null)
-            localVarFormParams.put("source.scopes.level[]", sourceScopesLevel);
-        if (sourceLinksInCountMin != null)
-            localVarFormParams.put("source.links_in_count.min", sourceLinksInCountMin);
-        if (sourceLinksInCountMax != null)
-            localVarFormParams.put("source.links_in_count.max", sourceLinksInCountMax);
-        if (sourceRankingsAlexaRankMin != null)
-            localVarFormParams.put("source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin);
-        if (sourceRankingsAlexaRankMax != null)
-            localVarFormParams.put("source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax);
-        if (sourceRankingsAlexaCountry != null)
-            localVarFormParams.put("source.rankings.alexa.country[]", sourceRankingsAlexaCountry);
-        if (cluster != null)
-            localVarFormParams.put("cluster", cluster);
-        if (clusterAlgorithm != null)
-            localVarFormParams.put("cluster.algorithm", clusterAlgorithm);
-        if (_return != null)
-            localVarFormParams.put("return[]", _return);
-        if (storyId != null)
-            localVarFormParams.put("story_id", storyId);
-        if (storyUrl != null)
-            localVarFormParams.put("story_url", storyUrl);
-        if (storyTitle != null)
-            localVarFormParams.put("story_title", storyTitle);
-        if (storyBody != null)
-            localVarFormParams.put("story_body", storyBody);
-        if (boostBy != null)
-            localVarFormParams.put("boost_by", boostBy);
-        if (storyLanguage != null)
-            localVarFormParams.put("story_language", storyLanguage);
-        if (perPage != null)
-            localVarFormParams.put("per_page", perPage);
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "title", title));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "body", body));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "text", text));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_id", storyId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_url", storyUrl));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_title", storyTitle));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_body", storyBody));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "boost_by", boostBy));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "story_language", storyLanguage));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "per_page", perPage));
 
         final String[] localVarAccepts = {
                 "application/json", "text/xml"
@@ -682,7 +583,7 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
@@ -810,7 +711,7 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
@@ -932,7 +833,7 @@ public class DefaultApi {
         // query params
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));

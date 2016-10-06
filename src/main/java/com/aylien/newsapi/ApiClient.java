@@ -31,17 +31,13 @@ import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.sun.jersey.multipart.FormDataMultiPart;
-import com.sun.jersey.multipart.file.FileDataBodyPart;
 
-import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response.Status.Family;
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.Map.Entry;
 
 
 public class ApiClient {
@@ -73,7 +69,7 @@ public class ApiClient {
         dateFormat = ApiClient.buildDefaultDateFormat();
 
         // Set default User-Agent.
-        setUserAgent("aylien-news-api/0.2.0/java");
+        setUserAgent("aylien-news-api/0.2.1/java");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
@@ -483,24 +479,25 @@ public class ApiClient {
      * Serialize the given Java object into string according the given
      * Content-Type (only JSON is supported for now).
      */
-    public Object serialize(Object obj, String contentType, Map<String, Object> formParams) throws ApiException {
+    public Object serialize(Object obj, String contentType, List<Pair> formParams) throws ApiException {
         if (contentType.startsWith("multipart/form-data")) {
             FormDataMultiPart mp = new FormDataMultiPart();
-            for (Entry<String, Object> param : formParams.entrySet()) {
-                if (param.getValue() instanceof List && !((List) param.getValue()).isEmpty()
-                        && ((List) param.getValue()).get(0) instanceof File) {
-                    @SuppressWarnings("unchecked")
-                    List<File> files = (List<File>) param.getValue();
-                    for (File file : files) {
-                        mp.bodyPart(new FileDataBodyPart(param.getKey(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
-                    }
-                } else if (param.getValue() instanceof File) {
-                    File file = (File) param.getValue();
-                    mp.bodyPart(new FileDataBodyPart(param.getKey(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
-                } else {
-                    mp.field(param.getKey(), parameterToString(param.getValue()), MediaType.MULTIPART_FORM_DATA_TYPE);
-                }
-            }
+//  TODO: Fixme later please
+//            for (Pair param : formParams) {
+//                if (param.getValue() instanceof List && !((List) param.getValue()).isEmpty()
+//                        && ((List) param.getValue()).get(0) instanceof File) {
+//                    @SuppressWarnings("unchecked")
+//                    List<File> files = (List<File>) param.getValue();
+//                    for (File file : files) {
+//                        mp.bodyPart(new FileDataBodyPart(param.getName(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
+//                    }
+//                } else if (param.getValue() instanceof File) {
+//                    File file = (File) param.getValue();
+//                    mp.bodyPart(new FileDataBodyPart(param.getName(), file, MediaType.APPLICATION_OCTET_STREAM_TYPE));
+//                } else {
+//                    mp.field(param.getName(), parameterToString(param.getValue()), MediaType.MULTIPART_FORM_DATA_TYPE);
+//                }
+//            }
             return mp;
         } else if (contentType.startsWith("application/x-www-form-urlencoded")) {
             return this.getXWWWFormUrlencodedParams(formParams);
@@ -541,7 +538,7 @@ public class ApiClient {
         return url.toString();
     }
 
-    private ClientResponse getAPIResponse(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames) throws ApiException {
+    private ClientResponse getAPIResponse(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, List<Pair> formParams, String accept, String contentType, String[] authNames) throws ApiException {
         if (body != null && !formParams.isEmpty()) {
             throw new ApiException(500, "Cannot have body and form params");
         }
@@ -597,7 +594,7 @@ public class ApiClient {
      * @param authNames    The authentications to apply
      * @return The response body in type of string
      */
-    public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, Map<String, Object> formParams, String accept, String contentType, String[] authNames, GenericType<T> returnType) throws ApiException {
+    public <T> T invokeAPI(String path, String method, List<Pair> queryParams, Object body, Map<String, String> headerParams, List<Pair> formParams, String accept, String contentType, String[] authNames, GenericType<T> returnType) throws ApiException {
 
         ClientResponse response = getAPIResponse(path, method, queryParams, body, headerParams, formParams, accept, contentType, authNames);
 
@@ -646,13 +643,13 @@ public class ApiClient {
     /**
      * Encode the given form parameters as request body.
      */
-    private String getXWWWFormUrlencodedParams(Map<String, Object> formParams) {
+    private String getXWWWFormUrlencodedParams(List<Pair> formParams) {
         StringBuilder formParamBuilder = new StringBuilder();
 
-        for (Entry<String, Object> param : formParams.entrySet()) {
+        for (Pair param : formParams) {
             String valueStr = parameterToString(param.getValue());
             try {
-                formParamBuilder.append(URLEncoder.encode(param.getKey(), "utf8"))
+                formParamBuilder.append(URLEncoder.encode(param.getName(), "utf8"))
                         .append("=")
                         .append(URLEncoder.encode(valueStr, "utf8"));
                 formParamBuilder.append("&");
