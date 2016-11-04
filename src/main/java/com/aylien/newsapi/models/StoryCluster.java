@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * StoryCluster
  */
@@ -172,6 +171,7 @@ public class StoryCluster {
         return Objects.hash(id, phrases, size, stories, score);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -196,5 +196,6 @@ public class StoryCluster {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

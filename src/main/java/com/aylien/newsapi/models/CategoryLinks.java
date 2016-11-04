@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * CategoryLinks
  */
@@ -91,6 +90,7 @@ public class CategoryLinks {
         return Objects.hash(self, parent);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -112,5 +112,6 @@ public class CategoryLinks {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Entity
  */
@@ -175,6 +174,7 @@ public class Entity {
         return Objects.hash(text, score, types, links, indices);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -199,5 +199,6 @@ public class Entity {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

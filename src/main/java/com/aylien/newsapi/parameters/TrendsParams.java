@@ -40,6 +40,13 @@ public class TrendsParams {
     private String sentimentBodyPolarity;
     private Integer mediaImagesCountMin;
     private Integer mediaImagesCountMax;
+    private Integer mediaImagesWidthMin;
+    private Integer mediaImagesWidthMax;
+    private Integer mediaImagesHeightMin;
+    private Integer mediaImagesHeightMax;
+    private Integer mediaImagesContentLengthMin;
+    private Integer mediaImagesContentLengthMax;
+    private List<String> mediaImagesFormat;
     private Integer mediaVideosCountMin;
     private Integer mediaVideosCountMax;
     private List<Integer> authorId;
@@ -59,54 +66,77 @@ public class TrendsParams {
     private Integer sourceRankingsAlexaRankMin;
     private Integer sourceRankingsAlexaRankMax;
     private List<String> sourceRankingsAlexaCountry;
+    private Integer socialSharesCountFacebookMin;
+    private Integer socialSharesCountFacebookMax;
+    private Integer socialSharesCountGooglePlusMin;
+    private Integer socialSharesCountGooglePlusMax;
+    private Integer socialSharesCountLinkedinMin;
+    private Integer socialSharesCountLinkedinMax;
+    private Integer socialSharesCountRedditMin;
+    private Integer socialSharesCountRedditMax;
     private String field;
 
     /**
      * Constructs parameters for Trends endpoint
      *
-     * @param id                         This parameter is used for finding stroies by story id. (optional)
-     * @param title                      This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param body                       This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param text                       This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
-     * @param language                   This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
-     * @param publishedAtStart           This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param publishedAtEnd             This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
-     * @param categoriesTaxonomy         This parameter is used for defining the type of the taxonomy for the rest of the categories queries. (optional)
-     * @param categoriesConfident        This parameter is used for finding stories whose categories are confident. (optional, default to true)
-     * @param categoriesId               This parameter is used for finding stories by categories id. (optional)
-     * @param categoriesLevel            This parameter is used for finding stories by categories level. (optional)
-     * @param entitiesTitleText          This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. (optional)
-     * @param entitiesTitleType          This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. (optional)
-     * @param entitiesTitleLinksDbpedia  This parameter is used to find stories based on the specified entities dbpedia URL in story titles. (optional)
-     * @param entitiesBodyText           This parameter is used to find stories based on the specified entities &#x60;text&#x60; in the body of stories. (optional)
-     * @param entitiesBodyType           This parameter is used to find stories based on the specified entities &#x60;type&#x60; in the body of stories. (optional)
-     * @param entitiesBodyLinksDbpedia   This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. (optional)
-     * @param sentimentTitlePolarity     This parameter is used for finding stories whose title sentiment is the specified value. (optional)
-     * @param sentimentBodyPolarity      This parameter is used for finding stories whose body sentiment is the specified value. (optional)
-     * @param mediaImagesCountMin        This parameter is used for finding stories whose number of images is greater than or equal to the specified value. (optional)
-     * @param mediaImagesCountMax        This parameter is used for finding stories whose number of images is less than or equal to the specified value. (optional)
-     * @param mediaVideosCountMin        This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. (optional)
-     * @param mediaVideosCountMax        This parameter is used for finding stories whose number of videos is less than or equal to the specified value. (optional)
-     * @param authorId                   This parameter is used for finding stories whose author id is the specified value. (optional)
-     * @param authorName                 This parameter is used for finding stories whose author full name contains the specified value. (optional)
-     * @param sourceId                   This parameter is used for finding stories whose source id is the specified value. (optional)
-     * @param sourceName                 This parameter is used for finding stories whose source name contains the specified value. (optional)
-     * @param sourceDomain               This parameter is used for finding stories whose source domain is the specified value. (optional)
-     * @param sourceLocationsCountry     This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceLocationsState       This parameter is used for finding stories whose source state/province is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceLocationsCity        This parameter is used for finding stories whose source city is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesCountry        This parameter is used for finding stories whose source scopes is the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesState          This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesCity           This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceScopesLevel          This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
-     * @param sourceLinksInCountMin      This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
-     * @param sourceLinksInCountMax      This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count here [https://newsapi.aylien.com/docs/working-with-links-in-count](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
-     * @param sourceRankingsAlexaRankMin This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
-     * @param sourceRankingsAlexaRankMax This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
-     * @param sourceRankingsAlexaCountry This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks here [https://newsapi.aylien.com/docs/working-with-alexa-ranks](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
-     * @param field                      This parameter is used to specify the trend field. (optional)
+     * @param id                             This parameter is used for finding stories by story id. (optional)
+     * @param title                          This parameter is used for finding stories whose title contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param body                           This parameter is used for finding stories whose body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param text                           This parameter is used for finding stories whose title or body contains a specfic keyword. It supports [boolean operators](https://newsapi.aylien.com/docs/boolean-operators). (optional)
+     * @param language                       This parameter is used for finding stories whose language is the specified value. It supports [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) language codes. (optional)
+     * @param publishedAtStart               This parameter is used for finding stories whose published at time is greater than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param publishedAtEnd                 This parameter is used for finding stories whose published at time is less than the specified value. [Here](https://newsapi.aylien.com/docs/working-with-dates) you can find more information about how [to work with dates](https://newsapi.aylien.com/docs/working-with-dates). (optional)
+     * @param categoriesTaxonomy             This parameter is used for defining the type of the taxonomy for the rest of the categories queries. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). (optional)
+     * @param categoriesConfident            This parameter is used for finding stories whose categories are confident. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). (optional, default to true)
+     * @param categoriesId                   This parameter is used for finding stories by categories id. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). (optional)
+     * @param categoriesLevel                This parameter is used for finding stories by categories level. You can read more about working with categories [here](https://newsapi.aylien.com/docs/working-with-categories). (optional)
+     * @param entitiesTitleText              This parameter is used to find stories based on the specified entities &#x60;text&#x60; in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param entitiesTitleType              This parameter is used to find stories based on the specified entities &#x60;type&#x60; in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param entitiesTitleLinksDbpedia      This parameter is used to find stories based on the specified entities dbpedia URL in story titles. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param entitiesBodyText               This parameter is used to find stories based on the specified entities &#x60;text&#x60; in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param entitiesBodyType               This parameter is used to find stories based on the specified entities &#x60;type&#x60; in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param entitiesBodyLinksDbpedia       This parameter is used to find stories based on the specified entities dbpedia URL in the body of stories. You can read more about working with entities [here](https://newsapi.aylien.com/docs/working-with-entities). (optional)
+     * @param sentimentTitlePolarity         This parameter is used for finding stories whose title sentiment is the specified value. (optional)
+     * @param sentimentBodyPolarity          This parameter is used for finding stories whose body sentiment is the specified value. (optional)
+     * @param mediaImagesCountMin            This parameter is used for finding stories whose number of images is greater than or equal to the specified value. (optional)
+     * @param mediaImagesCountMax            This parameter is used for finding stories whose number of images is less than or equal to the specified value. (optional)
+     * @param mediaImagesWidthMin            This parameter is used for finding stories whose width of images are greater than or equal to the specified value. (optional)
+     * @param mediaImagesWidthMax            This parameter is used for finding stories whose width of images are less than or equal to the specified value. (optional)
+     * @param mediaImagesHeightMin           This parameter is used for finding stories whose height of images are greater than or equal to the specified value. (optional)
+     * @param mediaImagesHeightMax           This parameter is used for finding stories whose height of images are less than or equal to the specified value. (optional)
+     * @param mediaImagesContentLengthMin    This parameter is used for finding stories whose images content length are greater than or equal to the specified value. (optional)
+     * @param mediaImagesContentLengthMax    This parameter is used for finding stories whose images content length are less than or equal to the specified value. (optional)
+     * @param mediaImagesFormat              This parameter is used for finding stories whose images format are the specified value. (optional)
+     * @param mediaVideosCountMin            This parameter is used for finding stories whose number of videos is greater than or equal to the specified value. (optional)
+     * @param mediaVideosCountMax            This parameter is used for finding stories whose number of videos is less than or equal to the specified value. (optional)
+     * @param authorId                       This parameter is used for finding stories whose author id is the specified value. (optional)
+     * @param authorName                     This parameter is used for finding stories whose author full name contains the specified value. (optional)
+     * @param sourceId                       This parameter is used for finding stories whose source id is the specified value. (optional)
+     * @param sourceName                     This parameter is used for finding stories whose source name contains the specified value. (optional)
+     * @param sourceDomain                   This parameter is used for finding stories whose source domain is the specified value. (optional)
+     * @param sourceLocationsCountry         This parameter is used for finding stories whose source country is the specified value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsState           This parameter is used for finding stories whose source state/province is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLocationsCity            This parameter is used for finding stories whose source city is the specified value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCountry            This parameter is used for finding stories whose source scopes is the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesState              This parameter is used for finding stories whose source scopes is the specified state/province value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesCity               This parameter is used for finding stories whose source scopes is the specified city value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceScopesLevel              This parameter is used for finding stories whose source scopes is the specified level value. [Here](https://newsapi.aylien.com/docs/working-with-locations) you can find more information about how [to work with locations](https://newsapi.aylien.com/docs/working-with-locations). (optional)
+     * @param sourceLinksInCountMin          This parameter is used for finding stories from sources whose Links in count is greater than or equal to the specified value. You can read more about working with Links in count [here](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
+     * @param sourceLinksInCountMax          This parameter is used for finding stories from sources whose Links in count is less than or equal to the specified value. You can read more about working with Links in count [here](https://newsapi.aylien.com/docs/working-with-links-in-count). (optional)
+     * @param sourceRankingsAlexaRankMin     This parameter is used for finding stories from sources whose Alexa rank is greater than or equal to the specified value. You can read more about working with Alexa ranks [here](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param sourceRankingsAlexaRankMax     This parameter is used for finding stories from sources whose Alexa rank is less than or equal to the specified value. You can read more about working with Alexa ranks [here](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param sourceRankingsAlexaCountry     This parameter is used for finding stories from sources whose Alexa rank is in the specified country value. It supports [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes. You can read more about working with Alexa ranks [here](https://newsapi.aylien.com/docs/working-with-alexa-ranks). (optional)
+     * @param socialSharesCountFacebookMin   This parameter is used for finding stories whose Facebook social shares count is greater than or equal to the specified value. (optional)
+     * @param socialSharesCountFacebookMax   This parameter is used for finding stories whose Facebook social shares count is less than or equal to the specified value. (optional)
+     * @param socialSharesCountGooglePlusMin This parameter is used for finding stories whose Google+ social shares count is greater than or equal to the specified value. (optional)
+     * @param socialSharesCountGooglePlusMax This parameter is used for finding stories whose Google+ social shares count is less than or equal to the specified value. (optional)
+     * @param socialSharesCountLinkedinMin   This parameter is used for finding stories whose LinkedIn social shares count is greater than or equal to the specified value. (optional)
+     * @param socialSharesCountLinkedinMax   This parameter is used for finding stories whose LinkedIn social shares count is less than or equal to the specified value. (optional)
+     * @param socialSharesCountRedditMin     This parameter is used for finding stories whose Reddit social shares count is greater than or equal to the specified value. (optional)
+     * @param socialSharesCountRedditMax     This parameter is used for finding stories whose Reddit social shares count is less than or equal to the specified value. (optional)
+     * @param field                          This parameter is used to specify the trend field. (optional)
      */
-    public TrendsParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, Integer mediaImagesCountMin, Integer mediaImagesCountMax, Integer mediaVideosCountMin, Integer mediaVideosCountMax, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Integer sourceLinksInCountMin, Integer sourceLinksInCountMax, Integer sourceRankingsAlexaRankMin, Integer sourceRankingsAlexaRankMax, List<String> sourceRankingsAlexaCountry, String field) {
+    public TrendsParams(List<Long> id, String title, String body, String text, List<String> language, String publishedAtStart, String publishedAtEnd, String categoriesTaxonomy, Boolean categoriesConfident, List<String> categoriesId, List<Integer> categoriesLevel, List<String> entitiesTitleText, List<String> entitiesTitleType, List<String> entitiesTitleLinksDbpedia, List<String> entitiesBodyText, List<String> entitiesBodyType, List<String> entitiesBodyLinksDbpedia, String sentimentTitlePolarity, String sentimentBodyPolarity, Integer mediaImagesCountMin, Integer mediaImagesCountMax, Integer mediaImagesWidthMin, Integer mediaImagesWidthMax, Integer mediaImagesHeightMin, Integer mediaImagesHeightMax, Integer mediaImagesContentLengthMin, Integer mediaImagesContentLengthMax, List<String> mediaImagesFormat, Integer mediaVideosCountMin, Integer mediaVideosCountMax, List<Integer> authorId, String authorName, List<Integer> sourceId, List<String> sourceName, List<String> sourceDomain, List<String> sourceLocationsCountry, List<String> sourceLocationsState, List<String> sourceLocationsCity, List<String> sourceScopesCountry, List<String> sourceScopesState, List<String> sourceScopesCity, List<String> sourceScopesLevel, Integer sourceLinksInCountMin, Integer sourceLinksInCountMax, Integer sourceRankingsAlexaRankMin, Integer sourceRankingsAlexaRankMax, List<String> sourceRankingsAlexaCountry, Integer socialSharesCountFacebookMin, Integer socialSharesCountFacebookMax, Integer socialSharesCountGooglePlusMin, Integer socialSharesCountGooglePlusMax, Integer socialSharesCountLinkedinMin, Integer socialSharesCountLinkedinMax, Integer socialSharesCountRedditMin, Integer socialSharesCountRedditMax, String field) {
         this.id = id;
         this.title = title;
         this.body = body;
@@ -128,6 +158,13 @@ public class TrendsParams {
         this.sentimentBodyPolarity = sentimentBodyPolarity;
         this.mediaImagesCountMin = mediaImagesCountMin;
         this.mediaImagesCountMax = mediaImagesCountMax;
+        this.mediaImagesWidthMin = mediaImagesWidthMin;
+        this.mediaImagesWidthMax = mediaImagesWidthMax;
+        this.mediaImagesHeightMin = mediaImagesHeightMin;
+        this.mediaImagesHeightMax = mediaImagesHeightMax;
+        this.mediaImagesContentLengthMin = mediaImagesContentLengthMin;
+        this.mediaImagesContentLengthMax = mediaImagesContentLengthMax;
+        this.mediaImagesFormat = mediaImagesFormat;
         this.mediaVideosCountMin = mediaVideosCountMin;
         this.mediaVideosCountMax = mediaVideosCountMax;
         this.authorId = authorId;
@@ -147,6 +184,14 @@ public class TrendsParams {
         this.sourceRankingsAlexaRankMin = sourceRankingsAlexaRankMin;
         this.sourceRankingsAlexaRankMax = sourceRankingsAlexaRankMax;
         this.sourceRankingsAlexaCountry = sourceRankingsAlexaCountry;
+        this.socialSharesCountFacebookMin = socialSharesCountFacebookMin;
+        this.socialSharesCountFacebookMax = socialSharesCountFacebookMax;
+        this.socialSharesCountGooglePlusMin = socialSharesCountGooglePlusMin;
+        this.socialSharesCountGooglePlusMax = socialSharesCountGooglePlusMax;
+        this.socialSharesCountLinkedinMin = socialSharesCountLinkedinMin;
+        this.socialSharesCountLinkedinMax = socialSharesCountLinkedinMax;
+        this.socialSharesCountRedditMin = socialSharesCountRedditMin;
+        this.socialSharesCountRedditMax = socialSharesCountRedditMax;
         this.field = field;
     }
 
@@ -238,6 +283,34 @@ public class TrendsParams {
         return mediaImagesCountMax;
     }
 
+    public Integer getMediaImagesWidthMin() {
+        return mediaImagesWidthMin;
+    }
+
+    public Integer getMediaImagesWidthMax() {
+        return mediaImagesWidthMax;
+    }
+
+    public Integer getMediaImagesHeightMin() {
+        return mediaImagesHeightMin;
+    }
+
+    public Integer getMediaImagesHeightMax() {
+        return mediaImagesHeightMax;
+    }
+
+    public Integer getMediaImagesContentLengthMin() {
+        return mediaImagesContentLengthMin;
+    }
+
+    public Integer getMediaImagesContentLengthMax() {
+        return mediaImagesContentLengthMax;
+    }
+
+    public List<String> getMediaImagesFormat() {
+        return mediaImagesFormat;
+    }
+
     public Integer getMediaVideosCountMin() {
         return mediaVideosCountMin;
     }
@@ -314,6 +387,38 @@ public class TrendsParams {
         return sourceRankingsAlexaCountry;
     }
 
+    public Integer getSocialSharesCountFacebookMin() {
+        return socialSharesCountFacebookMin;
+    }
+
+    public Integer getSocialSharesCountFacebookMax() {
+        return socialSharesCountFacebookMax;
+    }
+
+    public Integer getSocialSharesCountGooglePlusMin() {
+        return socialSharesCountGooglePlusMin;
+    }
+
+    public Integer getSocialSharesCountGooglePlusMax() {
+        return socialSharesCountGooglePlusMax;
+    }
+
+    public Integer getSocialSharesCountLinkedinMin() {
+        return socialSharesCountLinkedinMin;
+    }
+
+    public Integer getSocialSharesCountLinkedinMax() {
+        return socialSharesCountLinkedinMax;
+    }
+
+    public Integer getSocialSharesCountRedditMin() {
+        return socialSharesCountRedditMin;
+    }
+
+    public Integer getSocialSharesCountRedditMax() {
+        return socialSharesCountRedditMax;
+    }
+
     public String getField() {
         return field;
     }
@@ -340,6 +445,13 @@ public class TrendsParams {
         private String sentimentBodyPolarity;
         private Integer mediaImagesCountMin;
         private Integer mediaImagesCountMax;
+        private Integer mediaImagesWidthMin;
+        private Integer mediaImagesWidthMax;
+        private Integer mediaImagesHeightMin;
+        private Integer mediaImagesHeightMax;
+        private Integer mediaImagesContentLengthMin;
+        private Integer mediaImagesContentLengthMax;
+        private List<String> mediaImagesFormat;
         private Integer mediaVideosCountMin;
         private Integer mediaVideosCountMax;
         private List<Integer> authorId;
@@ -359,6 +471,14 @@ public class TrendsParams {
         private Integer sourceRankingsAlexaRankMin;
         private Integer sourceRankingsAlexaRankMax;
         private List<String> sourceRankingsAlexaCountry;
+        private Integer socialSharesCountFacebookMin;
+        private Integer socialSharesCountFacebookMax;
+        private Integer socialSharesCountGooglePlusMin;
+        private Integer socialSharesCountGooglePlusMax;
+        private Integer socialSharesCountLinkedinMin;
+        private Integer socialSharesCountLinkedinMax;
+        private Integer socialSharesCountRedditMin;
+        private Integer socialSharesCountRedditMax;
         private String field;
 
         public Builder setId(List<Long> id) {
@@ -466,6 +586,41 @@ public class TrendsParams {
             return this;
         }
 
+        public Builder setMediaImagesWidthMin(Integer mediaImagesWidthMin) {
+            this.mediaImagesWidthMin = mediaImagesWidthMin;
+            return this;
+        }
+
+        public Builder setMediaImagesWidthMax(Integer mediaImagesWidthMax) {
+            this.mediaImagesWidthMax = mediaImagesWidthMax;
+            return this;
+        }
+
+        public Builder setMediaImagesHeightMin(Integer mediaImagesHeightMin) {
+            this.mediaImagesHeightMin = mediaImagesHeightMin;
+            return this;
+        }
+
+        public Builder setMediaImagesHeightMax(Integer mediaImagesHeightMax) {
+            this.mediaImagesHeightMax = mediaImagesHeightMax;
+            return this;
+        }
+
+        public Builder setMediaImagesContentLengthMin(Integer mediaImagesContentLengthMin) {
+            this.mediaImagesContentLengthMin = mediaImagesContentLengthMin;
+            return this;
+        }
+
+        public Builder setMediaImagesContentLengthMax(Integer mediaImagesContentLengthMax) {
+            this.mediaImagesContentLengthMax = mediaImagesContentLengthMax;
+            return this;
+        }
+
+        public Builder setMediaImagesFormat(List<String> mediaImagesFormat) {
+            this.mediaImagesFormat = mediaImagesFormat;
+            return this;
+        }
+
         public Builder setMediaVideosCountMin(Integer mediaVideosCountMin) {
             this.mediaVideosCountMin = mediaVideosCountMin;
             return this;
@@ -561,13 +716,53 @@ public class TrendsParams {
             return this;
         }
 
+        public Builder setSocialSharesCountFacebookMin(Integer socialSharesCountFacebookMin) {
+            this.socialSharesCountFacebookMin = socialSharesCountFacebookMin;
+            return this;
+        }
+
+        public Builder setSocialSharesCountFacebookMax(Integer socialSharesCountFacebookMax) {
+            this.socialSharesCountFacebookMax = socialSharesCountFacebookMax;
+            return this;
+        }
+
+        public Builder setSocialSharesCountGooglePlusMin(Integer socialSharesCountGooglePlusMin) {
+            this.socialSharesCountGooglePlusMin = socialSharesCountGooglePlusMin;
+            return this;
+        }
+
+        public Builder setSocialSharesCountGooglePlusMax(Integer socialSharesCountGooglePlusMax) {
+            this.socialSharesCountGooglePlusMax = socialSharesCountGooglePlusMax;
+            return this;
+        }
+
+        public Builder setSocialSharesCountLinkedinMin(Integer socialSharesCountLinkedinMin) {
+            this.socialSharesCountLinkedinMin = socialSharesCountLinkedinMin;
+            return this;
+        }
+
+        public Builder setSocialSharesCountLinkedinMax(Integer socialSharesCountLinkedinMax) {
+            this.socialSharesCountLinkedinMax = socialSharesCountLinkedinMax;
+            return this;
+        }
+
+        public Builder setSocialSharesCountRedditMin(Integer socialSharesCountRedditMin) {
+            this.socialSharesCountRedditMin = socialSharesCountRedditMin;
+            return this;
+        }
+
+        public Builder setSocialSharesCountRedditMax(Integer socialSharesCountRedditMax) {
+            this.socialSharesCountRedditMax = socialSharesCountRedditMax;
+            return this;
+        }
+
         public Builder setField(String field) {
             this.field = field;
             return this;
         }
 
         public TrendsParams build() {
-            return new TrendsParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, mediaImagesCountMin, mediaImagesCountMax, mediaVideosCountMin, mediaVideosCountMax, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, sourceLinksInCountMin, sourceLinksInCountMax, sourceRankingsAlexaRankMin, sourceRankingsAlexaRankMax, sourceRankingsAlexaCountry, field);
+            return new TrendsParams(id, title, body, text, language, publishedAtStart, publishedAtEnd, categoriesTaxonomy, categoriesConfident, categoriesId, categoriesLevel, entitiesTitleText, entitiesTitleType, entitiesTitleLinksDbpedia, entitiesBodyText, entitiesBodyType, entitiesBodyLinksDbpedia, sentimentTitlePolarity, sentimentBodyPolarity, mediaImagesCountMin, mediaImagesCountMax, mediaImagesWidthMin, mediaImagesWidthMax, mediaImagesHeightMin, mediaImagesHeightMax, mediaImagesContentLengthMin, mediaImagesContentLengthMax, mediaImagesFormat, mediaVideosCountMin, mediaVideosCountMax, authorId, authorName, sourceId, sourceName, sourceDomain, sourceLocationsCountry, sourceLocationsState, sourceLocationsCity, sourceScopesCountry, sourceScopesState, sourceScopesCity, sourceScopesLevel, sourceLinksInCountMin, sourceLinksInCountMax, sourceRankingsAlexaRankMin, sourceRankingsAlexaRankMax, sourceRankingsAlexaCountry, socialSharesCountFacebookMin, socialSharesCountFacebookMax, socialSharesCountGooglePlusMin, socialSharesCountGooglePlusMax, socialSharesCountLinkedinMin, socialSharesCountLinkedinMax, socialSharesCountRedditMin, socialSharesCountRedditMax, field);
         }
     }
 }

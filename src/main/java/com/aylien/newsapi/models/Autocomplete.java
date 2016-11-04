@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Autocomplete
  */
@@ -91,6 +90,7 @@ public class Autocomplete {
         return Objects.hash(id, text);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -112,5 +112,6 @@ public class Autocomplete {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

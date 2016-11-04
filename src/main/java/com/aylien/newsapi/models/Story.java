@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Story
  */
@@ -529,6 +528,7 @@ public class Story {
         return Objects.hash(id, title, body, summary, source, author, entities, keywords, hashtags, charactersCount, wordsCount, sentencesCount, paragraphsCount, categories, socialSharesCount, media, sentiment, language, publishedAt, links);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -568,5 +568,6 @@ public class Story {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

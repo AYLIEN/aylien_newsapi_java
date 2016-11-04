@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Stories
  */
@@ -128,6 +127,7 @@ public class Stories {
         return Objects.hash(stories, clusters, nextPageCursor);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,5 +150,6 @@ public class Stories {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

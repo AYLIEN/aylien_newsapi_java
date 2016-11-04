@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Summary
  */
@@ -75,6 +74,7 @@ public class Summary {
         return Objects.hash(sentences);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -95,5 +95,6 @@ public class Summary {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

@@ -5,8 +5,8 @@
     <packaging>jar</packaging>
     <name>client</name>
     <description>AYLIEN's officially supported Java client library for accessing News API</description>
-    <url>https://github.com/AYLIEN/aylien_newsapi_java</url>
-    <version>0.2.1</version>
+    <url>https://newsapi.aylien.com/</url>
+    <version>0.3.0</version>
 
     <licenses>
         <license>

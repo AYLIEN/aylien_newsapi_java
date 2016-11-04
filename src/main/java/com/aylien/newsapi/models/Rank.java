@@ -23,7 +23,6 @@ import org.joda.time.DateTime;
 
 import java.util.Objects;
 
-
 /**
  * Rank
  */
@@ -115,6 +114,7 @@ public class Rank {
         return Objects.hash(rank, country, fetchedAt);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -137,5 +137,6 @@ public class Rank {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

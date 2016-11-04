@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * EntityLinks
  */
@@ -68,6 +67,7 @@ public class EntityLinks {
         return Objects.hash(dbpedia);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -88,5 +88,6 @@ public class EntityLinks {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

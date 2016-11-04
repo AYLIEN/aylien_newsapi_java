@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Error
  */
@@ -184,6 +183,7 @@ public class Error {
         return Objects.hash(id, links, status, code, title, detail);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -209,5 +209,6 @@ public class Error {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

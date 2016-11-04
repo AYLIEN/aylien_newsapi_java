@@ -23,7 +23,6 @@ import org.joda.time.DateTime;
 
 import java.util.Objects;
 
-
 /**
  * ShareCount
  */
@@ -92,6 +91,7 @@ public class ShareCount {
         return Objects.hash(count, fetchedAt);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,5 +113,6 @@ public class ShareCount {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

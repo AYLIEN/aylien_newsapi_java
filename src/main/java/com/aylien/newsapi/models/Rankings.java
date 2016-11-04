@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Rankings
  */
@@ -76,6 +75,7 @@ public class Rankings {
         return Objects.hash(alexa);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -96,5 +96,6 @@ public class Rankings {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

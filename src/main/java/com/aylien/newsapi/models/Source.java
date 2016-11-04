@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Source
  */
@@ -313,6 +312,7 @@ public class Source {
         return Objects.hash(id, name, title, description, linksInCount, homePageUrl, domain, logoUrl, locations, scopes, rankings);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -343,5 +343,6 @@ public class Source {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

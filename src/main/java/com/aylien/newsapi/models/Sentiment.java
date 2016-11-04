@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Sentiment
  */
@@ -145,5 +144,6 @@ public class Sentiment {
             return String.valueOf(value);
         }
     }
+
 }
 

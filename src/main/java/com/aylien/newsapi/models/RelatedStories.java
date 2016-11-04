@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * RelatedStories
  */
@@ -174,6 +173,7 @@ public class RelatedStories {
         return Objects.hash(storyTitle, storyBody, storyLanguage, relatedStories, clusters);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -198,5 +198,6 @@ public class RelatedStories {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

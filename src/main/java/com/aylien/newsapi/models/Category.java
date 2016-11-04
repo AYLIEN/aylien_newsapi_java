@@ -24,7 +24,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Category
  */
@@ -234,5 +233,6 @@ public class Category {
             return String.valueOf(value);
         }
     }
+
 }
 

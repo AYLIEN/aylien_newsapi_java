@@ -31,12 +31,14 @@ import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.api.client.config.DefaultClientConfig;
 import com.sun.jersey.api.client.filter.LoggingFilter;
 import com.sun.jersey.multipart.FormDataMultiPart;
+import com.sun.jersey.multipart.file.FileDataBodyPart;
 
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response.Status.Family;
+import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -69,12 +71,12 @@ public class ApiClient {
         dateFormat = ApiClient.buildDefaultDateFormat();
 
         // Set default User-Agent.
-        setUserAgent("aylien-news-api/0.2.1/java");
+        setUserAgent("aylien-news-api/0.3.0/java");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
-        authentications.put("app_key", new ApiKeyAuth("header", "X-AYLIEN-NewsAPI-Application-Key"));
         authentications.put("app_id", new ApiKeyAuth("header", "X-AYLIEN-NewsAPI-Application-ID"));
+        authentications.put("app_key", new ApiKeyAuth("header", "X-AYLIEN-NewsAPI-Application-Key"));
         // Prevent the authentications from being modified.
         authentications = Collections.unmodifiableMap(authentications);
 
@@ -82,12 +84,7 @@ public class ApiClient {
     }
 
     public static DateFormat buildDefaultDateFormat() {
-        // Use RFC3339 format for date and datetime.
-        // See http://xml2rfc.ietf.org/public/rfc/html/rfc3339.html#anchor14
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
-        // Use UTC as the default time zone.
-        dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return dateFormat;
+        return new RFC3339DateFormat();
     }
 
     /**
@@ -482,7 +479,7 @@ public class ApiClient {
     public Object serialize(Object obj, String contentType, List<Pair> formParams) throws ApiException {
         if (contentType.startsWith("multipart/form-data")) {
             FormDataMultiPart mp = new FormDataMultiPart();
-//  TODO: Fixme later please
+            // TODO: FIXME
 //            for (Pair param : formParams) {
 //                if (param.getValue() instanceof List && !((List) param.getValue()).isEmpty()
 //                        && ((List) param.getValue()).get(0) instanceof File) {
@@ -601,7 +598,7 @@ public class ApiClient {
         statusCode = response.getStatusInfo().getStatusCode();
         responseHeaders = response.getHeaders();
 
-        if (response.getStatusInfo() == ClientResponse.Status.NO_CONTENT) {
+        if (response.getStatusInfo().getStatusCode() == ClientResponse.Status.NO_CONTENT.getStatusCode()) {
             return null;
         } else if (response.getStatusInfo().getFamily() == Family.SUCCESSFUL) {
             if (returnType == null)

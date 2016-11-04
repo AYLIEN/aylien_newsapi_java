@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Histograms
  */
@@ -168,6 +167,7 @@ public class Histograms {
         return Objects.hash(intervals, intervalStart, intervalEnd, intervalWidth, field);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -192,5 +192,6 @@ public class Histograms {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * HistogramInterval
  */
@@ -91,6 +90,7 @@ public class HistogramInterval {
         return Objects.hash(bin, count);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -112,5 +112,6 @@ public class HistogramInterval {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

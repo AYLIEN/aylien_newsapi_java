@@ -23,7 +23,6 @@ import org.joda.time.DateTime;
 
 import java.util.Objects;
 
-
 /**
  * TimeSeries
  */
@@ -92,6 +91,7 @@ public class TimeSeries {
         return Objects.hash(publishedAt, count);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,5 +113,6 @@ public class TimeSeries {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

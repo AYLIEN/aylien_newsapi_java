@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * StoryLinks
  */
@@ -114,6 +113,7 @@ public class StoryLinks {
         return Objects.hash(permalink, relatedStories, coverages);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,5 +136,6 @@ public class StoryLinks {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

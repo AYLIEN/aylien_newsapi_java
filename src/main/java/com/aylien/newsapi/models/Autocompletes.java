@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Autocompletes
  */
@@ -76,6 +75,7 @@ public class Autocompletes {
         return Objects.hash(autocompletes);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -96,5 +96,6 @@ public class Autocompletes {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

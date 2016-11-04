@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Media
  */
@@ -33,6 +32,14 @@ public class Media {
     private TypeEnum type = null;
     @JsonProperty("url")
     private String url = null;
+    @JsonProperty("format")
+    private FormatEnum format = null;
+    @JsonProperty("content_length")
+    private Integer contentLength = null;
+    @JsonProperty("width")
+    private Integer width = null;
+    @JsonProperty("height")
+    private Integer height = null;
 
     public Media type(TypeEnum type) {
         this.type = type;
@@ -72,6 +79,82 @@ public class Media {
         this.url = url;
     }
 
+    public Media format(FormatEnum format) {
+        this.format = format;
+        return this;
+    }
+
+    /**
+     * The format of media
+     *
+     * @return format
+     **/
+    @ApiModelProperty(example = "null", value = "The format of media")
+    public FormatEnum getFormat() {
+        return format;
+    }
+
+    public void setFormat(FormatEnum format) {
+        this.format = format;
+    }
+
+    public Media contentLength(Integer contentLength) {
+        this.contentLength = contentLength;
+        return this;
+    }
+
+    /**
+     * The content length of media
+     *
+     * @return contentLength
+     **/
+    @ApiModelProperty(example = "null", value = "The content length of media")
+    public Integer getContentLength() {
+        return contentLength;
+    }
+
+    public void setContentLength(Integer contentLength) {
+        this.contentLength = contentLength;
+    }
+
+    public Media width(Integer width) {
+        this.width = width;
+        return this;
+    }
+
+    /**
+     * The width of media
+     *
+     * @return width
+     **/
+    @ApiModelProperty(example = "null", value = "The width of media")
+    public Integer getWidth() {
+        return width;
+    }
+
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+
+    public Media height(Integer height) {
+        this.height = height;
+        return this;
+    }
+
+    /**
+     * The height of media
+     *
+     * @return height
+     **/
+    @ApiModelProperty(example = "null", value = "The height of media")
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -82,12 +165,16 @@ public class Media {
         }
         Media media = (Media) o;
         return Objects.equals(this.type, media.type) &&
-                Objects.equals(this.url, media.url);
+                Objects.equals(this.url, media.url) &&
+                Objects.equals(this.format, media.format) &&
+                Objects.equals(this.contentLength, media.contentLength) &&
+                Objects.equals(this.width, media.width) &&
+                Objects.equals(this.height, media.height);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, url);
+        return Objects.hash(type, url, format, contentLength, width, height);
     }
 
     @Override
@@ -97,6 +184,10 @@ public class Media {
 
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    format: ").append(toIndentedString(format)).append("\n");
+        sb.append("    contentLength: ").append(toIndentedString(contentLength)).append("\n");
+        sb.append("    width: ").append(toIndentedString(width)).append("\n");
+        sb.append("    height: ").append(toIndentedString(height)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +202,7 @@ public class Media {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 
     /**
      * The type of media
@@ -141,5 +233,52 @@ public class Media {
             return String.valueOf(value);
         }
     }
+
+    /**
+     * The format of media
+     */
+    public enum FormatEnum {
+        BMP("BMP"),
+
+        GIF("GIF"),
+
+        JPEG("JPEG"),
+
+        PNG("PNG"),
+
+        TIFF("TIFF"),
+
+        PSD("PSD"),
+
+        ICO("ICO"),
+
+        CUR("CUR"),
+
+        WEBP("WEBP"),
+
+        SVG("SVG");
+
+        private String value;
+
+        FormatEnum(String value) {
+            this.value = value;
+        }
+
+        @JsonCreator
+        public static FormatEnum fromValue(String text) {
+            for (FormatEnum b : FormatEnum.values()) {
+                if (String.valueOf(b.value).equals(text)) {
+                    return b;
+                }
+            }
+            return null;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
+    }
+
 }
 

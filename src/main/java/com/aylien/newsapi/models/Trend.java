@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Trend
  */
@@ -91,6 +90,7 @@ public class Trend {
         return Objects.hash(value, count);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -112,5 +112,6 @@ public class Trend {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

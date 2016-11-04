@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Coverages
  */
@@ -198,6 +197,7 @@ public class Coverages {
         return Objects.hash(storyTitle, storyBody, storyPublishedAt, storyLanguage, coverages, clusters);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -223,5 +223,6 @@ public class Coverages {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

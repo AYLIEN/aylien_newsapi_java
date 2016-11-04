@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * ErrorLinks
  */
@@ -68,6 +67,7 @@ public class ErrorLinks {
         return Objects.hash(about);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -88,5 +88,6 @@ public class ErrorLinks {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

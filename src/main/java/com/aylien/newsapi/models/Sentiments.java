@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Sentiments
  */
@@ -92,6 +91,7 @@ public class Sentiments {
         return Objects.hash(title, body);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -113,5 +113,6 @@ public class Sentiments {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

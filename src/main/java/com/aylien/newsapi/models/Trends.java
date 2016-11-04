@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Trends
  */
@@ -99,6 +98,7 @@ public class Trends {
         return Objects.hash(trends, field);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -120,5 +120,6 @@ public class Trends {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

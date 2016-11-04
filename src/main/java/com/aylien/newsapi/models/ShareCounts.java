@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * ShareCounts
  */
@@ -160,6 +159,7 @@ public class ShareCounts {
         return Objects.hash(facebook, googlePlus, linkedin, reddit);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -183,5 +183,6 @@ public class ShareCounts {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

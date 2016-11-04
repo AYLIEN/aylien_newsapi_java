@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Location
  */
@@ -114,6 +113,7 @@ public class Location {
         return Objects.hash(country, state, city);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,5 +136,6 @@ public class Location {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

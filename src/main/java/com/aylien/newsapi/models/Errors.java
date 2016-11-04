@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * Errors
  */
@@ -76,6 +75,7 @@ public class Errors {
         return Objects.hash(errors);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -96,5 +96,6 @@ public class Errors {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

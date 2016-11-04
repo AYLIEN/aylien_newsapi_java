@@ -22,7 +22,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Author
  */
@@ -114,6 +113,7 @@ public class Author {
         return Objects.hash(id, name, avatarUrl);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -136,5 +136,6 @@ public class Author {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 

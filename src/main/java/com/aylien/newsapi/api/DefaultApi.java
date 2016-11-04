@@ -92,7 +92,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -141,6 +141,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = coveragesParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = coveragesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = coveragesParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = coveragesParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = coveragesParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = coveragesParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = coveragesParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = coveragesParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = coveragesParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = coveragesParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = coveragesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = coveragesParams.getMediaVideosCountMax();
         List<Integer> authorId = coveragesParams.getAuthorId();
@@ -160,6 +167,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = coveragesParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = coveragesParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = coveragesParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = coveragesParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = coveragesParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = coveragesParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = coveragesParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = coveragesParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = coveragesParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = coveragesParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = coveragesParams.getSocialSharesCountRedditMax();
         Boolean cluster = coveragesParams.getCluster();
         String clusterAlgorithm = coveragesParams.getClusterAlgorithm();
         List<String> _return = coveragesParams.get_return();
@@ -201,6 +216,13 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.format[]", mediaImagesFormat));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -220,6 +242,14 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
@@ -233,7 +263,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -282,6 +312,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = histogramsParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = histogramsParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = histogramsParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = histogramsParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = histogramsParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = histogramsParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = histogramsParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = histogramsParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = histogramsParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = histogramsParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = histogramsParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = histogramsParams.getMediaVideosCountMax();
         List<Integer> authorId = histogramsParams.getAuthorId();
@@ -301,6 +338,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = histogramsParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = histogramsParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = histogramsParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = histogramsParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = histogramsParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = histogramsParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = histogramsParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = histogramsParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = histogramsParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = histogramsParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = histogramsParams.getSocialSharesCountRedditMax();
         Integer intervalStart = histogramsParams.getIntervalStart();
         Integer intervalEnd = histogramsParams.getIntervalEnd();
         Integer intervalWidth = histogramsParams.getIntervalWidth();
@@ -335,6 +380,13 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -354,6 +406,14 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.start", intervalStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.end", intervalEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "interval.width", intervalWidth));
@@ -361,7 +421,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -410,6 +470,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = relatedStoriesParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = relatedStoriesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = relatedStoriesParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = relatedStoriesParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = relatedStoriesParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = relatedStoriesParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = relatedStoriesParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = relatedStoriesParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = relatedStoriesParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = relatedStoriesParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = relatedStoriesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = relatedStoriesParams.getMediaVideosCountMax();
         List<Integer> authorId = relatedStoriesParams.getAuthorId();
@@ -429,6 +496,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = relatedStoriesParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = relatedStoriesParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = relatedStoriesParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = relatedStoriesParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = relatedStoriesParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = relatedStoriesParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = relatedStoriesParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = relatedStoriesParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = relatedStoriesParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = relatedStoriesParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = relatedStoriesParams.getSocialSharesCountRedditMax();
         Boolean cluster = relatedStoriesParams.getCluster();
         String clusterAlgorithm = relatedStoriesParams.getClusterAlgorithm();
         List<String> _return = relatedStoriesParams.get_return();
@@ -470,6 +545,13 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.format[]", mediaImagesFormat));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -489,6 +571,14 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
@@ -501,7 +591,7 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "per_page", perPage));
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -550,6 +640,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = storiesParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = storiesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = storiesParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = storiesParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = storiesParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = storiesParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = storiesParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = storiesParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = storiesParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = storiesParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = storiesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = storiesParams.getMediaVideosCountMax();
         List<Integer> authorId = storiesParams.getAuthorId();
@@ -569,6 +666,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = storiesParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = storiesParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = storiesParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = storiesParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = storiesParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = storiesParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = storiesParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = storiesParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = storiesParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = storiesParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = storiesParams.getSocialSharesCountRedditMax();
         Boolean cluster = storiesParams.getCluster();
         String clusterAlgorithm = storiesParams.getClusterAlgorithm();
         List<String> _return = storiesParams.get_return();
@@ -606,6 +711,13 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -625,6 +737,14 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster", cluster));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "cluster.algorithm", clusterAlgorithm));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "return[]", _return));
@@ -635,7 +755,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -682,6 +802,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = timeSeriesParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = timeSeriesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = timeSeriesParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = timeSeriesParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = timeSeriesParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = timeSeriesParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = timeSeriesParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = timeSeriesParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = timeSeriesParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = timeSeriesParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = timeSeriesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = timeSeriesParams.getMediaVideosCountMax();
         List<Integer> authorId = timeSeriesParams.getAuthorId();
@@ -701,6 +828,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = timeSeriesParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = timeSeriesParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = timeSeriesParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = timeSeriesParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = timeSeriesParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = timeSeriesParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = timeSeriesParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = timeSeriesParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = timeSeriesParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = timeSeriesParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = timeSeriesParams.getSocialSharesCountRedditMax();
         String publishedAtStart = timeSeriesParams.getPublishedAtStart();
         String publishedAtEnd = timeSeriesParams.getPublishedAtEnd();
         String period = timeSeriesParams.getPeriod();
@@ -732,6 +867,13 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -751,13 +893,21 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "period", period));
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -806,6 +956,13 @@ public class DefaultApi {
         String sentimentBodyPolarity = trendsParams.getSentimentBodyPolarity();
         Integer mediaImagesCountMin = trendsParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = trendsParams.getMediaImagesCountMax();
+        Integer mediaImagesWidthMin = trendsParams.getMediaImagesWidthMin();
+        Integer mediaImagesWidthMax = trendsParams.getMediaImagesWidthMax();
+        Integer mediaImagesHeightMin = trendsParams.getMediaImagesHeightMin();
+        Integer mediaImagesHeightMax = trendsParams.getMediaImagesHeightMax();
+        Integer mediaImagesContentLengthMin = trendsParams.getMediaImagesContentLengthMin();
+        Integer mediaImagesContentLengthMax = trendsParams.getMediaImagesContentLengthMax();
+        List<String> mediaImagesFormat = trendsParams.getMediaImagesFormat();
         Integer mediaVideosCountMin = trendsParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = trendsParams.getMediaVideosCountMax();
         List<Integer> authorId = trendsParams.getAuthorId();
@@ -825,6 +982,14 @@ public class DefaultApi {
         Integer sourceRankingsAlexaRankMin = trendsParams.getSourceRankingsAlexaRankMin();
         Integer sourceRankingsAlexaRankMax = trendsParams.getSourceRankingsAlexaRankMax();
         List<String> sourceRankingsAlexaCountry = trendsParams.getSourceRankingsAlexaCountry();
+        Integer socialSharesCountFacebookMin = trendsParams.getSocialSharesCountFacebookMin();
+        Integer socialSharesCountFacebookMax = trendsParams.getSocialSharesCountFacebookMax();
+        Integer socialSharesCountGooglePlusMin = trendsParams.getSocialSharesCountGooglePlusMin();
+        Integer socialSharesCountGooglePlusMax = trendsParams.getSocialSharesCountGooglePlusMax();
+        Integer socialSharesCountLinkedinMin = trendsParams.getSocialSharesCountLinkedinMin();
+        Integer socialSharesCountLinkedinMax = trendsParams.getSocialSharesCountLinkedinMax();
+        Integer socialSharesCountRedditMin = trendsParams.getSocialSharesCountRedditMin();
+        Integer socialSharesCountRedditMax = trendsParams.getSocialSharesCountRedditMax();
         String field = trendsParams.getField();
 
         // create path and map variables
@@ -856,6 +1021,13 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
@@ -875,11 +1047,19 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.max", sourceRankingsAlexaRankMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.rankings.alexa.country[]", sourceRankingsAlexaCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.min", socialSharesCountFacebookMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.facebook.max", socialSharesCountFacebookMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.min", socialSharesCountGooglePlusMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.google_plus.max", socialSharesCountGooglePlusMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.min", socialSharesCountLinkedinMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.linkedin.max", socialSharesCountLinkedinMax));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.min", socialSharesCountRedditMin));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "social_shares_count.reddit.max", socialSharesCountRedditMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "field", field));
 
 
         final String[] localVarAccepts = {
-                "application/json", "text/xml"
+                "application/json"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 

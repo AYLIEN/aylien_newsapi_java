@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
 
-
 /**
  * Scope
  */
@@ -191,5 +190,6 @@ public class Scope {
             return String.valueOf(value);
         }
     }
+
 }
 

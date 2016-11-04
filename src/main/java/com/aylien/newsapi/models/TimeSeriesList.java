@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 /**
  * TimeSeriesList
  */
@@ -146,6 +145,7 @@ public class TimeSeriesList {
         return Objects.hash(timeSeries, period, publishedAtStart, publishedAtEnd);
     }
 
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -169,5 +169,6 @@ public class TimeSeriesList {
         }
         return o.toString().replace("\n", "\n    ");
     }
+
 }
 
