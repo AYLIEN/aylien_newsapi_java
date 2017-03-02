@@ -17,8 +17,6 @@
 
 package com.aylien.newsapi.models;
 
-import com.aylien.newsapi.models.Story;
-import com.aylien.newsapi.models.StoryCluster;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 import org.joda.time.DateTime;

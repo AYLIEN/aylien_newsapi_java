@@ -1,12 +1,21 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.aylien.newsapi</groupId>
     <artifactId>client</artifactId>
     <packaging>jar</packaging>
     <name>client</name>
-    <description>AYLIEN's officially supported Java client library for accessing News API</description>
+    <version>0.4.0</version>
     <url>https://newsapi.aylien.com/</url>
-    <version>0.3.0</version>
+    <description>AYLIEN&#39;s officially supported Java client library for accessing News API</description>
+    <scm>
+        <connection>scm:git:git://github.com/AYLIEN/aylien_newsapi_java.git</connection>
+        <developerConnection>scm:git:git@github.com:AYLIEN/aylien_newsapi_java.git</developerConnection>
+        <url>https://github.com/AYLIEN/aylien_newsapi_java</url>
+    </scm>
+    <prerequisites>
+        <maven>2.2.0</maven>
+    </prerequisites>
 
     <licenses>
         <license>
@@ -25,13 +34,6 @@
         </developer>
     </developers>
 
-    <scm>
-        <url>https://github.com/AYLIEN/aylien_newsapi_java</url>
-        <connection>scm:git:git://github.com/AYLIEN/aylien_newsapi_java.git</connection>
-        <developerConnection>scm:git:git@github.com:AYLIEN/aylien_newsapi_java.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -42,10 +44,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
-    <prerequisites>
-        <maven>2.2.0</maven>
-    </prerequisites>
 
     <build>
         <plugins>
@@ -65,6 +63,7 @@
                     <forkMode>pertest</forkMode>
                 </configuration>
             </plugin>
+
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -139,23 +138,20 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-source</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
                 <executions>
                     <execution>
-                        <id>package-javadoc</id>
-                        <phase>package</phase>
+                        <id>attach-javadocs</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
@@ -177,15 +173,20 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.3.2</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
+
     <dependencies>
         <dependency>
             <groupId>io.swagger</groupId>
@@ -229,7 +230,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-joda</artifactId>
-            <version>2.1.5</version>
+            <version>${jackson-version}</version>
         </dependency>
         <dependency>
             <groupId>joda-time</groupId>
@@ -256,10 +257,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <swagger-annotations-version>1.5.8</swagger-annotations-version>
         <jersey-version>1.19.1</jersey-version>
-        <jackson-version>2.7.0</jackson-version>
-        <jodatime-version>2.9.3</jodatime-version>
+        <jackson-version>2.7.5</jackson-version>
+        <jodatime-version>2.9.4</jodatime-version>
         <maven-plugin-version>1.0.0</maven-plugin-version>
         <junit-version>4.12</junit-version>
-        <java.version>1.7</java.version>
     </properties>
 </project>

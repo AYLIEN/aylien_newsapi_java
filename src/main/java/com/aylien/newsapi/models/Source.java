@@ -17,9 +17,6 @@
 
 package com.aylien.newsapi.models;
 
-import com.aylien.newsapi.models.Location;
-import com.aylien.newsapi.models.Rankings;
-import com.aylien.newsapi.models.Scope;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 

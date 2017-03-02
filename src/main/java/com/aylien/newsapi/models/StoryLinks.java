@@ -36,6 +36,9 @@ public class StoryLinks {
     @JsonProperty("coverages")
     private String coverages = null;
 
+    @JsonProperty("canonical")
+    private String canonical = null;
+
     public StoryLinks permalink(String permalink) {
         this.permalink = permalink;
         return this;
@@ -93,6 +96,25 @@ public class StoryLinks {
         this.coverages = coverages;
     }
 
+    public StoryLinks canonical(String canonical) {
+        this.canonical = canonical;
+        return this;
+    }
+
+    /**
+     * The story canonical URL
+     *
+     * @return canonical
+     **/
+    @ApiModelProperty(example = "null", value = "The story canonical URL")
+    public String getCanonical() {
+        return canonical;
+    }
+
+    public void setCanonical(String canonical) {
+        this.canonical = canonical;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -105,12 +127,13 @@ public class StoryLinks {
         StoryLinks storyLinks = (StoryLinks) o;
         return Objects.equals(this.permalink, storyLinks.permalink) &&
                 Objects.equals(this.relatedStories, storyLinks.relatedStories) &&
-                Objects.equals(this.coverages, storyLinks.coverages);
+                Objects.equals(this.coverages, storyLinks.coverages) &&
+                Objects.equals(this.canonical, storyLinks.canonical);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(permalink, relatedStories, coverages);
+        return Objects.hash(permalink, relatedStories, coverages, canonical);
     }
 
 
@@ -122,6 +145,7 @@ public class StoryLinks {
         sb.append("    permalink: ").append(toIndentedString(permalink)).append("\n");
         sb.append("    relatedStories: ").append(toIndentedString(relatedStories)).append("\n");
         sb.append("    coverages: ").append(toIndentedString(coverages)).append("\n");
+        sb.append("    canonical: ").append(toIndentedString(canonical)).append("\n");
         sb.append("}");
         return sb.toString();
     }

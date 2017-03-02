@@ -59,8 +59,8 @@ public class Sentiment {
 
     /**
      * Polarity score of the sentiment
-     * minimum: 0.0
-     * maximum: 1.0
+     * minimum: 0
+     * maximum: 1
      *
      * @return score
      **/

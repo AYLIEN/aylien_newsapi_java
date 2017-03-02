@@ -92,7 +92,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -121,24 +121,36 @@ public class DefaultApi {
 
         // setting builder variables
         List<Long> id = coveragesParams.getId();
+        List<Long> notId = coveragesParams.getNotId();
         String title = coveragesParams.getTitle();
         String body = coveragesParams.getBody();
         String text = coveragesParams.getText();
         List<String> language = coveragesParams.getLanguage();
+        List<String> notLanguage = coveragesParams.getNotLanguage();
         String publishedAtStart = coveragesParams.getPublishedAtStart();
         String publishedAtEnd = coveragesParams.getPublishedAtEnd();
         String categoriesTaxonomy = coveragesParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = coveragesParams.getCategoriesConfident();
         List<String> categoriesId = coveragesParams.getCategoriesId();
+        List<String> notCategoriesId = coveragesParams.getNotCategoriesId();
         List<Integer> categoriesLevel = coveragesParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = coveragesParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = coveragesParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = coveragesParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = coveragesParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = coveragesParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = coveragesParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = coveragesParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = coveragesParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = coveragesParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = coveragesParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = coveragesParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = coveragesParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = coveragesParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = coveragesParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = coveragesParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = coveragesParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = coveragesParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = coveragesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = coveragesParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = coveragesParams.getMediaImagesWidthMin();
@@ -148,20 +160,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = coveragesParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = coveragesParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = coveragesParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = coveragesParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = coveragesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = coveragesParams.getMediaVideosCountMax();
         List<Integer> authorId = coveragesParams.getAuthorId();
+        List<Integer> notAuthorId = coveragesParams.getNotAuthorId();
         String authorName = coveragesParams.getAuthorName();
+        String notAuthorName = coveragesParams.getNotAuthorName();
         List<Integer> sourceId = coveragesParams.getSourceId();
+        List<Integer> notSourceId = coveragesParams.getNotSourceId();
         List<String> sourceName = coveragesParams.getSourceName();
+        List<String> notSourceName = coveragesParams.getNotSourceName();
         List<String> sourceDomain = coveragesParams.getSourceDomain();
+        List<String> notSourceDomain = coveragesParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = coveragesParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = coveragesParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = coveragesParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = coveragesParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = coveragesParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = coveragesParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = coveragesParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = coveragesParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = coveragesParams.getSourceScopesState();
+        List<String> notSourceScopesState = coveragesParams.getNotSourceScopesState();
         List<String> sourceScopesCity = coveragesParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = coveragesParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = coveragesParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = coveragesParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = coveragesParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = coveragesParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = coveragesParams.getSourceRankingsAlexaRankMin();
@@ -196,47 +221,72 @@ public class DefaultApi {
 
 
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
-        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
-        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.format[]", mediaImagesFormat));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -261,9 +311,8 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "story_language", storyLanguage));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "per_page", perPage));
 
-
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -292,24 +341,36 @@ public class DefaultApi {
 
         // setting builder variables
         List<Long> id = histogramsParams.getId();
+        List<Long> notId = histogramsParams.getNotId();
         String title = histogramsParams.getTitle();
         String body = histogramsParams.getBody();
         String text = histogramsParams.getText();
         List<String> language = histogramsParams.getLanguage();
+        List<String> notLanguage = histogramsParams.getNotLanguage();
         String publishedAtStart = histogramsParams.getPublishedAtStart();
         String publishedAtEnd = histogramsParams.getPublishedAtEnd();
         String categoriesTaxonomy = histogramsParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = histogramsParams.getCategoriesConfident();
         List<String> categoriesId = histogramsParams.getCategoriesId();
+        List<String> notCategoriesId = histogramsParams.getNotCategoriesId();
         List<Integer> categoriesLevel = histogramsParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = histogramsParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = histogramsParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = histogramsParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = histogramsParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = histogramsParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = histogramsParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = histogramsParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = histogramsParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = histogramsParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = histogramsParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = histogramsParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = histogramsParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = histogramsParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = histogramsParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = histogramsParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = histogramsParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = histogramsParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = histogramsParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = histogramsParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = histogramsParams.getMediaImagesWidthMin();
@@ -319,20 +380,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = histogramsParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = histogramsParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = histogramsParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = histogramsParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = histogramsParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = histogramsParams.getMediaVideosCountMax();
         List<Integer> authorId = histogramsParams.getAuthorId();
+        List<Integer> notAuthorId = histogramsParams.getNotAuthorId();
         String authorName = histogramsParams.getAuthorName();
+        String notAuthorName = histogramsParams.getNotAuthorName();
         List<Integer> sourceId = histogramsParams.getSourceId();
+        List<Integer> notSourceId = histogramsParams.getNotSourceId();
         List<String> sourceName = histogramsParams.getSourceName();
+        List<String> notSourceName = histogramsParams.getNotSourceName();
         List<String> sourceDomain = histogramsParams.getSourceDomain();
+        List<String> notSourceDomain = histogramsParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = histogramsParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = histogramsParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = histogramsParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = histogramsParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = histogramsParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = histogramsParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = histogramsParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = histogramsParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = histogramsParams.getSourceScopesState();
+        List<String> notSourceScopesState = histogramsParams.getNotSourceScopesState();
         List<String> sourceScopesCity = histogramsParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = histogramsParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = histogramsParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = histogramsParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = histogramsParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = histogramsParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = histogramsParams.getSourceRankingsAlexaRankMin();
@@ -360,24 +434,36 @@ public class DefaultApi {
         List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
@@ -387,20 +473,33 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -421,7 +520,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -441,7 +540,7 @@ public class DefaultApi {
      * List related stories
      * This endpoint is used for finding related stories based on the parameters provided. The maximum number of related stories returned is 100.
      *
-     * @param relatedStoriesParams Related Stories parameters
+     * @param relatedStoriesParams RelatedStories parameters
      * @return RelatedStories
      * @throws ApiException if fails to make API call
      */
@@ -450,24 +549,36 @@ public class DefaultApi {
 
         // setting builder variables
         List<Long> id = relatedStoriesParams.getId();
+        List<Long> notId = relatedStoriesParams.getNotId();
         String title = relatedStoriesParams.getTitle();
         String body = relatedStoriesParams.getBody();
         String text = relatedStoriesParams.getText();
         List<String> language = relatedStoriesParams.getLanguage();
+        List<String> notLanguage = relatedStoriesParams.getNotLanguage();
         String publishedAtStart = relatedStoriesParams.getPublishedAtStart();
         String publishedAtEnd = relatedStoriesParams.getPublishedAtEnd();
         String categoriesTaxonomy = relatedStoriesParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = relatedStoriesParams.getCategoriesConfident();
         List<String> categoriesId = relatedStoriesParams.getCategoriesId();
+        List<String> notCategoriesId = relatedStoriesParams.getNotCategoriesId();
         List<Integer> categoriesLevel = relatedStoriesParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = relatedStoriesParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = relatedStoriesParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = relatedStoriesParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = relatedStoriesParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = relatedStoriesParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = relatedStoriesParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = relatedStoriesParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = relatedStoriesParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = relatedStoriesParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = relatedStoriesParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = relatedStoriesParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = relatedStoriesParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = relatedStoriesParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = relatedStoriesParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = relatedStoriesParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = relatedStoriesParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = relatedStoriesParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = relatedStoriesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = relatedStoriesParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = relatedStoriesParams.getMediaImagesWidthMin();
@@ -477,20 +588,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = relatedStoriesParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = relatedStoriesParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = relatedStoriesParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = relatedStoriesParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = relatedStoriesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = relatedStoriesParams.getMediaVideosCountMax();
         List<Integer> authorId = relatedStoriesParams.getAuthorId();
+        List<Integer> notAuthorId = relatedStoriesParams.getNotAuthorId();
         String authorName = relatedStoriesParams.getAuthorName();
+        String notAuthorName = relatedStoriesParams.getNotAuthorName();
         List<Integer> sourceId = relatedStoriesParams.getSourceId();
+        List<Integer> notSourceId = relatedStoriesParams.getNotSourceId();
         List<String> sourceName = relatedStoriesParams.getSourceName();
+        List<String> notSourceName = relatedStoriesParams.getNotSourceName();
         List<String> sourceDomain = relatedStoriesParams.getSourceDomain();
+        List<String> notSourceDomain = relatedStoriesParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = relatedStoriesParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = relatedStoriesParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = relatedStoriesParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = relatedStoriesParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = relatedStoriesParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = relatedStoriesParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = relatedStoriesParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = relatedStoriesParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = relatedStoriesParams.getSourceScopesState();
+        List<String> notSourceScopesState = relatedStoriesParams.getNotSourceScopesState();
         List<String> sourceScopesCity = relatedStoriesParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = relatedStoriesParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = relatedStoriesParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = relatedStoriesParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = relatedStoriesParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = relatedStoriesParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = relatedStoriesParams.getSourceRankingsAlexaRankMin();
@@ -525,47 +649,72 @@ public class DefaultApi {
 
 
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
-        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMax));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.width.max", mediaImagesWidthMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.min", mediaImagesHeightMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.height.max", mediaImagesHeightMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
-        localVarFormParams.addAll(apiClient.parameterToPairs("", "media.images.format[]", mediaImagesFormat));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarFormParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarFormParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarFormParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -591,7 +740,7 @@ public class DefaultApi {
         localVarFormParams.addAll(apiClient.parameterToPairs("", "per_page", perPage));
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -620,24 +769,36 @@ public class DefaultApi {
 
         // setting builder variables
         List<Long> id = storiesParams.getId();
+        List<Long> notId = storiesParams.getNotId();
         String title = storiesParams.getTitle();
         String body = storiesParams.getBody();
         String text = storiesParams.getText();
         List<String> language = storiesParams.getLanguage();
+        List<String> notLanguage = storiesParams.getNotLanguage();
         String publishedAtStart = storiesParams.getPublishedAtStart();
         String publishedAtEnd = storiesParams.getPublishedAtEnd();
         String categoriesTaxonomy = storiesParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = storiesParams.getCategoriesConfident();
         List<String> categoriesId = storiesParams.getCategoriesId();
+        List<String> notCategoriesId = storiesParams.getNotCategoriesId();
         List<Integer> categoriesLevel = storiesParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = storiesParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = storiesParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = storiesParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = storiesParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = storiesParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = storiesParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = storiesParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = storiesParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = storiesParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = storiesParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = storiesParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = storiesParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = storiesParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = storiesParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = storiesParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = storiesParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = storiesParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = storiesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = storiesParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = storiesParams.getMediaImagesWidthMin();
@@ -647,20 +808,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = storiesParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = storiesParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = storiesParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = storiesParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = storiesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = storiesParams.getMediaVideosCountMax();
         List<Integer> authorId = storiesParams.getAuthorId();
+        List<Integer> notAuthorId = storiesParams.getNotAuthorId();
         String authorName = storiesParams.getAuthorName();
+        String notAuthorName = storiesParams.getNotAuthorName();
         List<Integer> sourceId = storiesParams.getSourceId();
+        List<Integer> notSourceId = storiesParams.getNotSourceId();
         List<String> sourceName = storiesParams.getSourceName();
+        List<String> notSourceName = storiesParams.getNotSourceName();
         List<String> sourceDomain = storiesParams.getSourceDomain();
+        List<String> notSourceDomain = storiesParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = storiesParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = storiesParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = storiesParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = storiesParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = storiesParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = storiesParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = storiesParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = storiesParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = storiesParams.getSourceScopesState();
+        List<String> notSourceScopesState = storiesParams.getNotSourceScopesState();
         List<String> sourceScopesCity = storiesParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = storiesParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = storiesParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = storiesParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = storiesParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = storiesParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = storiesParams.getSourceRankingsAlexaRankMin();
@@ -691,24 +865,36 @@ public class DefaultApi {
         List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
@@ -718,20 +904,33 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -755,7 +954,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -775,7 +974,7 @@ public class DefaultApi {
      * List time series
      * This endpoint is used for getting time series by stories.
      *
-     * @param timeSeriesParams Time Series parameters
+     * @param timeSeriesParams TimeSeriesList parameters
      * @return TimeSeriesList
      * @throws ApiException if fails to make API call
      */
@@ -784,22 +983,34 @@ public class DefaultApi {
 
         // setting builder variables
         List<Long> id = timeSeriesParams.getId();
+        List<Long> notId = timeSeriesParams.getNotId();
         String title = timeSeriesParams.getTitle();
         String body = timeSeriesParams.getBody();
         String text = timeSeriesParams.getText();
         List<String> language = timeSeriesParams.getLanguage();
+        List<String> notLanguage = timeSeriesParams.getNotLanguage();
         String categoriesTaxonomy = timeSeriesParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = timeSeriesParams.getCategoriesConfident();
         List<String> categoriesId = timeSeriesParams.getCategoriesId();
+        List<String> notCategoriesId = timeSeriesParams.getNotCategoriesId();
         List<Integer> categoriesLevel = timeSeriesParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = timeSeriesParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = timeSeriesParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = timeSeriesParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = timeSeriesParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = timeSeriesParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = timeSeriesParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = timeSeriesParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = timeSeriesParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = timeSeriesParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = timeSeriesParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = timeSeriesParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = timeSeriesParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = timeSeriesParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = timeSeriesParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = timeSeriesParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = timeSeriesParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = timeSeriesParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = timeSeriesParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = timeSeriesParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = timeSeriesParams.getMediaImagesWidthMin();
@@ -809,20 +1020,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = timeSeriesParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = timeSeriesParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = timeSeriesParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = timeSeriesParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = timeSeriesParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = timeSeriesParams.getMediaVideosCountMax();
         List<Integer> authorId = timeSeriesParams.getAuthorId();
+        List<Integer> notAuthorId = timeSeriesParams.getNotAuthorId();
         String authorName = timeSeriesParams.getAuthorName();
+        String notAuthorName = timeSeriesParams.getNotAuthorName();
         List<Integer> sourceId = timeSeriesParams.getSourceId();
+        List<Integer> notSourceId = timeSeriesParams.getNotSourceId();
         List<String> sourceName = timeSeriesParams.getSourceName();
+        List<String> notSourceName = timeSeriesParams.getNotSourceName();
         List<String> sourceDomain = timeSeriesParams.getSourceDomain();
+        List<String> notSourceDomain = timeSeriesParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = timeSeriesParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = timeSeriesParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = timeSeriesParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = timeSeriesParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = timeSeriesParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = timeSeriesParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = timeSeriesParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = timeSeriesParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = timeSeriesParams.getSourceScopesState();
+        List<String> notSourceScopesState = timeSeriesParams.getNotSourceScopesState();
         List<String> sourceScopesCity = timeSeriesParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = timeSeriesParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = timeSeriesParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = timeSeriesParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = timeSeriesParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = timeSeriesParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = timeSeriesParams.getSourceRankingsAlexaRankMin();
@@ -849,22 +1073,34 @@ public class DefaultApi {
         List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
@@ -874,20 +1110,33 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -907,7 +1156,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 
@@ -935,25 +1184,38 @@ public class DefaultApi {
         Object localVarPostBody = null;
 
         // setting builder variables
+        String field = trendsParams.getField();
         List<Long> id = trendsParams.getId();
+        List<Long> notId = trendsParams.getNotId();
         String title = trendsParams.getTitle();
         String body = trendsParams.getBody();
         String text = trendsParams.getText();
         List<String> language = trendsParams.getLanguage();
+        List<String> notLanguage = trendsParams.getNotLanguage();
         String publishedAtStart = trendsParams.getPublishedAtStart();
         String publishedAtEnd = trendsParams.getPublishedAtEnd();
         String categoriesTaxonomy = trendsParams.getCategoriesTaxonomy();
         Boolean categoriesConfident = trendsParams.getCategoriesConfident();
         List<String> categoriesId = trendsParams.getCategoriesId();
+        List<String> notCategoriesId = trendsParams.getNotCategoriesId();
         List<Integer> categoriesLevel = trendsParams.getCategoriesLevel();
+        List<Integer> notCategoriesLevel = trendsParams.getNotCategoriesLevel();
         List<String> entitiesTitleText = trendsParams.getEntitiesTitleText();
+        List<String> notEntitiesTitleText = trendsParams.getNotEntitiesTitleText();
         List<String> entitiesTitleType = trendsParams.getEntitiesTitleType();
+        List<String> notEntitiesTitleType = trendsParams.getNotEntitiesTitleType();
         List<String> entitiesTitleLinksDbpedia = trendsParams.getEntitiesTitleLinksDbpedia();
+        List<String> notEntitiesTitleLinksDbpedia = trendsParams.getNotEntitiesTitleLinksDbpedia();
         List<String> entitiesBodyText = trendsParams.getEntitiesBodyText();
+        List<String> notEntitiesBodyText = trendsParams.getNotEntitiesBodyText();
         List<String> entitiesBodyType = trendsParams.getEntitiesBodyType();
+        List<String> notEntitiesBodyType = trendsParams.getNotEntitiesBodyType();
         List<String> entitiesBodyLinksDbpedia = trendsParams.getEntitiesBodyLinksDbpedia();
+        List<String> notEntitiesBodyLinksDbpedia = trendsParams.getNotEntitiesBodyLinksDbpedia();
         String sentimentTitlePolarity = trendsParams.getSentimentTitlePolarity();
+        String notSentimentTitlePolarity = trendsParams.getNotSentimentTitlePolarity();
         String sentimentBodyPolarity = trendsParams.getSentimentBodyPolarity();
+        String notSentimentBodyPolarity = trendsParams.getNotSentimentBodyPolarity();
         Integer mediaImagesCountMin = trendsParams.getMediaImagesCountMin();
         Integer mediaImagesCountMax = trendsParams.getMediaImagesCountMax();
         Integer mediaImagesWidthMin = trendsParams.getMediaImagesWidthMin();
@@ -963,20 +1225,33 @@ public class DefaultApi {
         Integer mediaImagesContentLengthMin = trendsParams.getMediaImagesContentLengthMin();
         Integer mediaImagesContentLengthMax = trendsParams.getMediaImagesContentLengthMax();
         List<String> mediaImagesFormat = trendsParams.getMediaImagesFormat();
+        List<String> notMediaImagesFormat = trendsParams.getNotMediaImagesFormat();
         Integer mediaVideosCountMin = trendsParams.getMediaVideosCountMin();
         Integer mediaVideosCountMax = trendsParams.getMediaVideosCountMax();
         List<Integer> authorId = trendsParams.getAuthorId();
+        List<Integer> notAuthorId = trendsParams.getNotAuthorId();
         String authorName = trendsParams.getAuthorName();
+        String notAuthorName = trendsParams.getNotAuthorName();
         List<Integer> sourceId = trendsParams.getSourceId();
+        List<Integer> notSourceId = trendsParams.getNotSourceId();
         List<String> sourceName = trendsParams.getSourceName();
+        List<String> notSourceName = trendsParams.getNotSourceName();
         List<String> sourceDomain = trendsParams.getSourceDomain();
+        List<String> notSourceDomain = trendsParams.getNotSourceDomain();
         List<String> sourceLocationsCountry = trendsParams.getSourceLocationsCountry();
+        List<String> notSourceLocationsCountry = trendsParams.getNotSourceLocationsCountry();
         List<String> sourceLocationsState = trendsParams.getSourceLocationsState();
+        List<String> notSourceLocationsState = trendsParams.getNotSourceLocationsState();
         List<String> sourceLocationsCity = trendsParams.getSourceLocationsCity();
+        List<String> notSourceLocationsCity = trendsParams.getNotSourceLocationsCity();
         List<String> sourceScopesCountry = trendsParams.getSourceScopesCountry();
+        List<String> notSourceScopesCountry = trendsParams.getNotSourceScopesCountry();
         List<String> sourceScopesState = trendsParams.getSourceScopesState();
+        List<String> notSourceScopesState = trendsParams.getNotSourceScopesState();
         List<String> sourceScopesCity = trendsParams.getSourceScopesCity();
+        List<String> notSourceScopesCity = trendsParams.getNotSourceScopesCity();
         List<String> sourceScopesLevel = trendsParams.getSourceScopesLevel();
+        List<String> notSourceScopesLevel = trendsParams.getNotSourceScopesLevel();
         Integer sourceLinksInCountMin = trendsParams.getSourceLinksInCountMin();
         Integer sourceLinksInCountMax = trendsParams.getSourceLinksInCountMax();
         Integer sourceRankingsAlexaRankMin = trendsParams.getSourceRankingsAlexaRankMin();
@@ -990,7 +1265,11 @@ public class DefaultApi {
         Integer socialSharesCountLinkedinMax = trendsParams.getSocialSharesCountLinkedinMax();
         Integer socialSharesCountRedditMin = trendsParams.getSocialSharesCountRedditMin();
         Integer socialSharesCountRedditMax = trendsParams.getSocialSharesCountRedditMax();
-        String field = trendsParams.getField();
+
+        // verify the required parameter 'field' is set
+        if (field == null) {
+            throw new ApiException(400, "Missing the required parameter 'field' when calling listTrends");
+        }
 
         // create path and map variables
         String localVarPath = "/trends".replaceAll("\\{format\\}", "json");
@@ -1001,24 +1280,36 @@ public class DefaultApi {
         List<Pair> localVarFormParams = new ArrayList<Pair>();
 
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "id[]", id));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!id[]", notId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "title", title));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "body", body));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "text", text));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "language[]", language));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!language[]", notLanguage));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.start", publishedAtStart));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "published_at.end", publishedAtEnd));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.taxonomy", categoriesTaxonomy));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "categories.confident", categoriesConfident));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.id[]", categoriesId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.id[]", notCategoriesId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "categories.level[]", categoriesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!categories.level[]", notCategoriesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.text[]", entitiesTitleText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.text[]", notEntitiesTitleText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.type[]", entitiesTitleType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.type[]", notEntitiesTitleType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.title.links.dbpedia[]", entitiesTitleLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.title.links.dbpedia[]", notEntitiesTitleLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.text[]", entitiesBodyText));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.text[]", notEntitiesBodyText));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.type[]", entitiesBodyType));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.type[]", notEntitiesBodyType));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "entities.body.links.dbpedia[]", entitiesBodyLinksDbpedia));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!entities.body.links.dbpedia[]", notEntitiesBodyLinksDbpedia));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.title.polarity", sentimentTitlePolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.title.polarity", notSentimentTitlePolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "sentiment.body.polarity", sentimentBodyPolarity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!sentiment.body.polarity", notSentimentBodyPolarity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.min", mediaImagesCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.count.max", mediaImagesCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.width.min", mediaImagesWidthMin));
@@ -1028,20 +1319,33 @@ public class DefaultApi {
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.min", mediaImagesContentLengthMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.images.content_length.max", mediaImagesContentLengthMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "media.images.format[]", mediaImagesFormat));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!media.images.format[]", notMediaImagesFormat));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.min", mediaVideosCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "media.videos.count.max", mediaVideosCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "author.id[]", authorId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!author.id[]", notAuthorId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "author.name", authorName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("", "!author.name", notAuthorName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.id[]", sourceId));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.id[]", notSourceId));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.name[]", sourceName));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.name[]", notSourceName));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.domain[]", sourceDomain));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.domain[]", notSourceDomain));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.country[]", sourceLocationsCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.country[]", notSourceLocationsCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.state[]", sourceLocationsState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.state[]", notSourceLocationsState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.locations.city[]", sourceLocationsCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.locations.city[]", notSourceLocationsCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.country[]", sourceScopesCountry));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.country[]", notSourceScopesCountry));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.state[]", sourceScopesState));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.state[]", notSourceScopesState));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.city[]", sourceScopesCity));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.city[]", notSourceScopesCity));
         localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "source.scopes.level[]", sourceScopesLevel));
+        localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "!source.scopes.level[]", notSourceScopesLevel));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.min", sourceLinksInCountMin));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.links_in_count.max", sourceLinksInCountMax));
         localVarQueryParams.addAll(apiClient.parameterToPairs("", "source.rankings.alexa.rank.min", sourceRankingsAlexaRankMin));
@@ -1059,7 +1363,7 @@ public class DefaultApi {
 
 
         final String[] localVarAccepts = {
-                "application/json"
+                "application/json", "text/xml"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
 

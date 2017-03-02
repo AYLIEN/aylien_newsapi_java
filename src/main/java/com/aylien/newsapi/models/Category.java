@@ -17,7 +17,6 @@
 
 package com.aylien.newsapi.models;
 
-import com.aylien.newsapi.models.CategoryLinks;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;

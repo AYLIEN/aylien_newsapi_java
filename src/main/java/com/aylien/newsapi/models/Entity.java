@@ -17,7 +17,6 @@
 
 package com.aylien.newsapi.models;
 
-import com.aylien.newsapi.models.EntityLinks;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -71,8 +70,8 @@ public class Entity {
 
     /**
      * The entity score
-     * minimum: 0.0
-     * maximum: 1.0
+     * minimum: 0
+     * maximum: 1
      *
      * @return score
      **/
