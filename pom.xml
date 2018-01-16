@@ -5,7 +5,7 @@
     <artifactId>client</artifactId>
     <packaging>jar</packaging>
     <name>client</name>
-    <version>0.4.0</version>
+    <version>0.5.0</version>
     <url>https://newsapi.aylien.com/</url>
     <description>AYLIEN&#39;s officially supported Java client library for accessing News API</description>
     <scm>
@@ -27,9 +27,8 @@
 
     <developers>
         <developer>
-            <name>Hamed Ramezanian Nik</name>
-            <email>hamed.r.nik@gmail.com</email>
-            <organization>AYLIEN, Inc.</organization>
+            <email>info@aylien.com</email>
+            <organization>Aylien Limited</organization>
             <organizationUrl>http://aylien.com/</organizationUrl>
         </developer>
     </developers>
