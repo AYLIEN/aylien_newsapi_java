@@ -19,6 +19,7 @@ package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
@@ -221,16 +222,21 @@ public class Media {
         @JsonCreator
         public static TypeEnum fromValue(String text) {
             for (TypeEnum b : TypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
+                if (b.value.equalsIgnoreCase(text)) {
                     return b;
                 }
             }
             return null;
         }
 
+        @JsonValue
+        public String toValue() {
+            return value;
+        }
+
         @Override
         public String toString() {
-            return String.valueOf(value);
+            return value;
         }
     }
 
@@ -267,16 +273,21 @@ public class Media {
         @JsonCreator
         public static FormatEnum fromValue(String text) {
             for (FormatEnum b : FormatEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
+                if (b.value.equalsIgnoreCase(text)) {
                     return b;
                 }
             }
             return null;
         }
 
+        @JsonValue
+        public String toValue() {
+            return value;
+        }
+
         @Override
         public String toString() {
-            return String.valueOf(value);
+            return value;
         }
     }
 

@@ -19,6 +19,7 @@ package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
@@ -220,16 +221,21 @@ public class Category {
         @JsonCreator
         public static TaxonomyEnum fromValue(String text) {
             for (TaxonomyEnum b : TaxonomyEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
+                if (b.value.equalsIgnoreCase(text)) {
                     return b;
                 }
             }
             return null;
         }
 
+        @JsonValue
+        public String toValue() {
+            return value;
+        }
+
         @Override
         public String toString() {
-            return String.valueOf(value);
+            return value;
         }
     }
 

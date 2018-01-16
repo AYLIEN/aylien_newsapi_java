@@ -19,6 +19,8 @@ package com.aylien.newsapi.models;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
@@ -132,16 +134,21 @@ public class Sentiment {
         @JsonCreator
         public static PolarityEnum fromValue(String text) {
             for (PolarityEnum b : PolarityEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
+                if (b.value.equalsIgnoreCase(text)) {
                     return b;
                 }
             }
             return null;
         }
 
+        @JsonValue
+        public String toValue() {
+            return value;
+        }
+
         @Override
         public String toString() {
-            return String.valueOf(value);
+            return value;
         }
     }
 
