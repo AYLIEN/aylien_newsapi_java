@@ -24,3 +24,4 @@ build
 *.iml
 release.properties
 pom.xml.releaseBackup
+settings.xml
