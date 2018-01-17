@@ -20,7 +20,6 @@ package com.aylien.newsapi.models;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.util.Objects;
