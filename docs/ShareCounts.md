@@ -1,7 +1,9 @@
 
+
 # ShareCounts
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **facebook** | [**List&lt;ShareCount&gt;**](ShareCount.md) | Facebook shares count |  [optional]

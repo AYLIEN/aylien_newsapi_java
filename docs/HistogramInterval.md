@@ -1,7 +1,9 @@
 
+
 # HistogramInterval
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bin** | **Integer** | Histogram bin |  [optional]

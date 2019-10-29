@@ -1,35 +1,39 @@
 apply plugin: 'idea'
 apply plugin: 'eclipse'
+apply plugin: 'java'
 
 group = 'com.aylien.newsapi'
-version = '0.4.0'
+version = '2.0.0'
 
 buildscript {
     repositories {
+        mavenCentral()
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.5.+'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.3'
+        classpath 'com.android.tools.build:gradle:2.3.+'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
 
 repositories {
     jcenter()
 }
+sourceSets {
+    main.java.srcDirs = ['src/main/java']
+}
 
-
-if (hasProperty('target') && target == 'android') {
+if(hasProperty('target') && target == 'android') {
 
     apply plugin: 'com.android.library'
     apply plugin: 'com.github.dcendents.android-maven'
 
     android {
-        compileSdkVersion 23
-        buildToolsVersion '23.0.2'
+        compileSdkVersion 25
+        buildToolsVersion '25.0.2'
         defaultConfig {
             minSdkVersion 14
-            targetSdkVersion 23
+            targetSdkVersion 25
         }
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_7
@@ -87,30 +91,24 @@ if (hasProperty('target') && target == 'android') {
         }
     }
 
-    task execute(type: JavaExec) {
-        main = System.getProperty('mainClass')
-        classpath = sourceSets.main.runtimeClasspath
+    task execute(type:JavaExec) {
+       main = System.getProperty('mainClass')
+       classpath = sourceSets.main.runtimeClasspath
     }
 }
 
-ext {
-    swagger_annotations_version = "1.5.8"
-    jackson_version = "2.7.5"
-    jersey_version = "1.19.1"
-    jodatime_version = "2.9.4"
-    junit_version = "4.12"
+dependencies {
+    compile 'io.swagger:swagger-annotations:1.5.22'
+    compile "com.google.code.findbugs:jsr305:3.0.2"
+    compile 'com.squareup.okhttp3:okhttp:3.14.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.14.2'
+    compile 'com.google.code.gson:gson:2.8.5'
+    compile 'io.gsonfire:gson-fire:1.8.3'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+    compile 'org.threeten:threetenbp:1.3.5'
+    testCompile 'junit:junit:4.12'
 }
 
-dependencies {
-    compile "io.swagger:swagger-annotations:$swagger_annotations_version"
-    compile "com.sun.jersey:jersey-client:$jersey_version"
-    compile "com.sun.jersey.contribs:jersey-multipart:$jersey_version"
-    compile "com.fasterxml.jackson.core:jackson-core:$jackson_version"
-    compile "com.fasterxml.jackson.core:jackson-annotations:$jackson_version"
-    compile "com.fasterxml.jackson.core:jackson-databind:$jackson_version"
-    compile "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jackson_version"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-joda:$jackson_version"
-    compile "joda-time:joda-time:$jodatime_version"
-    compile "com.brsanthu:migbase64:2.2"
-    testCompile "junit:junit:$junit_version"
+javadoc {
+    options.tags = [ "http.response.details:a:Http Response Details" ]
 }
