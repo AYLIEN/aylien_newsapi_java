@@ -29,7 +29,7 @@ import java.io.IOException;
  * Translations of the story. Each language has it&#39;s own key and object
  */
 @ApiModel(description = "Translations of the story. Each language has it's own key and object")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:35:56.141Z[Europe/Dublin]")
 public class StoryTranslations {
   public static final String SERIALIZED_NAME_EN = "en";
   @SerializedName(SERIALIZED_NAME_EN)

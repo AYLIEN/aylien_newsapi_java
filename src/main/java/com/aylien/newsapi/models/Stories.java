@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Stories
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:35:56.141Z[Europe/Dublin]")
 public class Stories {
   public static final String SERIALIZED_NAME_NEXT_PAGE_CURSOR = "next_page_cursor";
   @SerializedName(SERIALIZED_NAME_NEXT_PAGE_CURSOR)

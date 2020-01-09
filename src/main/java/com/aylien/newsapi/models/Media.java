@@ -29,7 +29,7 @@ import java.io.IOException;
 /**
  * Media
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:35:56.141Z[Europe/Dublin]")
 public class Media {
   public static final String SERIALIZED_NAME_CONTENT_LENGTH = "content_length";
   @SerializedName(SERIALIZED_NAME_CONTENT_LENGTH)

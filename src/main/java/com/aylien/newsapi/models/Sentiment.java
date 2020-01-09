@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Sentiment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:35:56.141Z[Europe/Dublin]")
 public class Sentiment {
   public static final String SERIALIZED_NAME_POLARITY = "polarity";
   @SerializedName(SERIALIZED_NAME_POLARITY)
