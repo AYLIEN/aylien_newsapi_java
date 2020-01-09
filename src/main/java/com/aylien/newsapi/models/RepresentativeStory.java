@@ -28,7 +28,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * RepresentativeStory
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class RepresentativeStory {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -65,7 +65,6 @@ public class RepresentativeStory {
   }
 
 
-
   public void setId(Long id) {
     this.id = id;
   }
@@ -87,7 +86,6 @@ public class RepresentativeStory {
   public String getPermalink() {
     return permalink;
   }
-
 
 
   public void setPermalink(String permalink) {
@@ -113,7 +111,6 @@ public class RepresentativeStory {
   }
 
 
-
   public void setPublishedAt(OffsetDateTime publishedAt) {
     this.publishedAt = publishedAt;
   }
@@ -135,7 +132,6 @@ public class RepresentativeStory {
   public String getTitle() {
     return title;
   }
-
 
 
   public void setTitle(String title) {

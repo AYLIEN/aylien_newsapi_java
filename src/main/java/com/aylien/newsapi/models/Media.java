@@ -15,6 +15,8 @@ package com.aylien.newsapi.models;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.aylien.newsapi.models.MediaFormat;
+import com.aylien.newsapi.models.MediaType;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,133 +29,23 @@ import java.io.IOException;
 /**
  * Media
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Media {
   public static final String SERIALIZED_NAME_CONTENT_LENGTH = "content_length";
   @SerializedName(SERIALIZED_NAME_CONTENT_LENGTH)
   private Integer contentLength;
 
-  /**
-   * The format of media
-   */
-  @JsonAdapter(FormatEnum.Adapter.class)
-  public enum FormatEnum {
-    BMP("BMP"),
-    
-    GIF("GIF"),
-    
-    JPEG("JPEG"),
-    
-    PNG("PNG"),
-    
-    TIFF("TIFF"),
-    
-    PSD("PSD"),
-    
-    ICO("ICO"),
-    
-    CUR("CUR"),
-    
-    WEBP("WEBP"),
-    
-    SVG("SVG");
-
-    private String value;
-
-    FormatEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static FormatEnum fromValue(String value) {
-      for (FormatEnum b : FormatEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<FormatEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final FormatEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public FormatEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return FormatEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_FORMAT = "format";
   @SerializedName(SERIALIZED_NAME_FORMAT)
-  private FormatEnum format;
+  private MediaFormat format;
 
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)
   private Integer height;
 
-  /**
-   * The type of media
-   */
-  @JsonAdapter(TypeEnum.Adapter.class)
-  public enum TypeEnum {
-    IMAGE("image"),
-    
-    VIDEO("video");
-
-    private String value;
-
-    TypeEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TypeEnum fromValue(String value) {
-      for (TypeEnum b : TypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TypeEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  private TypeEnum type;
+  private MediaType type;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -182,32 +74,30 @@ public class Media {
   }
 
 
-
   public void setContentLength(Integer contentLength) {
     this.contentLength = contentLength;
   }
 
 
-  public Media format(FormatEnum format) {
+  public Media format(MediaFormat format) {
     
     this.format = format;
     return this;
   }
 
    /**
-   * The format of media
+   * Get format
    * @return format
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The format of media")
+  @ApiModelProperty(value = "")
 
-  public FormatEnum getFormat() {
+  public MediaFormat getFormat() {
     return format;
   }
 
 
-
-  public void setFormat(FormatEnum format) {
+  public void setFormat(MediaFormat format) {
     this.format = format;
   }
 
@@ -230,32 +120,30 @@ public class Media {
   }
 
 
-
   public void setHeight(Integer height) {
     this.height = height;
   }
 
 
-  public Media type(TypeEnum type) {
+  public Media type(MediaType type) {
     
     this.type = type;
     return this;
   }
 
    /**
-   * The type of media
+   * Get type
    * @return type
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The type of media")
+  @ApiModelProperty(value = "")
 
-  public TypeEnum getType() {
+  public MediaType getType() {
     return type;
   }
 
 
-
-  public void setType(TypeEnum type) {
+  public void setType(MediaType type) {
     this.type = type;
   }
 
@@ -276,7 +164,6 @@ public class Media {
   public String getUrl() {
     return url;
   }
-
 
 
   public void setUrl(String url) {
@@ -300,7 +187,6 @@ public class Media {
   public Integer getWidth() {
     return width;
   }
-
 
 
   public void setWidth(Integer width) {

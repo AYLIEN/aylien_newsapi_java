@@ -28,7 +28,7 @@ import java.io.IOException;
 /**
  * Sentiments
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Sentiments {
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -57,7 +57,6 @@ public class Sentiments {
   }
 
 
-
   public void setBody(Sentiment body) {
     this.body = body;
   }
@@ -79,7 +78,6 @@ public class Sentiments {
   public Sentiment getTitle() {
     return title;
   }
-
 
 
   public void setTitle(Sentiment title) {

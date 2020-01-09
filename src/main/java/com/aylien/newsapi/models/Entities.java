@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Entities
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Entities {
   public static final String SERIALIZED_NAME_BODY = "body";
   @SerializedName(SERIALIZED_NAME_BODY)
@@ -67,7 +67,6 @@ public class Entities {
   }
 
 
-
   public void setBody(List<Entity> body) {
     this.body = body;
   }
@@ -97,7 +96,6 @@ public class Entities {
   public List<Entity> getTitle() {
     return title;
   }
-
 
 
   public void setTitle(List<Entity> title) {

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Trend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Trend {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
@@ -56,7 +56,6 @@ public class Trend {
   }
 
 
-
   public void setCount(Integer count) {
     this.count = count;
   }
@@ -78,7 +77,6 @@ public class Trend {
   public String getValue() {
     return value;
   }
-
 
 
   public void setValue(String value) {

@@ -16,6 +16,7 @@ package com.aylien.newsapi.models;
 import java.util.Objects;
 import java.util.Arrays;
 import com.aylien.newsapi.models.CategoryLinks;
+import com.aylien.newsapi.models.CategoryTaxonomy;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -28,7 +29,7 @@ import java.io.IOException;
 /**
  * Category
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Category {
   public static final String SERIALIZED_NAME_CONFIDENT = "confident";
   @SerializedName(SERIALIZED_NAME_CONFIDENT)
@@ -50,56 +51,9 @@ public class Category {
   @SerializedName(SERIALIZED_NAME_SCORE)
   private Double score;
 
-  /**
-   * The taxonomy of the category
-   */
-  @JsonAdapter(TaxonomyEnum.Adapter.class)
-  public enum TaxonomyEnum {
-    IAB_QAG("iab-qag"),
-    
-    IPTC_SUBJECTCODE("iptc-subjectcode");
-
-    private String value;
-
-    TaxonomyEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static TaxonomyEnum fromValue(String value) {
-      for (TaxonomyEnum b : TaxonomyEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<TaxonomyEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final TaxonomyEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public TaxonomyEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return TaxonomyEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_TAXONOMY = "taxonomy";
   @SerializedName(SERIALIZED_NAME_TAXONOMY)
-  private TaxonomyEnum taxonomy;
+  private CategoryTaxonomy taxonomy;
 
 
   public Category confident(Boolean confident) {
@@ -118,7 +72,6 @@ public class Category {
   public Boolean getConfident() {
     return confident;
   }
-
 
 
   public void setConfident(Boolean confident) {
@@ -144,7 +97,6 @@ public class Category {
   }
 
 
-
   public void setId(String id) {
     this.id = id;
   }
@@ -166,7 +118,6 @@ public class Category {
   public Integer getLevel() {
     return level;
   }
-
 
 
   public void setLevel(Integer level) {
@@ -192,7 +143,6 @@ public class Category {
   }
 
 
-
   public void setLinks(CategoryLinks links) {
     this.links = links;
   }
@@ -216,32 +166,30 @@ public class Category {
   }
 
 
-
   public void setScore(Double score) {
     this.score = score;
   }
 
 
-  public Category taxonomy(TaxonomyEnum taxonomy) {
+  public Category taxonomy(CategoryTaxonomy taxonomy) {
     
     this.taxonomy = taxonomy;
     return this;
   }
 
    /**
-   * The taxonomy of the category
+   * Get taxonomy
    * @return taxonomy
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The taxonomy of the category")
+  @ApiModelProperty(value = "")
 
-  public TaxonomyEnum getTaxonomy() {
+  public CategoryTaxonomy getTaxonomy() {
     return taxonomy;
   }
 
 
-
-  public void setTaxonomy(TaxonomyEnum taxonomy) {
+  public void setTaxonomy(CategoryTaxonomy taxonomy) {
     this.taxonomy = taxonomy;
   }
 

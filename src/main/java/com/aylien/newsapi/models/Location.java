@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Location
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Location {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
@@ -60,7 +60,6 @@ public class Location {
   }
 
 
-
   public void setCity(String city) {
     this.city = city;
   }
@@ -84,7 +83,6 @@ public class Location {
   }
 
 
-
   public void setCountry(String country) {
     this.country = country;
   }
@@ -106,7 +104,6 @@ public class Location {
   public String getState() {
     return state;
   }
-
 
 
   public void setState(String state) {

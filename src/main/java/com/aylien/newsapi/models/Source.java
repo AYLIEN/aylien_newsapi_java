@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Source
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Source {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
@@ -97,7 +97,6 @@ public class Source {
   }
 
 
-
   public void setDescription(String description) {
     this.description = description;
   }
@@ -119,7 +118,6 @@ public class Source {
   public String getDomain() {
     return domain;
   }
-
 
 
   public void setDomain(String domain) {
@@ -145,7 +143,6 @@ public class Source {
   }
 
 
-
   public void setHomePageUrl(String homePageUrl) {
     this.homePageUrl = homePageUrl;
   }
@@ -169,7 +166,6 @@ public class Source {
   }
 
 
-
   public void setId(Integer id) {
     this.id = id;
   }
@@ -191,7 +187,6 @@ public class Source {
   public Integer getLinksInCount() {
     return linksInCount;
   }
-
 
 
   public void setLinksInCount(Integer linksInCount) {
@@ -225,7 +220,6 @@ public class Source {
   }
 
 
-
   public void setLocations(List<Location> locations) {
     this.locations = locations;
   }
@@ -247,7 +241,6 @@ public class Source {
   public String getLogoUrl() {
     return logoUrl;
   }
-
 
 
   public void setLogoUrl(String logoUrl) {
@@ -273,7 +266,6 @@ public class Source {
   }
 
 
-
   public void setName(String name) {
     this.name = name;
   }
@@ -295,7 +287,6 @@ public class Source {
   public Rankings getRankings() {
     return rankings;
   }
-
 
 
   public void setRankings(Rankings rankings) {
@@ -329,7 +320,6 @@ public class Source {
   }
 
 
-
   public void setScopes(List<Scope> scopes) {
     this.scopes = scopes;
   }
@@ -351,7 +341,6 @@ public class Source {
   public String getTitle() {
     return title;
   }
-
 
 
   public void setTitle(String title) {

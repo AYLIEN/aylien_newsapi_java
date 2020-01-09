@@ -30,7 +30,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Cluster
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Cluster {
   public static final String SERIALIZED_NAME_EARLIEST_STORY = "earliest_story";
   @SerializedName(SERIALIZED_NAME_EARLIEST_STORY)
@@ -79,7 +79,6 @@ public class Cluster {
   }
 
 
-
   public void setEarliestStory(OffsetDateTime earliestStory) {
     this.earliestStory = earliestStory;
   }
@@ -101,7 +100,6 @@ public class Cluster {
   public Long getId() {
     return id;
   }
-
 
 
   public void setId(Long id) {
@@ -127,7 +125,6 @@ public class Cluster {
   }
 
 
-
   public void setLatestStory(OffsetDateTime latestStory) {
     this.latestStory = latestStory;
   }
@@ -149,7 +146,6 @@ public class Cluster {
   public Location getLocation() {
     return location;
   }
-
 
 
   public void setLocation(Location location) {
@@ -175,7 +171,6 @@ public class Cluster {
   }
 
 
-
   public void setRepresentativeStory(RepresentativeStory representativeStory) {
     this.representativeStory = representativeStory;
   }
@@ -199,7 +194,6 @@ public class Cluster {
   }
 
 
-
   public void setStoryCount(Integer storyCount) {
     this.storyCount = storyCount;
   }
@@ -221,7 +215,6 @@ public class Cluster {
   public OffsetDateTime getTime() {
     return time;
   }
-
 
 
   public void setTime(OffsetDateTime time) {

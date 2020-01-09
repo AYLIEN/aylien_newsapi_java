@@ -15,6 +15,7 @@ package com.aylien.newsapi.models;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.aylien.newsapi.models.SentimentPolarity;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,86 +28,36 @@ import java.io.IOException;
 /**
  * Sentiment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Sentiment {
-  /**
-   * Polarity of the sentiment
-   */
-  @JsonAdapter(PolarityEnum.Adapter.class)
-  public enum PolarityEnum {
-    POSITIVE("positive"),
-    
-    NEUTRAL("neutral"),
-    
-    NEGATIVE("negative");
-
-    private String value;
-
-    PolarityEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static PolarityEnum fromValue(String value) {
-      for (PolarityEnum b : PolarityEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<PolarityEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final PolarityEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public PolarityEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return PolarityEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_POLARITY = "polarity";
   @SerializedName(SERIALIZED_NAME_POLARITY)
-  private PolarityEnum polarity;
+  private SentimentPolarity polarity;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
   private Double score;
 
 
-  public Sentiment polarity(PolarityEnum polarity) {
+  public Sentiment polarity(SentimentPolarity polarity) {
     
     this.polarity = polarity;
     return this;
   }
 
    /**
-   * Polarity of the sentiment
+   * Get polarity
    * @return polarity
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Polarity of the sentiment")
+  @ApiModelProperty(value = "")
 
-  public PolarityEnum getPolarity() {
+  public SentimentPolarity getPolarity() {
     return polarity;
   }
 
 
-
-  public void setPolarity(PolarityEnum polarity) {
+  public void setPolarity(SentimentPolarity polarity) {
     this.polarity = polarity;
   }
 
@@ -129,7 +80,6 @@ public class Sentiment {
   public Double getScore() {
     return score;
   }
-
 
 
   public void setScore(Double score) {

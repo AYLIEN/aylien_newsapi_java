@@ -6,18 +6,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**polarity** | [**PolarityEnum**](#PolarityEnum) | Polarity of the sentiment |  [optional]
+**polarity** | [**SentimentPolarity**](SentimentPolarity.md) |  |  [optional]
 **score** | **Double** | Polarity score of the sentiment |  [optional]
-
-
-
-## Enum: PolarityEnum
-
-Name | Value
----- | -----
-POSITIVE | &quot;positive&quot;
-NEUTRAL | &quot;neutral&quot;
-NEGATIVE | &quot;negative&quot;
 
 
 

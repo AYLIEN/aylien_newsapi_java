@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * TimeSeriesList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class TimeSeriesList {
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
@@ -68,7 +68,6 @@ public class TimeSeriesList {
   }
 
 
-
   public void setPeriod(String period) {
     this.period = period;
   }
@@ -92,7 +91,6 @@ public class TimeSeriesList {
   }
 
 
-
   public void setPublishedAtEnd(OffsetDateTime publishedAtEnd) {
     this.publishedAtEnd = publishedAtEnd;
   }
@@ -114,7 +112,6 @@ public class TimeSeriesList {
   public OffsetDateTime getPublishedAtStart() {
     return publishedAtStart;
   }
-
 
 
   public void setPublishedAtStart(OffsetDateTime publishedAtStart) {
@@ -146,7 +143,6 @@ public class TimeSeriesList {
   public List<TimeSeries> getTimeSeries() {
     return timeSeries;
   }
-
 
 
   public void setTimeSeries(List<TimeSeries> timeSeries) {

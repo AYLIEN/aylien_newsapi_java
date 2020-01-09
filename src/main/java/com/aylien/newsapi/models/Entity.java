@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Entity
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Entity {
   public static final String SERIALIZED_NAME_INDICES = "indices";
   @SerializedName(SERIALIZED_NAME_INDICES)
@@ -79,7 +79,6 @@ public class Entity {
   }
 
 
-
   public void setIndices(List<List<Integer>> indices) {
     this.indices = indices;
   }
@@ -101,7 +100,6 @@ public class Entity {
   public EntityLinks getLinks() {
     return links;
   }
-
 
 
   public void setLinks(EntityLinks links) {
@@ -129,7 +127,6 @@ public class Entity {
   }
 
 
-
   public void setScore(Double score) {
     this.score = score;
   }
@@ -151,7 +148,6 @@ public class Entity {
   public String getText() {
     return text;
   }
-
 
 
   public void setText(String text) {
@@ -183,7 +179,6 @@ public class Entity {
   public List<String> getTypes() {
     return types;
   }
-
 
 
   public void setTypes(List<String> types) {

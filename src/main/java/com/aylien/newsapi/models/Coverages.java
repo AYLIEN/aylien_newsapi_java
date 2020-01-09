@@ -31,7 +31,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Coverages
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Coverages {
   public static final String SERIALIZED_NAME_COVERAGES = "coverages";
   @SerializedName(SERIALIZED_NAME_COVERAGES)
@@ -80,7 +80,6 @@ public class Coverages {
   }
 
 
-
   public void setCoverages(List<Story> coverages) {
     this.coverages = coverages;
   }
@@ -102,7 +101,6 @@ public class Coverages {
   public String getStoryBody() {
     return storyBody;
   }
-
 
 
   public void setStoryBody(String storyBody) {
@@ -128,7 +126,6 @@ public class Coverages {
   }
 
 
-
   public void setStoryLanguage(String storyLanguage) {
     this.storyLanguage = storyLanguage;
   }
@@ -152,7 +149,6 @@ public class Coverages {
   }
 
 
-
   public void setStoryPublishedAt(OffsetDateTime storyPublishedAt) {
     this.storyPublishedAt = storyPublishedAt;
   }
@@ -174,7 +170,6 @@ public class Coverages {
   public String getStoryTitle() {
     return storyTitle;
   }
-
 
 
   public void setStoryTitle(String storyTitle) {

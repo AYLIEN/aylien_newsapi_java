@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * StoryLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class StoryLinks {
   public static final String SERIALIZED_NAME_CANONICAL = "canonical";
   @SerializedName(SERIALIZED_NAME_CANONICAL)
@@ -64,7 +64,6 @@ public class StoryLinks {
   }
 
 
-
   public void setCanonical(String canonical) {
     this.canonical = canonical;
   }
@@ -86,7 +85,6 @@ public class StoryLinks {
   public String getCoverages() {
     return coverages;
   }
-
 
 
   public void setCoverages(String coverages) {
@@ -112,7 +110,6 @@ public class StoryLinks {
   }
 
 
-
   public void setPermalink(String permalink) {
     this.permalink = permalink;
   }
@@ -134,7 +131,6 @@ public class StoryLinks {
   public String getRelatedStories() {
     return relatedStories;
   }
-
 
 
   public void setRelatedStories(String relatedStories) {

@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Stories
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Stories {
   public static final String SERIALIZED_NAME_NEXT_PAGE_CURSOR = "next_page_cursor";
   @SerializedName(SERIALIZED_NAME_NEXT_PAGE_CURSOR)
@@ -57,7 +57,6 @@ public class Stories {
   public String getNextPageCursor() {
     return nextPageCursor;
   }
-
 
 
   public void setNextPageCursor(String nextPageCursor) {
@@ -89,7 +88,6 @@ public class Stories {
   public List<Story> getStories() {
     return stories;
   }
-
 
 
   public void setStories(List<Story> stories) {

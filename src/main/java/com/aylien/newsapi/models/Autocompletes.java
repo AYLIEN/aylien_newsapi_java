@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Autocompletes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Autocompletes {
   public static final String SERIALIZED_NAME_AUTOCOMPLETES = "autocompletes";
   @SerializedName(SERIALIZED_NAME_AUTOCOMPLETES)
@@ -61,7 +61,6 @@ public class Autocompletes {
   public List<Autocomplete> getAutocompletes() {
     return autocompletes;
   }
-
 
 
   public void setAutocompletes(List<Autocomplete> autocompletes) {

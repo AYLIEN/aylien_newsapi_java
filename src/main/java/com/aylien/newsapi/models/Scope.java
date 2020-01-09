@@ -15,6 +15,7 @@ package com.aylien.newsapi.models;
 
 import java.util.Objects;
 import java.util.Arrays;
+import com.aylien.newsapi.models.ScopeLevel;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -27,7 +28,7 @@ import java.io.IOException;
 /**
  * Scope
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Scope {
   public static final String SERIALIZED_NAME_CITY = "city";
   @SerializedName(SERIALIZED_NAME_CITY)
@@ -37,58 +38,9 @@ public class Scope {
   @SerializedName(SERIALIZED_NAME_COUNTRY)
   private String country;
 
-  /**
-   * The scope by level
-   */
-  @JsonAdapter(LevelEnum.Adapter.class)
-  public enum LevelEnum {
-    INTERNATIONAL("international"),
-    
-    NATIONAL("national"),
-    
-    LOCAL("local");
-
-    private String value;
-
-    LevelEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static LevelEnum fromValue(String value) {
-      for (LevelEnum b : LevelEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<LevelEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final LevelEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public LevelEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return LevelEnum.fromValue(value);
-      }
-    }
-  }
-
   public static final String SERIALIZED_NAME_LEVEL = "level";
   @SerializedName(SERIALIZED_NAME_LEVEL)
-  private LevelEnum level;
+  private ScopeLevel level;
 
   public static final String SERIALIZED_NAME_STATE = "state";
   @SerializedName(SERIALIZED_NAME_STATE)
@@ -111,7 +63,6 @@ public class Scope {
   public String getCity() {
     return city;
   }
-
 
 
   public void setCity(String city) {
@@ -137,32 +88,30 @@ public class Scope {
   }
 
 
-
   public void setCountry(String country) {
     this.country = country;
   }
 
 
-  public Scope level(LevelEnum level) {
+  public Scope level(ScopeLevel level) {
     
     this.level = level;
     return this;
   }
 
    /**
-   * The scope by level
+   * Get level
    * @return level
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The scope by level")
+  @ApiModelProperty(value = "")
 
-  public LevelEnum getLevel() {
+  public ScopeLevel getLevel() {
     return level;
   }
 
 
-
-  public void setLevel(LevelEnum level) {
+  public void setLevel(ScopeLevel level) {
     this.level = level;
   }
 
@@ -183,7 +132,6 @@ public class Scope {
   public String getState() {
     return state;
   }
-
 
 
   public void setState(String state) {

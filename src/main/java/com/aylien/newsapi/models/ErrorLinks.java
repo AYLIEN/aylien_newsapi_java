@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ErrorLinks
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class ErrorLinks {
   public static final String SERIALIZED_NAME_ABOUT = "about";
   @SerializedName(SERIALIZED_NAME_ABOUT)
@@ -50,7 +50,6 @@ public class ErrorLinks {
   public String getAbout() {
     return about;
   }
-
 
 
   public void setAbout(String about) {

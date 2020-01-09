@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * RelatedStories
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class RelatedStories {
   public static final String SERIALIZED_NAME_RELATED_STORIES = "related_stories";
   @SerializedName(SERIALIZED_NAME_RELATED_STORIES)
@@ -75,7 +75,6 @@ public class RelatedStories {
   }
 
 
-
   public void setRelatedStories(List<Story> relatedStories) {
     this.relatedStories = relatedStories;
   }
@@ -97,7 +96,6 @@ public class RelatedStories {
   public String getStoryBody() {
     return storyBody;
   }
-
 
 
   public void setStoryBody(String storyBody) {
@@ -123,7 +121,6 @@ public class RelatedStories {
   }
 
 
-
   public void setStoryLanguage(String storyLanguage) {
     this.storyLanguage = storyLanguage;
   }
@@ -145,7 +142,6 @@ public class RelatedStories {
   public String getStoryTitle() {
     return storyTitle;
   }
-
 
 
   public void setStoryTitle(String storyTitle) {

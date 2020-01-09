@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ShareCounts
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class ShareCounts {
   public static final String SERIALIZED_NAME_FACEBOOK = "facebook";
   @SerializedName(SERIALIZED_NAME_FACEBOOK)
@@ -75,7 +75,6 @@ public class ShareCounts {
   }
 
 
-
   public void setFacebook(List<ShareCount> facebook) {
     this.facebook = facebook;
   }
@@ -105,7 +104,6 @@ public class ShareCounts {
   public List<ShareCount> getGooglePlus() {
     return googlePlus;
   }
-
 
 
   public void setGooglePlus(List<ShareCount> googlePlus) {
@@ -139,7 +137,6 @@ public class ShareCounts {
   }
 
 
-
   public void setLinkedin(List<ShareCount> linkedin) {
     this.linkedin = linkedin;
   }
@@ -169,7 +166,6 @@ public class ShareCounts {
   public List<ShareCount> getReddit() {
     return reddit;
   }
-
 
 
   public void setReddit(List<ShareCount> reddit) {

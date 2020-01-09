@@ -40,7 +40,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * Story
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Story {
   public static final String SERIALIZED_NAME_AUTHOR = "author";
   @SerializedName(SERIALIZED_NAME_AUTHOR)
@@ -149,7 +149,6 @@ public class Story {
   }
 
 
-
   public void setAuthor(Author author) {
     this.author = author;
   }
@@ -171,7 +170,6 @@ public class Story {
   public String getBody() {
     return body;
   }
-
 
 
   public void setBody(String body) {
@@ -205,7 +203,6 @@ public class Story {
   }
 
 
-
   public void setCategories(List<Category> categories) {
     this.categories = categories;
   }
@@ -227,7 +224,6 @@ public class Story {
   public Integer getCharactersCount() {
     return charactersCount;
   }
-
 
 
   public void setCharactersCount(Integer charactersCount) {
@@ -261,7 +257,6 @@ public class Story {
   }
 
 
-
   public void setClusters(List<Long> clusters) {
     this.clusters = clusters;
   }
@@ -283,7 +278,6 @@ public class Story {
   public Entities getEntities() {
     return entities;
   }
-
 
 
   public void setEntities(Entities entities) {
@@ -317,7 +311,6 @@ public class Story {
   }
 
 
-
   public void setHashtags(List<String> hashtags) {
     this.hashtags = hashtags;
   }
@@ -339,7 +332,6 @@ public class Story {
   public Long getId() {
     return id;
   }
-
 
 
   public void setId(Long id) {
@@ -373,7 +365,6 @@ public class Story {
   }
 
 
-
   public void setKeywords(List<String> keywords) {
     this.keywords = keywords;
   }
@@ -397,7 +388,6 @@ public class Story {
   }
 
 
-
   public void setLanguage(String language) {
     this.language = language;
   }
@@ -419,7 +409,6 @@ public class Story {
   public StoryLinks getLinks() {
     return links;
   }
-
 
 
   public void setLinks(StoryLinks links) {
@@ -453,7 +442,6 @@ public class Story {
   }
 
 
-
   public void setMedia(List<Media> media) {
     this.media = media;
   }
@@ -475,7 +463,6 @@ public class Story {
   public Integer getParagraphsCount() {
     return paragraphsCount;
   }
-
 
 
   public void setParagraphsCount(Integer paragraphsCount) {
@@ -501,7 +488,6 @@ public class Story {
   }
 
 
-
   public void setPublishedAt(OffsetDateTime publishedAt) {
     this.publishedAt = publishedAt;
   }
@@ -523,7 +509,6 @@ public class Story {
   public Integer getSentencesCount() {
     return sentencesCount;
   }
-
 
 
   public void setSentencesCount(Integer sentencesCount) {
@@ -549,7 +534,6 @@ public class Story {
   }
 
 
-
   public void setSentiment(Sentiments sentiment) {
     this.sentiment = sentiment;
   }
@@ -571,7 +555,6 @@ public class Story {
   public ShareCounts getSocialSharesCount() {
     return socialSharesCount;
   }
-
 
 
   public void setSocialSharesCount(ShareCounts socialSharesCount) {
@@ -597,7 +580,6 @@ public class Story {
   }
 
 
-
   public void setSource(Source source) {
     this.source = source;
   }
@@ -619,7 +601,6 @@ public class Story {
   public Summary getSummary() {
     return summary;
   }
-
 
 
   public void setSummary(Summary summary) {
@@ -645,7 +626,6 @@ public class Story {
   }
 
 
-
   public void setTitle(String title) {
     this.title = title;
   }
@@ -669,7 +649,6 @@ public class Story {
   }
 
 
-
   public void setTranslations(StoryTranslations translations) {
     this.translations = translations;
   }
@@ -691,7 +670,6 @@ public class Story {
   public Integer getWordsCount() {
     return wordsCount;
   }
-
 
 
   public void setWordsCount(Integer wordsCount) {

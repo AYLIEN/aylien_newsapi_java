@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Histograms
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Histograms {
   public static final String SERIALIZED_NAME_FIELD = "field";
   @SerializedName(SERIALIZED_NAME_FIELD)
@@ -71,7 +71,6 @@ public class Histograms {
   }
 
 
-
   public void setField(String field) {
     this.field = field;
   }
@@ -93,7 +92,6 @@ public class Histograms {
   public Integer getIntervalEnd() {
     return intervalEnd;
   }
-
 
 
   public void setIntervalEnd(Integer intervalEnd) {
@@ -119,7 +117,6 @@ public class Histograms {
   }
 
 
-
   public void setIntervalStart(Integer intervalStart) {
     this.intervalStart = intervalStart;
   }
@@ -141,7 +138,6 @@ public class Histograms {
   public Integer getIntervalWidth() {
     return intervalWidth;
   }
-
 
 
   public void setIntervalWidth(Integer intervalWidth) {
@@ -173,7 +169,6 @@ public class Histograms {
   public List<HistogramInterval> getIntervals() {
     return intervals;
   }
-
 
 
   public void setIntervals(List<HistogramInterval> intervals) {

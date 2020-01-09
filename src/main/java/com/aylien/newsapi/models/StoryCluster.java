@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * StoryCluster
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class StoryCluster {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -70,7 +70,6 @@ public class StoryCluster {
   }
 
 
-
   public void setId(Integer id) {
     this.id = id;
   }
@@ -102,7 +101,6 @@ public class StoryCluster {
   }
 
 
-
   public void setPhrases(List<String> phrases) {
     this.phrases = phrases;
   }
@@ -126,7 +124,6 @@ public class StoryCluster {
   }
 
 
-
   public void setScore(Double score) {
     this.score = score;
   }
@@ -148,7 +145,6 @@ public class StoryCluster {
   public Integer getSize() {
     return size;
   }
-
 
 
   public void setSize(Integer size) {
@@ -180,7 +176,6 @@ public class StoryCluster {
   public List<Long> getStories() {
     return stories;
   }
-
 
 
   public void setStories(List<Long> stories) {

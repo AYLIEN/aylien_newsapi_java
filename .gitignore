@@ -19,9 +19,3 @@ hs_err_pid*
 target
 .gradle
 build
-
-.idea
-*.iml
-release.properties
-pom.xml.releaseBackup
-settings.xml

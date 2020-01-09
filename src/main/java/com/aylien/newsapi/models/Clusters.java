@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Clusters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Clusters {
   public static final String SERIALIZED_NAME_CLUSTER_COUNT = "cluster_count";
   @SerializedName(SERIALIZED_NAME_CLUSTER_COUNT)
@@ -61,7 +61,6 @@ public class Clusters {
   public Long getClusterCount() {
     return clusterCount;
   }
-
 
 
   public void setClusterCount(Long clusterCount) {
@@ -95,7 +94,6 @@ public class Clusters {
   }
 
 
-
   public void setClusters(List<Cluster> clusters) {
     this.clusters = clusters;
   }
@@ -117,7 +115,6 @@ public class Clusters {
   public String getNextPageCursor() {
     return nextPageCursor;
   }
-
 
 
   public void setNextPageCursor(String nextPageCursor) {

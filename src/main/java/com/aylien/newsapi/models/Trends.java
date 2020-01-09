@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * Trends
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2019-10-29T11:45:55.349Z[Europe/Dublin]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-09T08:27:46.745Z[Europe/Dublin]")
 public class Trends {
   public static final String SERIALIZED_NAME_FIELD = "field";
   @SerializedName(SERIALIZED_NAME_FIELD)
@@ -57,7 +57,6 @@ public class Trends {
   public String getField() {
     return field;
   }
-
 
 
   public void setField(String field) {
@@ -89,7 +88,6 @@ public class Trends {
   public List<Trend> getTrends() {
     return trends;
   }
-
 
 
   public void setTrends(List<Trend> trends) {
